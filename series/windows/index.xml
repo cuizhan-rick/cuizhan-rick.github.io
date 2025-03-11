@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Windows on Slow is Smooth and Smooth is Fast</title>
-    <link>https://874656645.github.io/series/windows/</link>
+    <link>https://cuizhan-rick.github.io/series/windows/</link>
     <description>Recent content in Windows on Slow is Smooth and Smooth is Fast</description>
     <image>
-      <url>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 05 Jan 2024 12:21:35 +0800</lastBuildDate><atom:link href="https://874656645.github.io/series/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Jan 2024 12:21:35 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/series/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows Cmd 设置临时和永久环境变量</title>
-      <link>https://874656645.github.io/posts/270-windows-cmd-%E8%AE%BE%E7%BD%AE%E4%B8%B4%E6%97%B6%E5%92%8C%E6%B0%B8%E4%B9%85%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</link>
+      <link>https://cuizhan-rick.github.io/posts/270-windows-cmd-%E8%AE%BE%E7%BD%AE%E4%B8%B4%E6%97%B6%E5%92%8C%E6%B0%B8%E4%B9%85%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</link>
       <pubDate>Fri, 05 Jan 2024 12:21:35 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/270-windows-cmd-%E8%AE%BE%E7%BD%AE%E4%B8%B4%E6%97%B6%E5%92%8C%E6%B0%B8%E4%B9%85%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/270-windows-cmd-%E8%AE%BE%E7%BD%AE%E4%B8%B4%E6%97%B6%E5%92%8C%E6%B0%B8%E4%B9%85%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</guid>
       <description>  打开 cmd 命令提示符（Win11）
   查看所有环境变量：输入 set
   查看 path：输入 set path
@@ -26,10 +26,10 @@
     
     <item>
       <title>PowerShell 修改脚本执行策略</title>
-      <link>https://874656645.github.io/posts/200-powershell-%E4%BF%AE%E6%94%B9%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5/</link>
+      <link>https://cuizhan-rick.github.io/posts/200-powershell-%E4%BF%AE%E6%94%B9%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5/</link>
       <pubDate>Wed, 06 Jul 2022 17:49:14 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/200-powershell-%E4%BF%AE%E6%94%B9%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/200-powershell-%E4%BF%AE%E6%94%B9%E8%84%9A%E6%9C%AC%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5/</guid>
       <description> 参考asdfasdfabout_Execution_Policies    get-executionpolicy 命令查看
  Restricted 执行策略不允许任何脚本运行 RemoteSigned    执行策略修改
 以管理员身份打开 PowerShell， 输入 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser 修改执行策略
@@ -38,10 +38,10 @@
     
     <item>
       <title>Power Shell ExecutionPolicy</title>
-      <link>https://874656645.github.io/posts/10-power-shell-executionpolicy/</link>
+      <link>https://cuizhan-rick.github.io/posts/10-power-shell-executionpolicy/</link>
       <pubDate>Thu, 28 Feb 2019 17:01:31 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/10-power-shell-executionpolicy/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/10-power-shell-executionpolicy/</guid>
       <description>Power shell执行策略 原文网址
 1、查看当前的安全策略 Get-ExecutionPolicy
 2、修改执行策略 ps:这种方法会将执行策略保存到注册表

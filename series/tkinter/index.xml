@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>tkinter on Slow is Smooth and Smooth is Fast</title>
-    <link>https://874656645.github.io/series/tkinter/</link>
+    <link>https://cuizhan-rick.github.io/series/tkinter/</link>
     <description>Recent content in tkinter on Slow is Smooth and Smooth is Fast</description>
     <image>
-      <url>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 15 Dec 2024 12:46:31 +0800</lastBuildDate><atom:link href="https://874656645.github.io/series/tkinter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Dec 2024 12:46:31 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/series/tkinter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python——tkinter 界面库</title>
-      <link>https://874656645.github.io/posts/286-python-tkinter-%E7%95%8C%E9%9D%A2%E5%BA%93/</link>
+      <link>https://cuizhan-rick.github.io/posts/286-python-tkinter-%E7%95%8C%E9%9D%A2%E5%BA%93/</link>
       <pubDate>Sun, 15 Dec 2024 12:46:31 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/286-python-tkinter-%E7%95%8C%E9%9D%A2%E5%BA%93/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/286-python-tkinter-%E7%95%8C%E9%9D%A2%E5%BA%93/</guid>
       <description>现在的 python 安装包中集成了 tkinter 库，无需单独安装。
 检查 tkinter 是否已安装
 测试脚本一：

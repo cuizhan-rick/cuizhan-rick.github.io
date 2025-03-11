@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Python on Slow is Smooth and Smooth is Fast</title>
-    <link>https://874656645.github.io/series/python/</link>
+    <link>https://cuizhan-rick.github.io/series/python/</link>
     <description>Recent content in Python on Slow is Smooth and Smooth is Fast</description>
     <image>
-      <url>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 15 Dec 2024 15:38:34 +0800</lastBuildDate><atom:link href="https://874656645.github.io/series/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Dec 2024 15:38:34 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/series/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Loop 运行 Command 脚本</title>
-      <link>https://874656645.github.io/posts/288-python-loop-%E8%BF%90%E8%A1%8C-command-%E8%84%9A%E6%9C%AC/</link>
+      <link>https://cuizhan-rick.github.io/posts/288-python-loop-%E8%BF%90%E8%A1%8C-command-%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Sun, 15 Dec 2024 15:38:34 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/288-python-loop-%E8%BF%90%E8%A1%8C-command-%E8%84%9A%E6%9C%AC/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/288-python-loop-%E8%BF%90%E8%A1%8C-command-%E8%84%9A%E6%9C%AC/</guid>
       <description>import sys import os from threading import Timer import datetime print(sys.version) file_name = &amp;#34;D:/gpu.txt&amp;#34; def printHello(): with open(file_name,&amp;#39;a&amp;#39;) as f1: command=&amp;#39;adb shell &amp;#34;cat /sys/kernel/debug/pvr/status | grep GPU&amp;#34;&amp;#39; tt=os.popen(command) tmp=tt.read() res = f&amp;#39;{datetime.datetime.now()}{tmp}&amp;#39;.replace(&amp;#39;\r&amp;#39;,&amp;#39;&amp;#39;).replace(&amp;#39;\n&amp;#39;,&amp;#39;&amp;#39;) print(res) f1.write(res+&amp;#39;\n&amp;#39;) def loop_func(func, second): while True: timer = Timer(second, func) timer.start() timer.join() loop_func(printHello, 1) </description>
     </item>
     
     <item>
       <title>Python Conda GDAL 环境搭建</title>
-      <link>https://874656645.github.io/posts/269-python-conda-gdal-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <link>https://cuizhan-rick.github.io/posts/269-python-conda-gdal-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Thu, 04 Jan 2024 19:18:20 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/269-python-conda-gdal-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/269-python-conda-gdal-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
       <description>  安装 miniconda，conda 命令使用可参考这里;
 注意：
  安装包的时候，conda install 和 pip install 最好不要混用，优先使用 pip 查看 python 包路径 python -m site

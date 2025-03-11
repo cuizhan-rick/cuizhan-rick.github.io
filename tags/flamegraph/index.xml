@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>FlameGraph on Slow is Smooth and Smooth is Fast</title>
-    <link>https://874656645.github.io/tags/flamegraph/</link>
+    <link>https://cuizhan-rick.github.io/tags/flamegraph/</link>
     <description>Recent content in FlameGraph on Slow is Smooth and Smooth is Fast</description>
     <image>
-      <url>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 15 Dec 2024 14:54:27 +0800</lastBuildDate><atom:link href="https://874656645.github.io/tags/flamegraph/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Dec 2024 14:54:27 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/tags/flamegraph/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python 脚本生成火焰图</title>
-      <link>https://874656645.github.io/posts/287-python-%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90%E7%81%AB%E7%84%B0%E5%9B%BE/</link>
+      <link>https://cuizhan-rick.github.io/posts/287-python-%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90%E7%81%AB%E7%84%B0%E5%9B%BE/</link>
       <pubDate>Sun, 15 Dec 2024 14:54:27 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/287-python-%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90%E7%81%AB%E7%84%B0%E5%9B%BE/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/287-python-%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90%E7%81%AB%E7%84%B0%E5%9B%BE/</guid>
       <description>首先下载脚本代码。
   安装 ActivePerl_5.16.2.3010812913.msi 并配置环境变量。
   将 Python 脚本放到 FlameGraph-master 目录下运行。

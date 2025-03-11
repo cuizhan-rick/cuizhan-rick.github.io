@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Python on Slow is Smooth and Smooth is Fast</title>
-    <link>https://874656645.github.io/tags/python/</link>
+    <link>https://cuizhan-rick.github.io/tags/python/</link>
     <description>Recent content in Python on Slow is Smooth and Smooth is Fast</description>
     <image>
-      <url>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 15 Dec 2024 15:38:34 +0800</lastBuildDate><atom:link href="https://874656645.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Dec 2024 15:38:34 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Loop 运行 Command 脚本</title>
-      <link>https://874656645.github.io/posts/288-python-loop-%E8%BF%90%E8%A1%8C-command-%E8%84%9A%E6%9C%AC/</link>
+      <link>https://cuizhan-rick.github.io/posts/288-python-loop-%E8%BF%90%E8%A1%8C-command-%E8%84%9A%E6%9C%AC/</link>
       <pubDate>Sun, 15 Dec 2024 15:38:34 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/288-python-loop-%E8%BF%90%E8%A1%8C-command-%E8%84%9A%E6%9C%AC/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/288-python-loop-%E8%BF%90%E8%A1%8C-command-%E8%84%9A%E6%9C%AC/</guid>
       <description>import sys import os from threading import Timer import datetime print(sys.version) file_name = &amp;#34;D:/gpu.txt&amp;#34; def printHello(): with open(file_name,&amp;#39;a&amp;#39;) as f1: command=&amp;#39;adb shell &amp;#34;cat /sys/kernel/debug/pvr/status | grep GPU&amp;#34;&amp;#39; tt=os.popen(command) tmp=tt.read() res = f&amp;#39;{datetime.datetime.now()}{tmp}&amp;#39;.replace(&amp;#39;\r&amp;#39;,&amp;#39;&amp;#39;).replace(&amp;#39;\n&amp;#39;,&amp;#39;&amp;#39;) print(res) f1.write(res+&amp;#39;\n&amp;#39;) def loop_func(func, second): while True: timer = Timer(second, func) timer.start() timer.join() loop_func(printHello, 1) </description>
     </item>
     
     <item>
       <title>Python 脚本生成火焰图</title>
-      <link>https://874656645.github.io/posts/287-python-%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90%E7%81%AB%E7%84%B0%E5%9B%BE/</link>
+      <link>https://cuizhan-rick.github.io/posts/287-python-%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90%E7%81%AB%E7%84%B0%E5%9B%BE/</link>
       <pubDate>Sun, 15 Dec 2024 14:54:27 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/287-python-%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90%E7%81%AB%E7%84%B0%E5%9B%BE/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/287-python-%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90%E7%81%AB%E7%84%B0%E5%9B%BE/</guid>
       <description>首先下载脚本代码。
   安装 ActivePerl_5.16.2.3010812913.msi 并配置环境变量。
   将 Python 脚本放到 FlameGraph-master 目录下运行。
@@ -34,20 +34,20 @@ import argparse import subprocess import sys import os print(sys.version) def ex
     
     <item>
       <title>clip-tif-by-China-polygon</title>
-      <link>https://874656645.github.io/posts/285-clip-tif-by-china-polygon/</link>
+      <link>https://cuizhan-rick.github.io/posts/285-clip-tif-by-china-polygon/</link>
       <pubDate>Sun, 15 Dec 2024 11:58:55 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/285-clip-tif-by-china-polygon/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/285-clip-tif-by-china-polygon/</guid>
       <description>利用 QGIS，通过 Python 脚本批量实现根据矢量面数据对 Tiff 栅格数据进行裁切
 import os,sys,json # import gdal # from osgeo import gdal import concurrent.futures from multiprocessing import cpu_count MAX_WORKERS = cpu_count() # * 0.75 # 线程池的最大线程数 # gdal 命令 # &amp;#34;C:\Program Files\QGIS 3.28.10\bin\gdalwarp.exe&amp;#34; -overwrite -s_srs EPSG:4326 -t_srs EPSG:4326 -of GTiff -cutline D:/Work/dem/23M6版本国界/国界面.MIF -cl 国界面 -dstnodata -1000.0 D:/Work/dem/Quanguo_DEM_TIF_300/Quanguo300/quanguo300_06_37.tif D:/Work/dem/Quanguo_DEM_TIF_300/test.tif # 获得当前工作目录 current_path = os.path.abspath(__file__) current_dir = os.path.dirname(current_path) mask_layer_file = r&amp;#34;{}/23M6版本国界/国界面.MIF&amp;#34;.format(current_dir) if os.path.exists(mask_layer_file) == False: msg = &amp;#34;ERROR: {}does not exit.</description>
     </item>
     
     <item>
       <title>Python Conda GDAL 环境搭建</title>
-      <link>https://874656645.github.io/posts/269-python-conda-gdal-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <link>https://cuizhan-rick.github.io/posts/269-python-conda-gdal-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Thu, 04 Jan 2024 19:18:20 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/269-python-conda-gdal-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/269-python-conda-gdal-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
       <description>  安装 miniconda，conda 命令使用可参考这里;
 注意：
  安装包的时候，conda install 和 pip install 最好不要混用，优先使用 pip 查看 python 包路径 python -m site
@@ -58,10 +58,10 @@ import os,sys,json # import gdal # from osgeo import gdal import concurrent.futu
     
     <item>
       <title>Conda Learn</title>
-      <link>https://874656645.github.io/posts/14-conda-learn/</link>
+      <link>https://cuizhan-rick.github.io/posts/14-conda-learn/</link>
       <pubDate>Tue, 04 Jun 2019 10:16:11 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/14-conda-learn/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/14-conda-learn/</guid>
       <description>miniconda包管理器常用命令 0、指定conda的工作平台 set CONDA_FORCE_32BIT=1 // 指定 conda 的工作平台为 win-32
 set CONDA_FORCE_32BIT= // 指定 conda 的工作平台为 x64
 1、指定conda的资源镜像 # 推荐使用中科大的 conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free # 清华的镜像好像用不了了 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free # 设置搜索时显示通道地址 conda config --set show_channel_urls yes 执行此命令后会在当前的用户文件夹下生成一个 .condarc 的配置文件
@@ -74,10 +74,10 @@ source conda activate python34 // for Linux &amp;amp; Mac</description>
     
     <item>
       <title>Scrapy Learn</title>
-      <link>https://874656645.github.io/posts/7-scrapy-learn/</link>
+      <link>https://cuizhan-rick.github.io/posts/7-scrapy-learn/</link>
       <pubDate>Fri, 15 Feb 2019 15:40:48 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/7-scrapy-learn/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/7-scrapy-learn/</guid>
       <description>原文网址
 1. Using a virtual environment (recommended) pip install virtualenv
 详细操作

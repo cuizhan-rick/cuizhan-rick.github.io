@@ -2,353 +2,353 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Slow is Smooth and Smooth is Fast</title>
-    <link>https://874656645.github.io/tags/</link>
+    <link>https://cuizhan-rick.github.io/tags/</link>
     <description>Recent content in Tags on Slow is Smooth and Smooth is Fast</description>
     <image>
-      <url>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 17 Dec 2024 22:10:14 +0800</lastBuildDate><atom:link href="https://874656645.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Dec 2024 22:10:14 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C&#43;&#43;</title>
-      <link>https://874656645.github.io/tags/c&#43;&#43;/</link>
+      <link>https://cuizhan-rick.github.io/tags/c&#43;&#43;/</link>
       <pubDate>Tue, 17 Dec 2024 22:10:14 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/c&#43;&#43;/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OpenGL</title>
-      <link>https://874656645.github.io/tags/opengl/</link>
+      <link>https://cuizhan-rick.github.io/tags/opengl/</link>
       <pubDate>Sun, 15 Dec 2024 16:43:15 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/opengl/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/opengl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://874656645.github.io/tags/python/</link>
+      <link>https://cuizhan-rick.github.io/tags/python/</link>
       <pubDate>Sun, 15 Dec 2024 15:38:34 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/python/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>FlameGraph</title>
-      <link>https://874656645.github.io/tags/flamegraph/</link>
+      <link>https://cuizhan-rick.github.io/tags/flamegraph/</link>
       <pubDate>Sun, 15 Dec 2024 14:54:27 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/flamegraph/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/flamegraph/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tkinter</title>
-      <link>https://874656645.github.io/tags/tkinter/</link>
+      <link>https://cuizhan-rick.github.io/tags/tkinter/</link>
       <pubDate>Sun, 15 Dec 2024 12:46:31 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/tkinter/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/tkinter/</guid>
       <description></description>
     </item>
     
     <item>
       <title>QGIS</title>
-      <link>https://874656645.github.io/tags/qgis/</link>
+      <link>https://cuizhan-rick.github.io/tags/qgis/</link>
       <pubDate>Sun, 15 Dec 2024 11:58:55 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/qgis/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/qgis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>数据结构与算法</title>
-      <link>https://874656645.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</link>
+      <link>https://cuizhan-rick.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</link>
       <pubDate>Fri, 13 Dec 2024 14:52:14 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://874656645.github.io/tags/linux/</link>
+      <link>https://cuizhan-rick.github.io/tags/linux/</link>
       <pubDate>Mon, 08 Jan 2024 18:35:40 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/linux/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Conda</title>
-      <link>https://874656645.github.io/tags/conda/</link>
+      <link>https://cuizhan-rick.github.io/tags/conda/</link>
       <pubDate>Thu, 04 Jan 2024 19:18:20 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/conda/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/conda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>adb</title>
-      <link>https://874656645.github.io/tags/adb/</link>
+      <link>https://cuizhan-rick.github.io/tags/adb/</link>
       <pubDate>Sat, 23 Dec 2023 11:59:04 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/adb/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/adb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Android Studio</title>
-      <link>https://874656645.github.io/tags/android-studio/</link>
+      <link>https://cuizhan-rick.github.io/tags/android-studio/</link>
       <pubDate>Mon, 30 Oct 2023 17:17:34 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/android-studio/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/android-studio/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ubuntu</title>
-      <link>https://874656645.github.io/tags/ubuntu/</link>
+      <link>https://cuizhan-rick.github.io/tags/ubuntu/</link>
       <pubDate>Mon, 11 Sep 2023 09:34:47 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/ubuntu/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>https://874656645.github.io/tags/git/</link>
+      <link>https://cuizhan-rick.github.io/tags/git/</link>
       <pubDate>Fri, 24 Feb 2023 13:45:59 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/git/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cesium</title>
-      <link>https://874656645.github.io/tags/cesium/</link>
+      <link>https://cuizhan-rick.github.io/tags/cesium/</link>
       <pubDate>Wed, 07 Dec 2022 10:34:53 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/cesium/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/cesium/</guid>
       <description></description>
     </item>
     
     <item>
       <title>UE5</title>
-      <link>https://874656645.github.io/tags/ue5/</link>
+      <link>https://cuizhan-rick.github.io/tags/ue5/</link>
       <pubDate>Wed, 07 Dec 2022 10:34:53 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/ue5/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/ue5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Global Mapper</title>
-      <link>https://874656645.github.io/tags/global-mapper/</link>
+      <link>https://cuizhan-rick.github.io/tags/global-mapper/</link>
       <pubDate>Fri, 09 Sep 2022 11:44:36 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/global-mapper/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/global-mapper/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ArcGIS</title>
-      <link>https://874656645.github.io/tags/arcgis/</link>
+      <link>https://cuizhan-rick.github.io/tags/arcgis/</link>
       <pubDate>Wed, 31 Aug 2022 11:19:28 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/arcgis/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/arcgis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GeoServer</title>
-      <link>https://874656645.github.io/tags/geoserver/</link>
+      <link>https://cuizhan-rick.github.io/tags/geoserver/</link>
       <pubDate>Wed, 31 Aug 2022 11:19:28 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/geoserver/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/geoserver/</guid>
       <description></description>
     </item>
     
     <item>
       <title>STL</title>
-      <link>https://874656645.github.io/tags/stl/</link>
+      <link>https://cuizhan-rick.github.io/tags/stl/</link>
       <pubDate>Tue, 30 Aug 2022 14:22:02 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/stl/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/stl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CentOS</title>
-      <link>https://874656645.github.io/tags/centos/</link>
+      <link>https://cuizhan-rick.github.io/tags/centos/</link>
       <pubDate>Wed, 17 Aug 2022 14:33:56 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/centos/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/centos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>计算几何</title>
-      <link>https://874656645.github.io/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/</link>
+      <link>https://cuizhan-rick.github.io/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/</link>
       <pubDate>Tue, 02 Aug 2022 17:43:53 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CMake</title>
-      <link>https://874656645.github.io/tags/cmake/</link>
+      <link>https://cuizhan-rick.github.io/tags/cmake/</link>
       <pubDate>Mon, 18 Jul 2022 22:17:00 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/cmake/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/cmake/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Qt</title>
-      <link>https://874656645.github.io/tags/qt/</link>
+      <link>https://cuizhan-rick.github.io/tags/qt/</link>
       <pubDate>Mon, 18 Jul 2022 22:17:00 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/qt/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/qt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PowerShell执行策略</title>
-      <link>https://874656645.github.io/tags/powershell%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5/</link>
+      <link>https://cuizhan-rick.github.io/tags/powershell%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5/</link>
       <pubDate>Wed, 06 Jul 2022 17:49:14 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/powershell%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/powershell%E6%89%A7%E8%A1%8C%E7%AD%96%E7%95%A5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux远程调试</title>
-      <link>https://874656645.github.io/tags/linux%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/</link>
+      <link>https://cuizhan-rick.github.io/tags/linux%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/</link>
       <pubDate>Wed, 18 May 2022 12:02:56 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/linux%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/linux%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>VS2022</title>
-      <link>https://874656645.github.io/tags/vs2022/</link>
+      <link>https://cuizhan-rick.github.io/tags/vs2022/</link>
       <pubDate>Wed, 18 May 2022 12:02:56 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/vs2022/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/vs2022/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unreal</title>
-      <link>https://874656645.github.io/tags/unreal/</link>
+      <link>https://cuizhan-rick.github.io/tags/unreal/</link>
       <pubDate>Sun, 17 Apr 2022 16:24:27 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/unreal/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/unreal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>emcc</title>
-      <link>https://874656645.github.io/tags/emcc/</link>
+      <link>https://cuizhan-rick.github.io/tags/emcc/</link>
       <pubDate>Tue, 29 Mar 2022 11:00:18 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/emcc/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/emcc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>js</title>
-      <link>https://874656645.github.io/tags/js/</link>
+      <link>https://cuizhan-rick.github.io/tags/js/</link>
       <pubDate>Tue, 29 Mar 2022 11:00:18 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/js/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>哈希表</title>
-      <link>https://874656645.github.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/</link>
+      <link>https://cuizhan-rick.github.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/</link>
       <pubDate>Fri, 25 Feb 2022 17:23:49 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/</guid>
       <description></description>
     </item>
     
     <item>
       <title>处理哈希冲突</title>
-      <link>https://874656645.github.io/tags/%E5%A4%84%E7%90%86%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81/</link>
+      <link>https://cuizhan-rick.github.io/tags/%E5%A4%84%E7%90%86%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81/</link>
       <pubDate>Fri, 25 Feb 2022 17:23:49 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/%E5%A4%84%E7%90%86%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/%E5%A4%84%E7%90%86%E5%93%88%E5%B8%8C%E5%86%B2%E7%AA%81/</guid>
       <description></description>
     </item>
     
     <item>
       <title>算法</title>
-      <link>https://874656645.github.io/tags/%E7%AE%97%E6%B3%95/</link>
+      <link>https://cuizhan-rick.github.io/tags/%E7%AE%97%E6%B3%95/</link>
       <pubDate>Fri, 25 Feb 2022 17:23:49 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/%E7%AE%97%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>设计模式</title>
-      <link>https://874656645.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <link>https://cuizhan-rick.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 02 Feb 2022 16:59:08 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
       <description></description>
     </item>
     
     <item>
       <title>UML</title>
-      <link>https://874656645.github.io/tags/uml/</link>
+      <link>https://cuizhan-rick.github.io/tags/uml/</link>
       <pubDate>Sat, 29 Jan 2022 19:55:47 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/uml/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/uml/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DmdSpider</title>
-      <link>https://874656645.github.io/tags/dmdspider/</link>
+      <link>https://cuizhan-rick.github.io/tags/dmdspider/</link>
       <pubDate>Thu, 28 Feb 2019 15:00:16 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/dmdspider/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/dmdspider/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Virtualenv</title>
-      <link>https://874656645.github.io/tags/virtualenv/</link>
+      <link>https://cuizhan-rick.github.io/tags/virtualenv/</link>
       <pubDate>Sat, 16 Feb 2019 11:20:20 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/virtualenv/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/virtualenv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://874656645.github.io/tags/hugo/</link>
+      <link>https://cuizhan-rick.github.io/tags/hugo/</link>
       <pubDate>Fri, 14 Dec 2018 22:40:04 +0800</pubDate>
       
-      <guid>https://874656645.github.io/tags/hugo/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>spatialite</title>
-      <link>https://874656645.github.io/tags/spatialite/</link>
+      <link>https://cuizhan-rick.github.io/tags/spatialite/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://874656645.github.io/tags/spatialite/</guid>
+      <guid>https://cuizhan-rick.github.io/tags/spatialite/</guid>
       <description></description>
     </item>
     

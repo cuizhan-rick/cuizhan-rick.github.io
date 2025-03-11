@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>GIS on Slow is Smooth and Smooth is Fast</title>
-    <link>https://874656645.github.io/categories/gis/</link>
+    <link>https://cuizhan-rick.github.io/categories/gis/</link>
     <description>Recent content in GIS on Slow is Smooth and Smooth is Fast</description>
     <image>
-      <url>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 15 Dec 2024 11:58:55 +0800</lastBuildDate><atom:link href="https://874656645.github.io/categories/gis/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 15 Dec 2024 11:58:55 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/categories/gis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>clip-tif-by-China-polygon</title>
-      <link>https://874656645.github.io/posts/285-clip-tif-by-china-polygon/</link>
+      <link>https://cuizhan-rick.github.io/posts/285-clip-tif-by-china-polygon/</link>
       <pubDate>Sun, 15 Dec 2024 11:58:55 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/285-clip-tif-by-china-polygon/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/285-clip-tif-by-china-polygon/</guid>
       <description>利用 QGIS，通过 Python 脚本批量实现根据矢量面数据对 Tiff 栅格数据进行裁切
 import os,sys,json # import gdal # from osgeo import gdal import concurrent.futures from multiprocessing import cpu_count MAX_WORKERS = cpu_count() # * 0.75 # 线程池的最大线程数 # gdal 命令 # &amp;#34;C:\Program Files\QGIS 3.28.10\bin\gdalwarp.exe&amp;#34; -overwrite -s_srs EPSG:4326 -t_srs EPSG:4326 -of GTiff -cutline D:/Work/dem/23M6版本国界/国界面.MIF -cl 国界面 -dstnodata -1000.0 D:/Work/dem/Quanguo_DEM_TIF_300/Quanguo300/quanguo300_06_37.tif D:/Work/dem/Quanguo_DEM_TIF_300/test.tif # 获得当前工作目录 current_path = os.path.abspath(__file__) current_dir = os.path.dirname(current_path) mask_layer_file = r&amp;#34;{}/23M6版本国界/国界面.MIF&amp;#34;.format(current_dir) if os.path.exists(mask_layer_file) == False: msg = &amp;#34;ERROR: {}does not exit.</description>
     </item>
     
     <item>
       <title>Unreal——Subsystem（子系统）</title>
-      <link>https://874656645.github.io/posts/257-unreal-subsystem%E5%AD%90%E7%B3%BB%E7%BB%9F/</link>
+      <link>https://cuizhan-rick.github.io/posts/257-unreal-subsystem%E5%AD%90%E7%B3%BB%E7%BB%9F/</link>
       <pubDate>Wed, 07 Dec 2022 10:34:53 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/257-unreal-subsystem%E5%AD%90%E7%B3%BB%E7%BB%9F/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/257-unreal-subsystem%E5%AD%90%E7%B3%BB%E7%BB%9F/</guid>
       <description>Programming Subsystems</description>
     </item>
     
     <item>
       <title>Unreal——项目和插件</title>
-      <link>https://874656645.github.io/posts/256-unreal-%E9%A1%B9%E7%9B%AE%E5%92%8C%E6%8F%92%E4%BB%B6/</link>
+      <link>https://cuizhan-rick.github.io/posts/256-unreal-%E9%A1%B9%E7%9B%AE%E5%92%8C%E6%8F%92%E4%BB%B6/</link>
       <pubDate>Wed, 07 Dec 2022 09:59:17 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/256-unreal-%E9%A1%B9%E7%9B%AE%E5%92%8C%E6%8F%92%E4%BB%B6/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/256-unreal-%E9%A1%B9%E7%9B%AE%E5%92%8C%E6%8F%92%E4%BB%B6/</guid>
       <description>一、插件  插件是为特定目的设计的代码和数据的集合； 开发人员可以很容易的在单个项目中启用或禁用他们； 插件分为运行时（runtime gameplay functionality）、编辑器（editor functionality）  二、模块  项目本身也是一个模块  三、依赖 </description>
     </item>
     
     <item>
       <title>Unreal5——开发、使用问题汇总</title>
-      <link>https://874656645.github.io/posts/252-unreal5-%E5%BC%80%E5%8F%91%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <link>https://cuizhan-rick.github.io/posts/252-unreal5-%E5%BC%80%E5%8F%91%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
       <pubDate>Thu, 10 Nov 2022 09:01:48 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/252-unreal5-%E5%BC%80%E5%8F%91%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/252-unreal5-%E5%BC%80%E5%8F%91%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
       <description>新建项目的时候没有项目模板
 打开 Epic Games Launcher，在 虚幻引擎 -&amp;gt; 库 中选择需要添加组件的引擎版本，打开 选项 面板，勾选需要更改的组件
   在 Play 模式下切换到鼠标控制
@@ -64,10 +64,10 @@ VS Code: Ctrl + Shift + B
     
     <item>
       <title>Cesium4Unreal——Importing Quixel Assets</title>
-      <link>https://874656645.github.io/posts/251-cesium-unreal-importing-quixel-assets/</link>
+      <link>https://cuizhan-rick.github.io/posts/251-cesium-unreal-importing-quixel-assets/</link>
       <pubDate>Tue, 25 Oct 2022 09:48:36 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/251-cesium-unreal-importing-quixel-assets/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/251-cesium-unreal-importing-quixel-assets/</guid>
       <description>一、安装 Quixel Bridge   UE5 中已经集成了 Quixel Bridge 插件，不再需要单独安装（安装包），选择 编辑（Edit）&amp;gt; 插件（Plugins） 。在搜索栏中输入 bridge ，然后点击复选框以启用该插件。
   如果在插件面板中未显示 Quixel Bridge 插件，需要从 Epic Games 启动程序（Epic Games Launcher） 安装它。打开 Epic Games 启动程序，点击 库（Library） ，然后向下滚动到名为 保管库（Vault） 的分割线。在搜索栏中输入 Bridge 。选择 安装到引擎（Install to Engine） 。重新启动引擎时，可以按如上所述启用该插件。
   使用 EPIC GAME 账户 登录到 Quixel Bridge 并进行授权，加入 Unreal Unlimited 计划，如有需要，请科学上网
@@ -77,10 +77,10 @@ VS Code: Ctrl + Shift + B
     
     <item>
       <title>Cesium4Unreal——Build a Flight Tracker With Cesium for Unreal</title>
-      <link>https://874656645.github.io/posts/250-cesium-unreal-build-a-flight-tracker-with-cesium-for-unreal/</link>
+      <link>https://cuizhan-rick.github.io/posts/250-cesium-unreal-build-a-flight-tracker-with-cesium-for-unreal/</link>
       <pubDate>Wed, 19 Oct 2022 14:25:50 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/250-cesium-unreal-build-a-flight-tracker-with-cesium-for-unreal/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/250-cesium-unreal-build-a-flight-tracker-with-cesium-for-unreal/</guid>
       <description>第一步：创建一个关卡  创建一个空的 Unreal 关卡； 登录 Cesium ion 并添加 Cesium World Terrain 和 CesiumSunSky； 设置 CesiumGeoreference 的坐标为 San Francisco International Airport (SFO)；
 Origin Latitude = 37.61779
 Origin Longitude = -122.390533
@@ -92,10 +92,10 @@ VS 2022 解决方案类似下图：
     
     <item>
       <title>GIS——Global Mapper 使用</title>
-      <link>https://874656645.github.io/posts/232-gis-global-mapper-%E4%BD%BF%E7%94%A8/</link>
+      <link>https://cuizhan-rick.github.io/posts/232-gis-global-mapper-%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Fri, 09 Sep 2022 11:44:36 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/232-gis-global-mapper-%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/232-gis-global-mapper-%E4%BD%BF%E7%94%A8/</guid>
       <description>  【File】-&amp;gt;【Create New Map Catalog】
   Export
   导出灰度图
@@ -104,19 +104,19 @@ VS 2022 解决方案类似下图：
     
     <item>
       <title>GIS——GeoServer 发布 ArcGIS 切片的 WMTS 服务</title>
-      <link>https://874656645.github.io/posts/226-gis-geoserver-%E5%8F%91%E5%B8%83-arcgis-%E5%88%87%E7%89%87%E7%9A%84-wmts-%E6%9C%8D%E5%8A%A1/</link>
+      <link>https://cuizhan-rick.github.io/posts/226-gis-geoserver-%E5%8F%91%E5%B8%83-arcgis-%E5%88%87%E7%89%87%E7%9A%84-wmts-%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Wed, 31 Aug 2022 11:19:28 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/226-gis-geoserver-%E5%8F%91%E5%B8%83-arcgis-%E5%88%87%E7%89%87%E7%9A%84-wmts-%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/226-gis-geoserver-%E5%8F%91%E5%B8%83-arcgis-%E5%88%87%E7%89%87%E7%9A%84-wmts-%E6%9C%8D%E5%8A%A1/</guid>
       <description>一、部署环境和软件版本 操作系统 版本 win10 JDK 版本 OpenJDK11U-jdk_x64_windows_hotspot_11.0.16.1_1 GeoServer 版本 2.21.1 GeoWebCache 版本 1.21.1 二、说明  安装 JDK，配置 java 环境。 Windows 平台可安装 GeoServer Exe 安装包。 也可以通过 Tomcat 起动服务，需要下载 GeoServer 和 GeoWebCache 的 war 包，并放到 tomcat/webapps 目录下，如果只是发布切片服务，配置 GeoWebCache 即可。  三、软件下载  下载 GeoServer 也可GeoServer 官网下载 下载 GeoWebCache，解压待用  四、配置 GeoServer  将 GeoWebCache 中的 jar 包 \geowebcache\WEB-INF\lib\gwc-arcgiscache-1.21.1.jar 拷贝到 GeoServer 安装目录 \webapps\geoserver\WEB-INF\lib。 解压 GeoServer 安装目录下的 jar 包 \webapps\geoserver\WEB-INF\lib\gs-gwc-2.21.1.jar 到 gs-gwc-2.21.1 文件夹，将 GeoWebCache 中的 \geowebcache\WEB-INF\geowebcache-arcgiscache-context.</description>
     </item>
     
     <item>
       <title>ArcGIS Desktop 制作影像切片</title>
-      <link>https://874656645.github.io/posts/224-arcgis-desktop-%E5%88%B6%E4%BD%9C%E5%BD%B1%E5%83%8F%E5%88%87%E7%89%87/</link>
+      <link>https://cuizhan-rick.github.io/posts/224-arcgis-desktop-%E5%88%B6%E4%BD%9C%E5%BD%B1%E5%83%8F%E5%88%87%E7%89%87/</link>
       <pubDate>Mon, 29 Aug 2022 11:09:11 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/224-arcgis-desktop-%E5%88%B6%E4%BD%9C%E5%BD%B1%E5%83%8F%E5%88%87%E7%89%87/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/224-arcgis-desktop-%E5%88%B6%E4%BD%9C%E5%BD%B1%E5%83%8F%E5%88%87%E7%89%87/</guid>
       <description>ArcGIS Desktop 10.6 一、生成切片方案 打开 ArcGIS Desktop，打开 工具箱( Tools Box ) &amp;ndash;&amp;gt; 系统工具箱( System Tools Box ) &amp;ndash;&amp;gt; 数据管理工具( Data Managment Tools ) &amp;ndash;&amp;gt; 切片缓存( Tile Cache )&amp;ndash;&amp;gt; 生成切片缓存切片方案( Generate Tile Cache Tiling Scheme )
 重要参数：
  切片格式( Tile Format )：主要是 PNGx、JPEG、MIXED，MIXED 混合格式，指的是在切片的时候，如果检测到瓦片内有透明区域，则这个瓦片使用 PNG32 格式，如果没有，则使用 JPEG 格式。这样做可以在不失去透明通道的前提下，有效降低瓦片数据文件的大小。 切片压缩质量( Tile Compression Quality )：仅对 JPEG（包括 MIXED 中使用 JPEG 的瓦片）有效，参数值需要介于 1-100 之间，默认是 75。 存储格式( Storage Format )：  COMPACT 紧凑格式，也就是把多个瓦片（最多128x128个）存储到一个 bundle 文件的形式，避免出现大量碎文件； EXPLODED 分散格式，就是把每一个瓦片存储成一个图片文件，这个形式的瓦片不能和 tpk 包一起使用。    CGCS2000 切片方案</description>
@@ -124,10 +124,10 @@ VS 2022 解决方案类似下图：
     
     <item>
       <title>GIS——GeoServer 地图服务</title>
-      <link>https://874656645.github.io/posts/223-gis-geoserver-%E5%9C%B0%E5%9B%BE%E6%9C%8D%E5%8A%A1/</link>
+      <link>https://cuizhan-rick.github.io/posts/223-gis-geoserver-%E5%9C%B0%E5%9B%BE%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Tue, 23 Aug 2022 10:34:42 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/223-gis-geoserver-%E5%9C%B0%E5%9B%BE%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/223-gis-geoserver-%E5%9C%B0%E5%9B%BE%E6%9C%8D%E5%8A%A1/</guid>
       <description>GeoServer Version 2.21.1 一、WMS 服务   获取服务能力元数据：
   可在网址中指定 version=1.1.0 和 service=WMS 参数
   获取整个 geoserver 的服务能力，默认 WMS_Capabilities 的 version 是 1.3.0 的
@@ -145,10 +145,10 @@ http://172.16.17.127:8066/geoserver/cite/wms?request=getCapabilities&amp;amp;ver
     
     <item>
       <title>Unreal——使用蓝图获取 uasset 资源</title>
-      <link>https://874656645.github.io/posts/219-unreal-%E4%BD%BF%E7%94%A8%E8%93%9D%E5%9B%BE%E8%8E%B7%E5%8F%96-uasset-%E8%B5%84%E6%BA%90/</link>
+      <link>https://cuizhan-rick.github.io/posts/219-unreal-%E4%BD%BF%E7%94%A8%E8%93%9D%E5%9B%BE%E8%8E%B7%E5%8F%96-uasset-%E8%B5%84%E6%BA%90/</link>
       <pubDate>Thu, 11 Aug 2022 17:40:41 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/219-unreal-%E4%BD%BF%E7%94%A8%E8%93%9D%E5%9B%BE%E8%8E%B7%E5%8F%96-uasset-%E8%B5%84%E6%BA%90/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/219-unreal-%E4%BD%BF%E7%94%A8%E8%93%9D%E5%9B%BE%E8%8E%B7%E5%8F%96-uasset-%E8%B5%84%E6%BA%90/</guid>
       <description>方法一：   可以通过 获取资产注册表（Get Asset Registry） + 按路径获取资产（Get Asset by Path） 获取路径下的所有类型资产；
   通过 获取完整名称（GetFullName） + 包含（Contains） 筛选需要的资产；
   通过 获取资产（GetAsset） 获取资产对象
@@ -162,10 +162,10 @@ http://172.16.17.127:8066/geoserver/cite/wms?request=getCapabilities&amp;amp;ver
     
     <item>
       <title>Unreal——蓝图接口</title>
-      <link>https://874656645.github.io/posts/218-unreal-%E8%93%9D%E5%9B%BE%E6%8E%A5%E5%8F%A3/</link>
+      <link>https://cuizhan-rick.github.io/posts/218-unreal-%E8%93%9D%E5%9B%BE%E6%8E%A5%E5%8F%A3/</link>
       <pubDate>Wed, 10 Aug 2022 11:27:36 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/218-unreal-%E8%93%9D%E5%9B%BE%E6%8E%A5%E5%8F%A3/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/218-unreal-%E8%93%9D%E5%9B%BE%E6%8E%A5%E5%8F%A3/</guid>
       <description>  蓝图接口（Blueprint Interface） 是一个或多个函数的集合——只有名称，没有实现。
   由于接口函数没有实现，作为设计人员，所能做的就是指定一系列类型化输入和输出。
   蓝图接口也有一定的局限性：
@@ -177,10 +177,10 @@ http://172.16.17.127:8066/geoserver/cite/wms?request=getCapabilities&amp;amp;ver
     
     <item>
       <title>Unreal——Actor 蓝图类</title>
-      <link>https://874656645.github.io/posts/217-unreal-actor-%E8%93%9D%E5%9B%BE%E7%B1%BB/</link>
+      <link>https://cuizhan-rick.github.io/posts/217-unreal-actor-%E8%93%9D%E5%9B%BE%E7%B1%BB/</link>
       <pubDate>Wed, 10 Aug 2022 11:23:12 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/217-unreal-actor-%E8%93%9D%E5%9B%BE%E7%B1%BB/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/217-unreal-actor-%E8%93%9D%E5%9B%BE%E7%B1%BB/</guid>
       <description>  所有可以放入关卡的对象都是 Actor，比如摄像机、静态网格体、玩家起始位置。
   Actor支持三维变换，例如平移、旋转和缩放。
   可以通过游戏逻辑代码（C++或蓝图）创建（在蓝图中使用 从类生成Actor 节点）或 销毁Actor。
@@ -194,10 +194,10 @@ http://172.16.17.127:8066/geoserver/cite/wms?request=getCapabilities&amp;amp;ver
     
     <item>
       <title>Unreal——通用基类（Actor、Pawn、Character等）</title>
-      <link>https://874656645.github.io/posts/216-unreal-%E9%80%9A%E7%94%A8%E5%9F%BA%E7%B1%BBactorpawncharacter%E7%AD%89/</link>
+      <link>https://cuizhan-rick.github.io/posts/216-unreal-%E9%80%9A%E7%94%A8%E5%9F%BA%E7%B1%BBactorpawncharacter%E7%AD%89/</link>
       <pubDate>Wed, 10 Aug 2022 10:02:42 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/216-unreal-%E9%80%9A%E7%94%A8%E5%9F%BA%E7%B1%BBactorpawncharacter%E7%AD%89/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/216-unreal-%E9%80%9A%E7%94%A8%E5%9F%BA%E7%B1%BBactorpawncharacter%E7%AD%89/</guid>
       <description>Actor
   Actor 是可以放到关卡中的任何对象，例如摄像机、静态网格体或玩家出生点位置
   Actor 支持 3D 变换，例如转换、旋转和缩放
@@ -211,10 +211,10 @@ Pawn 是 Actor 的子类，作为游戏内的形象或人像（例如游戏中�
     
     <item>
       <title>Unreal——蓝图函数、事件和宏</title>
-      <link>https://874656645.github.io/posts/215-unreal-%E8%93%9D%E5%9B%BE%E5%87%BD%E6%95%B0%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%AE%8F/</link>
+      <link>https://cuizhan-rick.github.io/posts/215-unreal-%E8%93%9D%E5%9B%BE%E5%87%BD%E6%95%B0%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%AE%8F/</link>
       <pubDate>Tue, 09 Aug 2022 19:38:55 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/215-unreal-%E8%93%9D%E5%9B%BE%E5%87%BD%E6%95%B0%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%AE%8F/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/215-unreal-%E8%93%9D%E5%9B%BE%E5%87%BD%E6%95%B0%E4%BA%8B%E4%BB%B6%E5%92%8C%E5%AE%8F/</guid>
       <description>  函数调用会等待函数执行结果，事件调用只是触发但不会等待
 事件是异步执行，触发后，会在新的线程中执行，所以可以使用 Delay，函数和宏的调用是同步执行，是单线程的，所以在函数中不能使用 Timeline、Delay 和 Http 请求 等操作。
   事件没有返回值，函数和宏可以有返回值
@@ -229,10 +229,10 @@ Pawn 是 Actor 的子类，作为游戏内的形象或人像（例如游戏中�
     
     <item>
       <title>Unreal——DefaultGraphicsRHI</title>
-      <link>https://874656645.github.io/posts/214-unreal-defaultgraphicsrhi/</link>
+      <link>https://cuizhan-rick.github.io/posts/214-unreal-defaultgraphicsrhi/</link>
       <pubDate>Thu, 04 Aug 2022 14:57:18 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/214-unreal-defaultgraphicsrhi/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/214-unreal-defaultgraphicsrhi/</guid>
       <description>注意： UE5 默认使用的是 DX12，有可能会在渲染方面出现奇怪的问题，需要特别注意。
 RHI 是 Render Hardware Interface 的缩写，虚幻引擎通过 RHI 把各个平台的图形 API 包装成统一接口，供上层渲染来使用，让业务不用过多的关注 API 细节（实际还得关注RHI 细节）。从代码结构上来看，RHI 封装的比较贴合于现代的图形 API(vulkan, metal, DX12)，也支持 opengl/opengles。这个接口是广义上的概念，不仅指 C++ 的纯虚基类，也包括一些全局变量，全局函数等。
 参考：
@@ -241,10 +241,10 @@ RHI 是 Render Hardware Interface 的缩写，虚幻引擎通过 RHI 把各个�
     
     <item>
       <title>Unreal——像素流送播放器页面与 UE 通信</title>
-      <link>https://874656645.github.io/posts/203-unreal-%E5%83%8F%E7%B4%A0%E6%B5%81%E9%80%81%E6%92%AD%E6%94%BE%E5%99%A8%E9%A1%B5%E9%9D%A2%E4%B8%8E-ue-%E9%80%9A%E4%BF%A1/</link>
+      <link>https://cuizhan-rick.github.io/posts/203-unreal-%E5%83%8F%E7%B4%A0%E6%B5%81%E9%80%81%E6%92%AD%E6%94%BE%E5%99%A8%E9%A1%B5%E9%9D%A2%E4%B8%8E-ue-%E9%80%9A%E4%BF%A1/</link>
       <pubDate>Fri, 08 Jul 2022 17:50:31 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/203-unreal-%E5%83%8F%E7%B4%A0%E6%B5%81%E9%80%81%E6%92%AD%E6%94%BE%E5%99%A8%E9%A1%B5%E9%9D%A2%E4%B8%8E-ue-%E9%80%9A%E4%BF%A1/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/203-unreal-%E5%83%8F%E7%B4%A0%E6%B5%81%E9%80%81%E6%92%AD%E6%94%BE%E5%99%A8%E9%A1%B5%E9%9D%A2%E4%B8%8E-ue-%E9%80%9A%E4%BF%A1/</guid>
       <description>一、HTML 页面  必须包含 webRtcPlayer.js 脚本文件，该文件处理浏览器和虚幻引擎应用间的通信，接受并显示来自服务器的媒体流。在非必要的情况下，请勿修改此JavaScript文件。
 &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;scripts/webRtcPlayer.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 建议包含 app.js 脚本文件，此文件将设置处理键盘、鼠标和触摸事件的事件监听器，其还包含数个可在播放器页面使用的函数。
 &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;scripts/app.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 页面必须含有一个 ID 为 player 的 div 元素。该元素可被流送自 UE4 应用的视频帧所替换。
@@ -257,10 +257,10 @@ RHI 是 Render Hardware Interface 的缩写，虚幻引擎通过 RHI 把各个�
     
     <item>
       <title>Unreal——像素流送</title>
-      <link>https://874656645.github.io/posts/202-unreal-%E5%83%8F%E7%B4%A0%E6%B5%81%E9%80%81/</link>
+      <link>https://cuizhan-rick.github.io/posts/202-unreal-%E5%83%8F%E7%B4%A0%E6%B5%81%E9%80%81/</link>
       <pubDate>Fri, 08 Jul 2022 15:50:34 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/202-unreal-%E5%83%8F%E7%B4%A0%E6%B5%81%E9%80%81/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/202-unreal-%E5%83%8F%E7%B4%A0%E6%B5%81%E9%80%81/</guid>
       <description>有两种方式启动三维渲染服务器  一、方式一：使用 UE Editor 作为渲染服务器  启用像素流送插件
 【Pixel Streaming】 启用触控设备输入（可选）
 【编辑（Edit）】 &amp;gt; 【项目设置（Project Settings）】 &amp;gt; 【引擎（Engine）】 &amp;gt; 【输入（Input category）】 下启用 【固定显示触控界面（Always Show Touch Interface）】 设置 设置额外启动参数
@@ -272,10 +272,10 @@ RHI 是 Render Hardware Interface 的缩写，虚幻引擎通过 RHI 把各个�
     
     <item>
       <title>Unreal Engine 5 打包</title>
-      <link>https://874656645.github.io/posts/201-unreal-engine-5-%E6%89%93%E5%8C%85/</link>
+      <link>https://cuizhan-rick.github.io/posts/201-unreal-engine-5-%E6%89%93%E5%8C%85/</link>
       <pubDate>Thu, 07 Jul 2022 10:23:08 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/201-unreal-engine-5-%E6%89%93%E5%8C%85/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/201-unreal-engine-5-%E6%89%93%E5%8C%85/</guid>
       <description>UE5 打包：
 如果平台前面有感叹号表示缺少 SDK 环境
  注意： 安装完 SDK 后要重启电脑   Windows SDK 18362 or Newer .NET Core 3.1  </description>
@@ -283,10 +283,10 @@ RHI 是 Render Hardware Interface 的缩写，虚幻引擎通过 RHI 把各个�
     
     <item>
       <title>Unreal——智慧城市项目搭建</title>
-      <link>https://874656645.github.io/posts/199-unreal-%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/</link>
+      <link>https://cuizhan-rick.github.io/posts/199-unreal-%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Thu, 30 Jun 2022 15:12:06 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/199-unreal-%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/199-unreal-%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/</guid>
       <description>一、项目目录 —— 内容
 —— Maps
 —— UMG
@@ -306,10 +306,10 @@ RHI 是 Render Hardware Interface 的缩写，虚幻引擎通过 RHI 把各个�
     
     <item>
       <title>Unreal——智慧城市项目技术路线和软件</title>
-      <link>https://874656645.github.io/posts/198-unreal-%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%E9%A1%B9%E7%9B%AE%E6%8A%80%E6%9C%AF%E8%B7%AF%E7%BA%BF%E5%92%8C%E8%BD%AF%E4%BB%B6/</link>
+      <link>https://cuizhan-rick.github.io/posts/198-unreal-%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%E9%A1%B9%E7%9B%AE%E6%8A%80%E6%9C%AF%E8%B7%AF%E7%BA%BF%E5%92%8C%E8%BD%AF%E4%BB%B6/</link>
       <pubDate>Wed, 29 Jun 2022 10:18:09 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/198-unreal-%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%E9%A1%B9%E7%9B%AE%E6%8A%80%E6%9C%AF%E8%B7%AF%E7%BA%BF%E5%92%8C%E8%BD%AF%E4%BB%B6/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/198-unreal-%E6%99%BA%E6%85%A7%E5%9F%8E%E5%B8%82%E9%A1%B9%E7%9B%AE%E6%8A%80%E6%9C%AF%E8%B7%AF%E7%BA%BF%E5%92%8C%E8%BD%AF%E4%BB%B6/</guid>
       <description>软件和插件：
  Blender 和 BlenderGis 插件 C4D CityEngine Unreal Engine `Cesium for Unreal Engine&#39; `CityEngine VR Experience for Unreal Engine&#39; datasmith for Unreal Engine CesiumLab 地编素材库（city park environment collection） HDRI 插件和 HDRI 素材 ArchViz Explorer 项目，场景 Pawn 操作 Factory Environment Collection json读取插件：json assets、json library、jsonxmlhelper、varest 网页插件：web ui 视频流：web camera Water 插件 基于精确地理的太阳定位工具  蓝图开发：
  通过鼠标左键、右键和滚轮控制相机移动、缩放和旋转 Cesium 场景搭建 3DTiles 模型加载 3DMax 场景导入 UI界面搭建（用户界面、控件蓝图、商城UI插件Custom UI） 天气切换 控制器切换（自由、人行、驾驶） 长度测量（射线——由通道检测线条，缆索Actor） 面积测量 添加POI  三维效果：</description>
@@ -317,10 +317,10 @@ RHI 是 Render Hardware Interface 的缩写，虚幻引擎通过 RHI 把各个�
     
     <item>
       <title>ArcGIS 处理 Shape 字段</title>
-      <link>https://874656645.github.io/posts/194-arcgis-%E5%A4%84%E7%90%86-shape-%E5%AD%97%E6%AE%B5/</link>
+      <link>https://cuizhan-rick.github.io/posts/194-arcgis-%E5%A4%84%E7%90%86-shape-%E5%AD%97%E6%AE%B5/</link>
       <pubDate>Mon, 23 May 2022 17:41:51 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/194-arcgis-%E5%A4%84%E7%90%86-shape-%E5%AD%97%E6%AE%B5/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/194-arcgis-%E5%A4%84%E7%90%86-shape-%E5%AD%97%E6%AE%B5/</guid>
       <description>注：ArcMap 版本为 10.6.1
 一、将 shape 字段处理为 WKT 文本
  在属性表中添加一个 Text 类型的字段，大小尽量大一些； 使用字段计算功能 shape file 的字符串类型字段的大小有限制（254）  二、
@@ -329,10 +329,10 @@ def MySub(feat): partnum = 0 # Count the number of points in the current multipa
     
     <item>
       <title>Cesium4Unreal——Editing Tileset Materials</title>
-      <link>https://874656645.github.io/posts/185-cesium-unreal-editing-tileset-materials/</link>
+      <link>https://cuizhan-rick.github.io/posts/185-cesium-unreal-editing-tileset-materials/</link>
       <pubDate>Sun, 17 Apr 2022 16:24:27 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/185-cesium-unreal-editing-tileset-materials/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/185-cesium-unreal-editing-tileset-materials/</guid>
       <description>Cesium for Unreal 插件的材质被设计成模块化的，所以可以被很容易地添加和删除。
 目标  浏览和理解现有的 Cesium for Unreal 3D Tileset 的材质 基于包含在 Cesium for Unreal 插件内的材质实例文件创建自定义材质 修改 tileset 的材质 了解 tileset mesh 的材质限制  Material Instances Cesium for Unreal 通过使用 Material Instances 实现最大的灵活度，每个材质实例通过使用更多的材质图层来应用图像叠加，水，或其他材质效果。
 ![MaterialInstances](./img/MaterialInstances.jpg)  图层资产：包含将显示在给定层上的材质图层节点 混合资产：包含一个节点，该节点确定该材质图层将如何与下面的图层混合 每个材质图层和材质图层混合都可以像其他材质对象一样在材质编辑器中编辑  创建应用到整个 tileset 的材质   在插件目录找到 MI_CesiumThreeOverlaysAndClipping 材质实例文件，并把它拷贝到项目的内容文件夹中，将其改名为 MI_GroundTint。
@@ -345,10 +345,10 @@ def MySub(feat): partnum = 0 # Count the number of points in the current multipa
     
     <item>
       <title>Cesium4Unreal——Hide Parts Tilesets</title>
-      <link>https://874656645.github.io/posts/184-cesium-unreal-hide-parts-tilesets/</link>
+      <link>https://cuizhan-rick.github.io/posts/184-cesium-unreal-hide-parts-tilesets/</link>
       <pubDate>Sat, 16 Apr 2022 16:24:27 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/184-cesium-unreal-hide-parts-tilesets/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/184-cesium-unreal-hide-parts-tilesets/</guid>
       <description>使用 CesiumCartographicPolygon actor，可以定义一个 tileset 的隐藏区域，或应用其他材质效果。CesiumCartographicPolygon 可以通过 Cesium PolygonRasterOverlay 组件添加到一个或多个 tilesets。
 在这里，一个 CesiumCartographicPolygon 被用来隐藏 Cesium World Terrain 和 Cesium OSM Buildings，它们与 Aerometrex Denver Photogrammetry 重叠。
 注意：虽然 CesiumCartographicPolygon 有助于基于材质的改变，如 clipping，但它们不影响物理。你仍然可以与 tileset 的隐藏部分发生碰撞。
@@ -361,10 +361,10 @@ def MySub(feat): partnum = 0 # Count the number of points in the current multipa
     
     <item>
       <title>Cesium4Unreal——Using Custom Controllers</title>
-      <link>https://874656645.github.io/posts/183-cesium-unreal-using-custom-controllers/</link>
+      <link>https://cuizhan-rick.github.io/posts/183-cesium-unreal-using-custom-controllers/</link>
       <pubDate>Sat, 16 Apr 2022 10:34:27 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/183-cesium-unreal-using-custom-controllers/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/183-cesium-unreal-using-custom-controllers/</guid>
       <description>目标 此步骤将学习如何设置控制器，而不是使用 Cesium 的 DynamicPawn。
 第一步：添加摄影测量数据 为了防止地形和摄影测量数据交叉，将 Aerometrex Denver Photogrammetry 的 actor 的位置的 Z 值设置为 600。
 第二步：定位到摄影测量数据  方式一：如果有经纬度坐标和高程数据，直接设置 CesiumGeoreference 的数据  Origin Latitude = 39.752827
@@ -381,10 +381,10 @@ Origin Height = 1570.879421
     
     <item>
       <title>Cesium4Unreal——Transition Between Locations</title>
-      <link>https://874656645.github.io/posts/182-cesium-unreal-transition-between-locations/</link>
+      <link>https://cuizhan-rick.github.io/posts/182-cesium-unreal-transition-between-locations/</link>
       <pubDate>Fri, 15 Apr 2022 16:34:27 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/182-cesium-unreal-transition-between-locations/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/182-cesium-unreal-transition-between-locations/</guid>
       <description>目标 学习使用虚幻引擎的蓝图系统编程，实现在地球上的两个位置之间平稳飞行。
  在虚幻引擎中使用地图坐标 在感兴趣的位置创建 viewpoints 创建一个蓝图，使位置的切换变得平滑  第一步：创建一个关卡 参考前面的步骤创关卡，并定位到澳大利亚悉尼
 Origin Latitude = -33.871799 Origin Longitude = 151.206696 Origin Height = 3000.0
@@ -401,10 +401,10 @@ height = 2000
     
     <item>
       <title>Cesium4Unreal——Building Global Scenes with Georeferenced Sublevels</title>
-      <link>https://874656645.github.io/posts/181-cesium-unreal-georeferenced-sublevels/</link>
+      <link>https://cuizhan-rick.github.io/posts/181-cesium-unreal-georeferenced-sublevels/</link>
       <pubDate>Fri, 15 Apr 2022 13:34:27 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/181-cesium-unreal-georeferenced-sublevels/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/181-cesium-unreal-georeferenced-sublevels/</guid>
       <description>目标  Create a persistent global level Put several local sublevels within the persistent level Fill each sublevel with assets and game-logic using your typical Unreal workflow Seamlessly fly between sublevels as well as explore the persistent level Stay aware of pitfalls along the way  第一步：新建由项目组成的世界场景   新建一个空白的项目
 参考快速入门，删除【世界大纲试图】中的所有默认的 actors
   创建持久关卡(Persistent Level)
@@ -417,10 +417,10 @@ height = 2000
     
     <item>
       <title>Cesium4Unreal——Place Objects On Globe</title>
-      <link>https://874656645.github.io/posts/180-cesium-unreal-placeobjectonglobe/</link>
+      <link>https://cuizhan-rick.github.io/posts/180-cesium-unreal-placeobjectonglobe/</link>
       <pubDate>Fri, 15 Apr 2022 10:34:27 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/180-cesium-unreal-placeobjectonglobe/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/180-cesium-unreal-placeobjectonglobe/</guid>
       <description>一、添加静态风格体（static meshes） 二、真实世界椭球与游戏世界坐标系 由于地球曲率的影响，距离 CesiumGeoreference 原点越远，铅垂线的方向误差越大，每一公里方向偏差大概 0.01 度。当我们从地球的一端到对面的一端时，重力的方向就转了 180 度。
 可以从以下几方面解决（由易到难）：
  待在一个相对较小的区域内，大概100公里左右； 在地球的每个部分设置独立的子关卡，每个子关卡都有自己的 CesiumGeoreference； 使用 CesiumGlobeAnchor 为 actor 添加有限的真实世界信息参考(参见下面的“我们可以将动态对象转换为地理引用对象”); 手动扩展你的游戏对象，以充分考虑真实椭圆地球影响。  三、一般的虚幻引擎对象的位置问题 一般的虚幻引擎对象是固定在游戏世界，而不固定在真实世界的位置
@@ -435,10 +435,10 @@ height = 2000
     
     <item>
       <title>Cesium4Unreal——Photogrammetry 倾斜摄影</title>
-      <link>https://874656645.github.io/posts/179-cesium-unreal-photogrammetry/</link>
+      <link>https://cuizhan-rick.github.io/posts/179-cesium-unreal-photogrammetry/</link>
       <pubDate>Thu, 14 Apr 2022 15:34:27 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/179-cesium-unreal-photogrammetry/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/179-cesium-unreal-photogrammetry/</guid>
       <description>第一步：新建空白关卡 第二步：添加倾斜摄影数据 去网站将数据资产添加到自己的账户
 第三步：以倾斜摄影数据为中心 看起来怪怪的是因为球心坐标系与游戏的坐标系统有所不同， 虚幻编辑器的摄像机 Z 方向是向上的。在地球上（与大多数游戏不同）以地球为中心的坐标系统的向上方向取决于你在世界的位置。
 通过点击 CesiumGeoreference 的 Place Georeference Origin Here 按钮快速设置场景坐标原点到当前相机位置
@@ -458,10 +458,10 @@ height = 2000
     
     <item>
       <title>Cesium4Unreal——Hello Cesium for UE</title>
-      <link>https://874656645.github.io/posts/178-cesium-unreal-project/</link>
+      <link>https://cuizhan-rick.github.io/posts/178-cesium-unreal-project/</link>
       <pubDate>Thu, 14 Apr 2022 10:34:27 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/178-cesium-unreal-project/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/178-cesium-unreal-project/</guid>
       <description> Ureal Engin 版本 4.27  第一步：安装 Cesium 插件 Cesium for Unreal 插件地址
 启动 Epic Games Launcher，搜索 Cesium for Unreal
 第二步：新建项目关卡 1. 项目类型——&amp;gt;游戏，模板——&amp;gt;空白，选择不带初学者内容包 2. 激活 Cesium for Unreal 插件 3. 删除【世界大纲视图】中的所有内容，这样就有了一个空的关卡 保存当前关卡
@@ -473,10 +473,10 @@ height = 2000
     
     <item>
       <title>ArcMap 加载天地图服务</title>
-      <link>https://874656645.github.io/posts/27-arcmap-%E5%8A%A0%E8%BD%BD%E5%A4%A9%E5%9C%B0%E5%9B%BE%E6%9C%8D%E5%8A%A1/</link>
+      <link>https://cuizhan-rick.github.io/posts/27-arcmap-%E5%8A%A0%E8%BD%BD%E5%A4%A9%E5%9C%B0%E5%9B%BE%E6%9C%8D%E5%8A%A1/</link>
       <pubDate>Fri, 17 Dec 2021 22:34:27 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/27-arcmap-%E5%8A%A0%E8%BD%BD%E5%A4%A9%E5%9C%B0%E5%9B%BE%E6%9C%8D%E5%8A%A1/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/27-arcmap-%E5%8A%A0%E8%BD%BD%E5%A4%A9%E5%9C%B0%E5%9B%BE%E6%9C%8D%E5%8A%A1/</guid>
       <description>注：软件版本为10.6，需要 服务端 token 注：天地图官网的服务（https://t0.tianditu.gov.cn/img_w/wmts）使用的 dpi 大小采用的是国家标准，并不是 OGC 标准，会导致 ArcMap 加载影像后，矢量化的坐标不对  影像底图：
 http://t0.tianditu.com/img_c/esri/wmts 天地图影像（经纬度，CGCS2000）
 http://t0.tianditu.com/cia_c/esri/wmts 天地图影像注记（经纬度，CGCS2000）
@@ -492,10 +492,10 @@ ArcMap WMTS</description>
     
     <item>
       <title>ArcGIS 字段计算（自增、随机数）</title>
-      <link>https://874656645.github.io/posts/17-arcgis-%E5%AD%97%E6%AE%B5%E9%9A%8F%E6%9C%BA%E6%95%B0/</link>
+      <link>https://cuizhan-rick.github.io/posts/17-arcgis-%E5%AD%97%E6%AE%B5%E9%9A%8F%E6%9C%BA%E6%95%B0/</link>
       <pubDate>Thu, 25 Nov 2021 11:36:19 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/17-arcgis-%E5%AD%97%E6%AE%B5%E9%9A%8F%E6%9C%BA%E6%95%B0/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/17-arcgis-%E5%AD%97%E6%AE%B5%E9%9A%8F%E6%9C%BA%E6%95%B0/</guid>
       <description>1、随机数 python 脚本
 import random def randNum(): res = random.randint(1, 7) return res 2、自增 python 脚本
 total = 0 def accumulate(increment): global total if total: total += increment else: total = increment return total </description>
@@ -503,10 +503,10 @@ total = 0 def accumulate(increment): global total if total: total += increment e
     
     <item>
       <title>spatialite 随机数</title>
-      <link>https://874656645.github.io/posts/16-spatialite-%E9%9A%8F%E6%9C%BA%E6%95%B0/</link>
+      <link>https://cuizhan-rick.github.io/posts/16-spatialite-%E9%9A%8F%E6%9C%BA%E6%95%B0/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://874656645.github.io/posts/16-spatialite-%E9%9A%8F%E6%9C%BA%E6%95%B0/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/16-spatialite-%E9%9A%8F%E6%9C%BA%E6%95%B0/</guid>
       <description>1、随机数 SQL 脚本
 update &amp;#34;CYBuildings2&amp;#34; set &amp;#34;imgIndex&amp;#34; = FLOOR(1 + (RANDOM()+9223372036854775808)/2.0/9223372036854775808 * 7); </description>
     </item>

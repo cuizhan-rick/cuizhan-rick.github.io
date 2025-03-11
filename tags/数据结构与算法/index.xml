@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>数据结构与算法 on Slow is Smooth and Smooth is Fast</title>
-    <link>https://874656645.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</link>
+    <link>https://cuizhan-rick.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</link>
     <description>Recent content in 数据结构与算法 on Slow is Smooth and Smooth is Fast</description>
     <image>
-      <url>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 13 Dec 2024 14:52:14 +0800</lastBuildDate><atom:link href="https://874656645.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Dec 2024 14:52:14 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>数据结构与算法——括号生成</title>
-      <link>https://874656645.github.io/posts/284-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/</link>
+      <link>https://cuizhan-rick.github.io/posts/284-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/</link>
       <pubDate>Fri, 13 Dec 2024 14:52:14 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/284-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/284-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/</guid>
       <description>问题链接
 思路： 递归的使用
 左边括号数量小于总数
@@ -25,10 +25,10 @@ class Solution { int sn; public: /** * 代码中的类名、方法名、参数�
     
     <item>
       <title>数据结构与算法——矩阵的最小路径和</title>
-      <link>https://874656645.github.io/posts/283-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/</link>
+      <link>https://cuizhan-rick.github.io/posts/283-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/</link>
       <pubDate>Fri, 13 Dec 2024 14:33:39 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/283-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/283-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/</guid>
       <description>问题链接
 思路： 动态规划
 #include &amp;lt;climits&amp;gt;class Solution { public: /** * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可 * * * @param matrix int整型vector&amp;lt;vector&amp;lt;&amp;gt;&amp;gt; the matrix * @return int整型 */ int minPathSum(vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt;&amp;amp; matrix) { // write code here  auto rowNum = matrix.size(); auto colNum = matrix[0].size(); vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; sumMat(rowNum, vector&amp;lt;int&amp;gt;(colNum)); sumMat[0][0] = matrix[0][0]; // 初始化首行  for (auto i = 1; i != colNum; ++i) { sumMat[0][i] = sumMat[0][i - 1] + matrix[0][i]; } // 初始化首列  for (auto i = 1; i !</description>
@@ -36,10 +36,10 @@ class Solution { int sn; public: /** * 代码中的类名、方法名、参数�
     
     <item>
       <title>数据结构与算法——旋转数组的最小数字</title>
-      <link>https://874656645.github.io/posts/282-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/</link>
+      <link>https://cuizhan-rick.github.io/posts/282-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/</link>
       <pubDate>Thu, 12 Dec 2024 21:35:49 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/282-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/282-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/</guid>
       <description>问题链接
 要求： 空间复杂度：O(1) ，时间复杂度：O(logn)
 思路： 分治
@@ -50,10 +50,10 @@ class Solution { // 方案一  int calRotateIndex(vector&amp;lt;int&amp;gt;&amp;
     
     <item>
       <title>数据结构与算法——数组中的逆序对</title>
-      <link>https://874656645.github.io/posts/281-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/</link>
+      <link>https://cuizhan-rick.github.io/posts/281-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/</link>
       <pubDate>Thu, 12 Dec 2024 21:27:26 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/281-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/281-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/</guid>
       <description>问题链接
 要求： 空间复杂度 O(n)，时间复杂度 O(nlogn)
 思路： 归并排序，在合并的阶段统计逆序对个数
@@ -62,10 +62,10 @@ class Solution { // 方案一  int calRotateIndex(vector&amp;lt;int&amp;gt;&amp;
     
     <item>
       <title>数据结构与算法——单链表的排序</title>
-      <link>https://874656645.github.io/posts/280-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%8E%92%E5%BA%8F/</link>
+      <link>https://cuizhan-rick.github.io/posts/280-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%8E%92%E5%BA%8F/</link>
       <pubDate>Thu, 12 Dec 2024 21:11:55 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/280-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/280-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%8E%92%E5%BA%8F/</guid>
       <description>问题链接
 要求： 时间复杂度 O(nlogn)
 思路： 分治，归并排序思想
@@ -76,10 +76,10 @@ class Solution { // 方案一  int calRotateIndex(vector&amp;lt;int&amp;gt;&amp;
     
     <item>
       <title>数据结构与算法——合并 K 个已排序的链表</title>
-      <link>https://874656645.github.io/posts/279-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%90%88%E5%B9%B6-k-%E4%B8%AA%E5%B7%B2%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</link>
+      <link>https://cuizhan-rick.github.io/posts/279-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%90%88%E5%B9%B6-k-%E4%B8%AA%E5%B7%B2%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</link>
       <pubDate>Thu, 12 Dec 2024 20:41:48 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/279-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%90%88%E5%B9%B6-k-%E4%B8%AA%E5%B7%B2%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/279-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%90%88%E5%B9%B6-k-%E4%B8%AA%E5%B7%B2%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/</guid>
       <description>问题链接
 要求： 时间复杂度 O(nlogn)
 思路： 分治法，归并排序的思想
@@ -89,20 +89,20 @@ class Solution { // 方案一  int calRotateIndex(vector&amp;lt;int&amp;gt;&amp;
     
     <item>
       <title>数据结构与算法——Hamiltonian Cycles</title>
-      <link>https://874656645.github.io/posts/278-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-hamiltonian-cycles/</link>
+      <link>https://cuizhan-rick.github.io/posts/278-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-hamiltonian-cycles/</link>
       <pubDate>Sat, 12 Oct 2024 20:41:33 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/278-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-hamiltonian-cycles/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/278-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-hamiltonian-cycles/</guid>
       <description>BackTracking（DFS + BoundingFunction）
 #include &amp;lt;iostream&amp;gt; using namespace std; int n = 5; int x[6] = {0,1}; int G[6][6] = { {0,0,0,0,0,0}, {0,0,1,1,0,1}, {0,1,0,1,1,1}, {0,1,1,0,1,0}, {0,0,1,1,0,1}, {0,1,1,0,1,0} }; void NextVetex(int k){ do { x[k] = (x[k] + 1) % (n + 1); if(x[k] == 0){ return; } // 确保和前一个节点联通  if(G[x[k - 1]][x[k]] != 0){ int j = 1; // 确保节点不会重复  for(; j &amp;lt; k; ++j){ if(x[j] == x[k]){ break; } } if(j == k){ // 如果不是最后一个节点  // 或者是最后一个节点，并且最后一个节点和第一个节点是联通的  if((k &amp;lt; n) || (k == n &amp;amp;&amp;amp; G[x[n]][x[1]] !</description>
     </item>
     
     <item>
       <title>数据结构与算法——Permutation a String</title>
-      <link>https://874656645.github.io/posts/277-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-permutation-a-string/</link>
+      <link>https://cuizhan-rick.github.io/posts/277-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-permutation-a-string/</link>
       <pubDate>Fri, 27 Sep 2024 22:06:51 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/277-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-permutation-a-string/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/277-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-permutation-a-string/</guid>
       <description>state space tree
 Back Tracking (DFS)
 brute force
@@ -114,28 +114,28 @@ Branch and Bound (BFS)
     
     <item>
       <title>数据结构与算法——Shell Sort</title>
-      <link>https://874656645.github.io/posts/276-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-shell-sort/</link>
+      <link>https://cuizhan-rick.github.io/posts/276-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-shell-sort/</link>
       <pubDate>Fri, 21 Jun 2024 21:40:45 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/276-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-shell-sort/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/276-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-shell-sort/</guid>
       <description>#include &amp;lt;iostream&amp;gt; void shellSort(int A[], int n){ int gap, i, j, temp; for(gap = n/2; gap &amp;gt;= 1; gap /= 2){ for(i = gap; i &amp;lt; n; ++i){ temp = A[i]; j = i - gap; while(j &amp;gt;= 0 &amp;amp;&amp;amp; A[j] &amp;gt; temp){ A[j+gap] = A[j]; j = j - gap; } A[j + gap] = temp; } } } int main() { int A[] = {8, 3, 7, 4, 9, 2, 6, 5, 1, 11, 10}; int n = 11; shellSort(A, n); for(int i = 0; i &amp;lt; n; ++i){ std::cout&amp;lt;&amp;lt;A[i] &amp;lt;&amp;lt; &amp;#34; &amp;#34;; } return 0; } </description>
     </item>
     
     <item>
       <title>数据结构与算法——Merge Sort</title>
-      <link>https://874656645.github.io/posts/275-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-merge-sort/</link>
+      <link>https://cuizhan-rick.github.io/posts/275-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-merge-sort/</link>
       <pubDate>Tue, 18 Jun 2024 21:37:23 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/275-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-merge-sort/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/275-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-merge-sort/</guid>
       <description>#include &amp;lt;iostream&amp;gt; void Merge(int A[], int l, int mid, int h){ int i, j, k; i = l; j = mid + 1; k = l; int B[h+1]; while(i &amp;lt;= mid &amp;amp;&amp;amp; j &amp;lt;= h){ if(A[i] &amp;lt; A[j]){ B[k++] = A[i++]; } else{ B[k++] = A[j++]; } } for(; i &amp;lt;= mid; i++){ B[k++] = A[i]; } for(; j &amp;lt;= h; j++){ B[k++] = A[j]; } for(i = l; i &amp;lt;= h; i++){ A[i] = B[i]; } } // 迭代 void IMergeSort(int A[], int n) { int p, i, l, mid, h; for(p = 2; p &amp;lt;= n; p = p * 2){ for(i = 0; i + p - 1 &amp;lt; n; i = i + p){ l = i; h = i + p -1; mid = (l + h) / 2; Merge(A, l, mid, h); } if(i &amp;lt; n){ l = i; h = n-1; mid = (l+h)/2; Merge(A,l,mid,h); } for(int i = 0; i &amp;lt; n; ++i){ std::cout&amp;lt;&amp;lt;A[i] &amp;lt;&amp;lt; &amp;#34; &amp;#34;; } std::cout &amp;lt;&amp;lt; &amp;#34;\n&amp;#34;; } if(p/2 &amp;lt; n){ Merge(A, 0, p/2-1, n-1); } } // 递归 void MergeSort(int A[], int l, int h){ int mid; if(l &amp;lt; h){ mid = (l + h) / 2; MergeSort(A, l, mid); MergeSort(A, mid+1, h); Merge(A, l, mid, h); } } int main() { int A[] = {8, 3, 7, 4, 9, 2, 6, 5, 1, 11, 10}; int n = 11; IMergeSort(A, n); for(int i = 0; i &amp;lt; n; ++i){ std::cout&amp;lt;&amp;lt;A[i] &amp;lt;&amp;lt; &amp;#34; &amp;#34;; } return 0; } 输出：</description>
     </item>
     
     <item>
       <title>数据结构与算法——二叉树遍历</title>
-      <link>https://874656645.github.io/posts/255-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/</link>
+      <link>https://cuizhan-rick.github.io/posts/255-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/</link>
       <pubDate>Sun, 13 Nov 2022 19:46:40 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/255-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/255-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/</guid>
       <description>先序遍历
 template&amp;lt;typename T&amp;gt; void PreOrder(BinaryTreeNode&amp;lt;T&amp;gt;* root){ stack&amp;lt;BinaryTreeNode&amp;lt;T&amp;gt;*&amp;gt; aStack; BinaryTreeNode&amp;lt;T&amp;gt;* pointer = root; aStack.push(nullptr); // 栈底监视哨  while(pointer){ // 或者 !aStack.empty()  Visit(pointer); // 访问当前结点  if(pointer-&amp;gt;rightchild() != nullptr){ // 右孩子入栈  aStack.push(pointer-&amp;gt;rightchild()); } if(pointer-&amp;gt;leftchild() != nullptr){ // 左路下降  pointer = pointer-&amp;gt;leftchild(); }else{ // 左子树访问完毕，转向访问右子树  pointer = aStack.top(); aStack.pop(); } } }   中序遍历
 template&amp;lt;typename T&amp;gt; void InOrder(BinaryTreeNode&amp;lt;T&amp;gt;* root){ stack&amp;lt;BinaryTreeNode&amp;lt;T&amp;gt;*&amp;gt; aStack; BinaryTreeNode&amp;lt;T&amp;gt;* pointer = root; while(!aStack.empty() || pointer){ if(pointer){ // Visit(pointer); // 前序访问点  aStack.</description>
@@ -143,10 +143,10 @@ template&amp;lt;typename T&amp;gt; void InOrder(BinaryTreeNode&amp;lt;T&amp;gt;*
     
     <item>
       <title>数据结构与算法——二叉树</title>
-      <link>https://874656645.github.io/posts/254-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <link>https://cuizhan-rick.github.io/posts/254-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
       <pubDate>Sun, 13 Nov 2022 17:58:17 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/254-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/254-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
       <description>一、相关概念   结点：根节、叶节点、分支结点、兄弟结点、父子结点
   边、路径
   结点深度、高度、层数
@@ -158,10 +158,10 @@ template&amp;lt;typename T&amp;gt; void InOrder(BinaryTreeNode&amp;lt;T&amp;gt;*
     
     <item>
       <title>数据结构与算法——KMP 字符串匹配算法</title>
-      <link>https://874656645.github.io/posts/253-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95kmp-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/</link>
+      <link>https://cuizhan-rick.github.io/posts/253-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95kmp-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/</link>
       <pubDate>Sun, 13 Nov 2022 14:56:36 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/253-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95kmp-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/253-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95kmp-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95/</guid>
       <description>  模式串 next 向量计算：
   字符串比较
 int mystrcmp(const char* str1, const char* str2){ int i = 0; while(str1[i] == str2[i] &amp;amp;&amp;amp; str1[i] != &amp;#39;\0&amp;#39;){ i++; } return str1[i] - str2[i]; }   </description>
@@ -169,10 +169,10 @@ int mystrcmp(const char* str1, const char* str2){ int i = 0; while(str1[i] == st
     
     <item>
       <title>数据结构与算法——队列的应用</title>
-      <link>https://874656645.github.io/posts/165-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+      <link>https://cuizhan-rick.github.io/posts/165-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/</link>
       <pubDate>Wed, 06 Apr 2022 08:56:06 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/165-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/165-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
       <description>一、队列的应用   只要满足先来先服务特性的应用均可采用队列作为其数据组织方式或中间数据结构
  调度或缓冲  消息缓冲器 邮件缓冲器 计算机硬设备之间的通信也需要队列作为数据缓冲 操作系统的资源管理   宽度优先搜索    广度优先搜索：搜索该步的所有可能状态，再进一步考虑后面的各种情况；（队列应用）
  树的层次遍历    深度优先搜索：沿某一状态走下去，不行再回头。（栈应用）
@@ -183,10 +183,10 @@ int mystrcmp(const char* str1, const char* str2){ int i = 0; while(str1[i] == st
     
     <item>
       <title>数据结构与算法——队列的实现方式</title>
-      <link>https://874656645.github.io/posts/164-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E9%98%9F%E5%88%97%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</link>
+      <link>https://cuizhan-rick.github.io/posts/164-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E9%98%9F%E5%88%97%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Tue, 05 Apr 2022 12:22:44 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/164-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E9%98%9F%E5%88%97%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/164-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E9%98%9F%E5%88%97%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</guid>
       <description>栈的物理实现有 顺序队列 和 链式队列
 一、顺序队列 用向量存储队列元素，用两个变量分别指向队列的前端(front)和尾端(rear)
  关键是如何防止假溢出    队列溢出
@@ -197,10 +197,10 @@ int mystrcmp(const char* str1, const char* str2){ int i = 0; while(str1[i] == st
     
     <item>
       <title>数据结构与算法——队列</title>
-      <link>https://874656645.github.io/posts/163-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E9%98%9F%E5%88%97/</link>
+      <link>https://cuizhan-rick.github.io/posts/163-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E9%98%9F%E5%88%97/</link>
       <pubDate>Tue, 05 Apr 2022 09:03:06 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/163-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E9%98%9F%E5%88%97/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/163-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E9%98%9F%E5%88%97/</guid>
       <description>一、队列   队列特点
  访问受限的线性表 先进先出 插入在一端进行，删除在另一端进行    主要元素
  队头 队尾    主要操作
@@ -209,10 +209,10 @@ int mystrcmp(const char* str1, const char* str2){ int i = 0; while(str1[i] == st
     
     <item>
       <title>数据结构与算法——栈的应用</title>
-      <link>https://874656645.github.io/posts/162-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/</link>
+      <link>https://cuizhan-rick.github.io/posts/162-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/</link>
       <pubDate>Mon, 04 Apr 2022 14:12:42 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/162-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/162-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8/</guid>
       <description>栈的特点是后进先出，所以常用来处理具有递归结构的数据
  深度优先搜索 表达式求值 子程序 / 函数调用的管理 消除递归    表达式的递归定义
  基本符号集：${0，1，…，9，+，-，*，/，（，）}$ 语法成分集：{&amp;lt;表达式&amp;gt; , &amp;lt;项&amp;gt; , &amp;lt;因子&amp;gt; , &amp;lt;常数&amp;gt;, &amp;lt;数字&amp;gt; } 中缀表达式：$23\ +\ (34\ *\ 45)\ /\ (5\ +\ 6\ +\ 7)$  后缀表达式：$23\ 34\ 45\ *\ 5\ 6\ +\ 7\ +\ /\ +$
@@ -223,10 +223,10 @@ int mystrcmp(const char* str1, const char* str2){ int i = 0; while(str1[i] == st
     
     <item>
       <title>数据结构与算法——栈的实现方式</title>
-      <link>https://874656645.github.io/posts/161-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</link>
+      <link>https://cuizhan-rick.github.io/posts/161-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</link>
       <pubDate>Sun, 03 Apr 2022 20:03:03 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/161-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/161-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F/</guid>
       <description>栈的物理实现有 顺序栈 和 链式栈
 一、顺序栈（Array-based Stack）  使用向量实现，本质上是顺序表的简化版  栈有固定大小   关键是确定哪一端作为栈顶 注意上溢、下溢问题  类定义：
 template &amp;lt;class T&amp;gt; class arrStack : public Stack &amp;lt;T&amp;gt; { private: // 栈的顺序存储  int mSize; // 栈中最多可存放的元素个数  int top; // 栈顶位置，应小于mSize  T *st; // 存放栈元素的数组 public: // 栈的运算的顺序实现  arrStack(int size) { // 创建一个给定长度的顺序栈实例  mSize = size; top = -1; st = new T[mSize]; } arrStack() { // 创建一个顺序栈的实例  top = -1; } ~arrStack() { delete [] st; } void clear() { top = -1; } // 清空栈 }; bool arrStack&amp;lt;T&amp;gt;::push(const T item) { // 入栈  if (top == mSize-1) { // 栈已满  cout &amp;lt;&amp;lt; &amp;#34;栈满溢出&amp;#34; &amp;lt;&amp;lt; endl; return false; } else { // 新元素入栈并修改栈顶指针  st[++top] = item; return true; } } bool arrStack&amp;lt;T&amp;gt;::pop(T&amp;amp; item) { // 出栈  if (top == -1) { // 栈为空  cout &amp;lt;&amp;lt; &amp;#34;栈为空，不能执行出栈操作&amp;#34;&amp;lt;&amp;lt; endl; return false; } else { item = st[top--]; // 返回栈顶，并缩减1  return true; } } 二、链式栈（Linked Stack）  用单链表方式存储，其中指针的方向是从栈顶向下链接 理论上没有大小限制  类定义：</description>
@@ -234,29 +234,29 @@ template &amp;lt;class T&amp;gt; class arrStack : public Stack &amp;lt;T&amp;gt;
     
     <item>
       <title>数据结构与算法——栈</title>
-      <link>https://874656645.github.io/posts/160-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88/</link>
+      <link>https://cuizhan-rick.github.io/posts/160-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88/</link>
       <pubDate>Thu, 31 Mar 2022 22:04:28 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/160-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/160-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%A0%88/</guid>
       <description>一、栈  后进先出  是一种限制访问端口的线性表   主要操作  进栈（push） 出栈（pop）   应用  表达式求值（中缀表达式、后缀表达式） 消除递归 深度优先搜索（树、图）    二、栈的抽象数据类型 template &amp;lt;class T&amp;gt; class Stack { public: // 栈的运算集  void clear(); // 变为空栈  bool push(const T item); // item入栈，成功返回真，否则假  bool pop(T&amp;amp; item); // 返回栈顶内容并弹出，成功返回真，否则假  bool top(T&amp;amp; item); // 返回栈顶但不弹出，成功返回真，否则假  bool isEmpty(); // 若栈已空返回真  bool isFull(); // 若栈已满返回真 }; 三、思考题   若入栈顺序为 1,2,3,4 的话，则出栈的顺序可以有哪些?</description>
     </item>
     
     <item>
       <title>数据结构与算法——连续子数组最大和</title>
-      <link>https://874656645.github.io/posts/152-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%92%8C/</link>
+      <link>https://cuizhan-rick.github.io/posts/152-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%92%8C/</link>
       <pubDate>Sat, 19 Mar 2022 15:35:35 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/152-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%92%8C/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/152-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E8%BF%9E%E7%BB%AD%E5%AD%90%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%92%8C/</guid>
       <description>一、暴力算法 $\mathcal{O}(n^3)$ 遍历数组的所有子数组集合，并对其求和，筛选出和的最大值
 int maxSumOfSub1(int* array, int length){ int maxSum = 0; int startIndex = 0, endIndex = 0; for(int i = 0; i &amp;lt; length; i++){ for(int j = i; j &amp;lt; length; j++){ int sum = 0; for(int k = i; k &amp;lt;= j; k++) sum += array[k]; if(maxSum &amp;lt; sum){ maxSum = sum; startIndex = i; endIndex = j; } } } cout &amp;lt;&amp;lt; &amp;#34;Begin:&amp;#34; &amp;lt;&amp;lt; startIndex &amp;lt;&amp;lt; &amp;#34; End:&amp;#34; &amp;lt;&amp;lt; endIndex &amp;lt;&amp;lt; &amp;#34; Num:&amp;#34; &amp;lt;&amp;lt; maxSum &amp;lt;&amp;lt; endl; return maxSum; } 二、前缀和 $\mathcal{O}(n^2)$ 先把数组的前 i 项和求出来并将其保存到数组中，然后计算所有子数组集合的和，筛选其中最大的</description>
     </item>
     
     <item>
       <title>数据结构与算法——线性表</title>
-      <link>https://874656645.github.io/posts/151-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
+      <link>https://cuizhan-rick.github.io/posts/151-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
       <pubDate>Mon, 14 Mar 2022 21:30:45 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/151-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/151-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
       <description>线性结构  二元组 B = (K, R) , K = {a0, a1, …, an-1 }, R = {r}，其中 r 为前驱后继关系，具有反对称性和传递性 唯一的开始结点（表头）：没有前驱，只有一个唯一的后继 唯一的终止结点（表尾）：没有后继，只有一个唯一的前驱 内部结点：一个唯一的前驱和一个唯一的后继  线性表 线性表简称表，是零个或多个元素的有穷序列
  表目：线性表中的元素 文件：含有大量记录的线性表又称为文件 索引（下标） 表的长度 空表：长度为零的线性表(n=0)  线性表分类   按访问方式划分：
  直接访问型 顺序访问型 目录索引型    按存储方式：
@@ -266,10 +266,10 @@ int maxSumOfSub1(int* array, int length){ int maxSum = 0; int startIndex = 0, en
     
     <item>
       <title>数据结构与算法——算法效率与度量</title>
-      <link>https://874656645.github.io/posts/150-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87%E4%B8%8E%E5%BA%A6%E9%87%8F/</link>
+      <link>https://cuizhan-rick.github.io/posts/150-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87%E4%B8%8E%E5%BA%A6%E9%87%8F/</link>
       <pubDate>Sun, 13 Mar 2022 16:29:26 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/150-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87%E4%B8%8E%E5%BA%A6%E9%87%8F/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/150-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95%E6%95%88%E7%8E%87%E4%B8%8E%E5%BA%A6%E9%87%8F/</guid>
       <description>算法的时间和空间性能非常重要
 一、算法的渐近分析 当 n 增大到一定值后，其他的常数项和低幂次项都可以忽略，只需确定是在什么量级（线性、n 方、指数级等）
 1. 大 $\mathcal{O}$ 表式法 函数增长率上限
@@ -284,10 +284,10 @@ int maxSumOfSub1(int* array, int length){ int maxSum = 0; int startIndex = 0, en
     
     <item>
       <title>数据结构与算法——算法特性及分类</title>
-      <link>https://874656645.github.io/posts/149-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95%E7%89%B9%E6%80%A7%E5%8F%8A%E5%88%86%E7%B1%BB/</link>
+      <link>https://cuizhan-rick.github.io/posts/149-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95%E7%89%B9%E6%80%A7%E5%8F%8A%E5%88%86%E7%B1%BB/</link>
       <pubDate>Fri, 11 Mar 2022 22:26:22 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/149-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95%E7%89%B9%E6%80%A7%E5%8F%8A%E5%88%86%E7%B1%BB/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/149-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%97%E6%B3%95%E7%89%B9%E6%80%A7%E5%8F%8A%E5%88%86%E7%B1%BB/</guid>
       <description>一、问题——算法——程序  问题：一个函数，从输入到输出在一种映射 算法：对特定问题求解过程的描述，是指令的有限序列 程序：算法在计算机程序设计语言中的具体实现  二、算法的特性  通用性：参数化的，能对一类问题进行参数化输入并问题求解 有效性：有限条有效指令组成的指令序列，保证计算结果的正确性 确定性：算法的下一步执行步骤必须明确 有穷性：执行必须在有限步内结束，不能有死循环  三、基本算法分类  穷举法：
 遍历每一个元素，比较低效，但是是一种万能的算法；对于一个问题，如果一时想不出好的算法的话，可对小规模数据采用穷举法剖析问题的特性和数据的特性，进而寻求更高效的算法 回溯、搜索：
 能进则进，不能进则换，不能换则退，如树和图的遍历 递归分治：
@@ -298,10 +298,10 @@ int maxSumOfSub1(int* array, int length){ int maxSum = 0; int startIndex = 0, en
     
     <item>
       <title>数据结构与算法——数据结构定义</title>
-      <link>https://874656645.github.io/posts/148-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9A%E4%B9%89/</link>
+      <link>https://cuizhan-rick.github.io/posts/148-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9A%E4%B9%89/</link>
       <pubDate>Thu, 10 Mar 2022 21:10:53 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/148-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9A%E4%B9%89/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/148-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9A%E4%B9%89/</guid>
       <description>一、什么是数据结构   结构：实体 + 关系，比如分子结构，关系图等
   数据结构：按照逻辑关系组织起来的一批数据，按一定的存储方法所把它存储在计算机中，并在这些数据上定义了一个运算的集合
   二、数据的逻辑结构  线性结构
@@ -317,10 +317,10 @@ int maxSumOfSub1(int* array, int length){ int maxSum = 0; int startIndex = 0, en
     
     <item>
       <title>数据结构与算法——简介</title>
-      <link>https://874656645.github.io/posts/147-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%80%E4%BB%8B/</link>
+      <link>https://cuizhan-rick.github.io/posts/147-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%80%E4%BB%8B/</link>
       <pubDate>Tue, 08 Mar 2022 20:33:08 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/147-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%80%E4%BB%8B/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/147-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%AE%80%E4%BB%8B/</guid>
       <description>算法 + 数据结构 = 程序   数据结构与算法是程序的灵魂，以问题求解为导向，进行问题抽象、数据抽象、算法抽象，通过有效地组织数据、设计高效的算法、完成高质量的程序，从而解决实际应用的问题。
   流程：问题 =&amp;gt; 数据 =&amp;gt; 算法
   理论（离散数学、概率统计、图论等） =&amp;gt; 抽象（问题抽象、数据抽象、算法抽象等面向对象思想） =&amp;gt; 设计（实现的某种具体编程语言）

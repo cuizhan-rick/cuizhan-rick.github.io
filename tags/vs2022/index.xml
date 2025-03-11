@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>VS2022 on Slow is Smooth and Smooth is Fast</title>
-    <link>https://874656645.github.io/tags/vs2022/</link>
+    <link>https://cuizhan-rick.github.io/tags/vs2022/</link>
     <description>Recent content in VS2022 on Slow is Smooth and Smooth is Fast</description>
     <image>
-      <url>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 18 May 2022 12:02:56 +0800</lastBuildDate><atom:link href="https://874656645.github.io/tags/vs2022/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 May 2022 12:02:56 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/tags/vs2022/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用 VS2022 部署、运行和调试 Linux MSBuild 项目</title>
-      <link>https://874656645.github.io/posts/191-%E4%BD%BF%E7%94%A8-vs2022-%E9%83%A8%E7%BD%B2%E8%BF%90%E8%A1%8C%E5%92%8C%E8%B0%83%E8%AF%95-linux-msbuild-%E9%A1%B9%E7%9B%AE/</link>
+      <link>https://cuizhan-rick.github.io/posts/191-%E4%BD%BF%E7%94%A8-vs2022-%E9%83%A8%E7%BD%B2%E8%BF%90%E8%A1%8C%E5%92%8C%E8%B0%83%E8%AF%95-linux-msbuild-%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Wed, 18 May 2022 12:02:56 +0800</pubDate>
       
-      <guid>https://874656645.github.io/posts/191-%E4%BD%BF%E7%94%A8-vs2022-%E9%83%A8%E7%BD%B2%E8%BF%90%E8%A1%8C%E5%92%8C%E8%B0%83%E8%AF%95-linux-msbuild-%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>https://cuizhan-rick.github.io/posts/191-%E4%BD%BF%E7%94%A8-vs2022-%E9%83%A8%E7%BD%B2%E8%BF%90%E8%A1%8C%E5%92%8C%E8%B0%83%E8%AF%95-linux-msbuild-%E9%A1%B9%E7%9B%AE/</guid>
       <description>一、设置 Linux 环境 1. 确保已安装用于 Visual Studio 的 Linux 开发工作负荷 2. Linux 所需环境 sudo apt-get install openssh-server g++ gdb make ninja-build rsync zip
 确保 ssh 服务在 Linux 计算机上运行
 sudo service ssh start

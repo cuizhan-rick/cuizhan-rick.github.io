@@ -9,7 +9,7 @@
 <meta name="keywords" content="GeoServer, ArcGIS" />
 <meta name="description" content="一、部署环境和软件版本 操作系统 版本 win10 JDK 版本 OpenJDK11U-jdk_x64_windows_hotspot_11.0.16.1_1 GeoServer 版本 2.21.1 GeoWebCache 版本 1.21.1 二、说明  安装 JDK，配置 java 环境。 Windows 平台可安装 GeoServer Exe 安装包。 也可以通过 Tomcat 起动服务，需要下载 GeoServer 和 GeoWebCache 的 war 包，并放到 tomcat/webapps 目录下，如果只是发布切片服务，配置 GeoWebCache 即可。  三、软件下载  下载 GeoServer 也可GeoServer 官网下载 下载 GeoWebCache，解压待用  四、配置 GeoServer  将 GeoWebCache 中的 jar 包 \geowebcache\WEB-INF\lib\gwc-arcgiscache-1.21.1.jar 拷贝到 GeoServer 安装目录 \webapps\geoserver\WEB-INF\lib。 解压 GeoServer 安装目录下的 jar 包 \webapps\geoserver\WEB-INF\lib\gs-gwc-2.21.1.jar 到 gs-gwc-2.21.1 文件夹，将 GeoWebCache 中的 \geowebcache\WEB-INF\geowebcache-arcgiscache-context.">
 <meta name="author" content="Rick Cui">
-<link rel="canonical" href="https://874656645.github.io/posts/226-gis-geoserver-%E5%8F%91%E5%B8%83-arcgis-%E5%88%87%E7%89%87%E7%9A%84-wmts-%E6%9C%8D%E5%8A%A1/" />
+<link rel="canonical" href="https://cuizhan-rick.github.io/posts/226-gis-geoserver-%E5%8F%91%E5%B8%83-arcgis-%E5%88%87%E7%89%87%E7%9A%84-wmts-%E6%9C%8D%E5%8A%A1/" />
 <meta name="google-site-verification" content="XYZabc" />
 <meta name="yandex-verification" content="XYZabc" />
 <meta name="msvalidate.01" content="XYZabc" />
@@ -18,11 +18,11 @@
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.a8d96e9fdcfb04de6ce842f2e3dc4f0df9ca7b9e31b230fd17e775ab09b8c508.css" integrity="sha256-qNlun9z7BN5s6ELy49xPDfnKe54xsjD9F&#43;d1qwm4xQg=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
     onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://874656645.github.io/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://874656645.github.io/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://874656645.github.io/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://874656645.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://874656645.github.io/safari-pinned-tab.svg">
+<link rel="icon" href="https://cuizhan-rick.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cuizhan-rick.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cuizhan-rick.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://cuizhan-rick.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://cuizhan-rick.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <noscript>
@@ -48,12 +48,12 @@ if (!doNotTrack) {
 </script><meta property="og:title" content="GIS——GeoServer 发布 ArcGIS 切片的 WMTS 服务" />
 <meta property="og:description" content="一、部署环境和软件版本 操作系统 版本 win10 JDK 版本 OpenJDK11U-jdk_x64_windows_hotspot_11.0.16.1_1 GeoServer 版本 2.21.1 GeoWebCache 版本 1.21.1 二、说明  安装 JDK，配置 java 环境。 Windows 平台可安装 GeoServer Exe 安装包。 也可以通过 Tomcat 起动服务，需要下载 GeoServer 和 GeoWebCache 的 war 包，并放到 tomcat/webapps 目录下，如果只是发布切片服务，配置 GeoWebCache 即可。  三、软件下载  下载 GeoServer 也可GeoServer 官网下载 下载 GeoWebCache，解压待用  四、配置 GeoServer  将 GeoWebCache 中的 jar 包 \geowebcache\WEB-INF\lib\gwc-arcgiscache-1.21.1.jar 拷贝到 GeoServer 安装目录 \webapps\geoserver\WEB-INF\lib。 解压 GeoServer 安装目录下的 jar 包 \webapps\geoserver\WEB-INF\lib\gs-gwc-2.21.1.jar 到 gs-gwc-2.21.1 文件夹，将 GeoWebCache 中的 \geowebcache\WEB-INF\geowebcache-arcgiscache-context." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://874656645.github.io/posts/226-gis-geoserver-%E5%8F%91%E5%B8%83-arcgis-%E5%88%87%E7%89%87%E7%9A%84-wmts-%E6%9C%8D%E5%8A%A1/" /><meta property="og:image" content="https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://cuizhan-rick.github.io/posts/226-gis-geoserver-%E5%8F%91%E5%B8%83-arcgis-%E5%88%87%E7%89%87%E7%9A%84-wmts-%E6%9C%8D%E5%8A%A1/" /><meta property="og:image" content="https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-08-31T11:19:28&#43;08:00" />
 <meta property="article:modified_time" content="2022-08-31T11:19:28&#43;08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://874656645.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/>
+<meta name="twitter:image" content="https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/>
 
 <meta name="twitter:title" content="GIS——GeoServer 发布 ArcGIS 切片的 WMTS 服务"/>
 <meta name="twitter:description" content="一、部署环境和软件版本 操作系统 版本 win10 JDK 版本 OpenJDK11U-jdk_x64_windows_hotspot_11.0.16.1_1 GeoServer 版本 2.21.1 GeoWebCache 版本 1.21.1 二、说明  安装 JDK，配置 java 环境。 Windows 平台可安装 GeoServer Exe 安装包。 也可以通过 Tomcat 起动服务，需要下载 GeoServer 和 GeoWebCache 的 war 包，并放到 tomcat/webapps 目录下，如果只是发布切片服务，配置 GeoWebCache 即可。  三、软件下载  下载 GeoServer 也可GeoServer 官网下载 下载 GeoWebCache，解压待用  四、配置 GeoServer  将 GeoWebCache 中的 jar 包 \geowebcache\WEB-INF\lib\gwc-arcgiscache-1.21.1.jar 拷贝到 GeoServer 安装目录 \webapps\geoserver\WEB-INF\lib。 解压 GeoServer 安装目录下的 jar 包 \webapps\geoserver\WEB-INF\lib\gs-gwc-2.21.1.jar 到 gs-gwc-2.21.1 文件夹，将 GeoWebCache 中的 \geowebcache\WEB-INF\geowebcache-arcgiscache-context."/>
@@ -68,13 +68,13 @@ if (!doNotTrack) {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Posts",
-      "item": "https://874656645.github.io/posts/"
+      "item": "https://cuizhan-rick.github.io/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  3 ,
       "name": "GIS——GeoServer 发布 ArcGIS 切片的 WMTS 服务",
-      "item": "https://874656645.github.io/posts/226-gis-geoserver-%E5%8F%91%E5%B8%83-arcgis-%E5%88%87%E7%89%87%E7%9A%84-wmts-%E6%9C%8D%E5%8A%A1/"
+      "item": "https://cuizhan-rick.github.io/posts/226-gis-geoserver-%E5%8F%91%E5%B8%83-arcgis-%E5%88%87%E7%89%87%E7%9A%84-wmts-%E6%9C%8D%E5%8A%A1/"
     }
   ]
 }
@@ -100,14 +100,14 @@ if (!doNotTrack) {
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://874656645.github.io/posts/226-gis-geoserver-%E5%8F%91%E5%B8%83-arcgis-%E5%88%87%E7%89%87%E7%9A%84-wmts-%E6%9C%8D%E5%8A%A1/"
+    "@id": "https://cuizhan-rick.github.io/posts/226-gis-geoserver-%E5%8F%91%E5%B8%83-arcgis-%E5%88%87%E7%89%87%E7%9A%84-wmts-%E6%9C%8D%E5%8A%A1/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Slow is Smooth and Smooth is Fast",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://874656645.github.io/favicon.ico"
+      "url": "https://cuizhan-rick.github.io/favicon.ico"
     }
   }
 }
@@ -126,7 +126,7 @@ if (!doNotTrack) {
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://874656645.github.io" accesskey="h" title="Welcome Aboard (Alt + H)">Welcome Aboard</a>
+            <a href="https://cuizhan-rick.github.io" accesskey="h" title="Welcome Aboard (Alt + H)">Welcome Aboard</a>
             <span class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -152,27 +152,27 @@ if (!doNotTrack) {
         </div>
         <ul id="menu">
             <li>
-                <a href="https://874656645.github.io/archives" title="Archive">
+                <a href="https://cuizhan-rick.github.io/archives" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
             <li>
-                <a href="https://874656645.github.io/categories" title="Categories">
+                <a href="https://cuizhan-rick.github.io/categories" title="Categories">
                     <span>Categories</span>
                 </a>
             </li>
             <li>
-                <a href="https://874656645.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://cuizhan-rick.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://874656645.github.io/series" title="Series">
+                <a href="https://cuizhan-rick.github.io/series" title="Series">
                     <span>Series</span>
                 </a>
             </li>
             <li>
-                <a href="https://874656645.github.io/tags/" title="Tags">
+                <a href="https://cuizhan-rick.github.io/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -183,7 +183,7 @@ if (!doNotTrack) {
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://874656645.github.io">Home</a>&nbsp;»&nbsp;<a href="https://874656645.github.io/posts/">Posts</a></div>
+    <div class="breadcrumbs"><a href="https://cuizhan-rick.github.io">Home</a>&nbsp;»&nbsp;<a href="https://cuizhan-rick.github.io/posts/">Posts</a></div>
     <h1 class="post-title">
       GIS——GeoServer 发布 ArcGIS 切片的 WMTS 服务
     </h1>
@@ -275,16 +275,16 @@ GeoWebCache     版本    1.21.1
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://874656645.github.io/tags/geoserver/">GeoServer</a></li>
-      <li><a href="https://874656645.github.io/tags/arcgis/">ArcGIS</a></li>
+      <li><a href="https://cuizhan-rick.github.io/tags/geoserver/">GeoServer</a></li>
+      <li><a href="https://cuizhan-rick.github.io/tags/arcgis/">ArcGIS</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://874656645.github.io/posts/227-c&#43;&#43;-const-volatile-constexpr-inline-static/">
+  <a class="prev" href="https://cuizhan-rick.github.io/posts/227-c&#43;&#43;-const-volatile-constexpr-inline-static/">
     <span class="title">« Prev Page</span>
     <br>
     <span>C&#43;&#43;——volatile、const、constexpr、inline、static</span>
   </a>
-  <a class="next" href="https://874656645.github.io/posts/225-stl-map-%E6%8E%92%E5%BA%8F%E7%9B%B8%E5%85%B3/">
+  <a class="next" href="https://cuizhan-rick.github.io/posts/225-stl-map-%E6%8E%92%E5%BA%8F%E7%9B%B8%E5%85%B3/">
     <span class="title">Next Page »</span>
     <br>
     <span>STL——map 排序相关</span>
@@ -297,7 +297,7 @@ GeoWebCache     版本    1.21.1
     
 <footer class="footer">
     <span>"Take time for all things: great haste makes great waste." – Benjamin Franklin</span><br/>
-    <span>&copy; 2025 <a href="https://874656645.github.io">Slow is Smooth and Smooth is Fast</a></span>
+    <span>&copy; 2025 <a href="https://cuizhan-rick.github.io">Slow is Smooth and Smooth is Fast</a></span>
     
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
