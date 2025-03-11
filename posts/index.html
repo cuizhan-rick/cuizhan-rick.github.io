@@ -164,7 +164,7 @@ if (!doNotTrack) {
     </h2>
   </header>
   <section class="entry-content">
-    <p>注意 join() 与 detach() 的区别  condition_variable #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;queue&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt;#include &lt;chrono&gt;#include &lt;algorithm&gt; using namespace std; queue&lt;string&gt; mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lock&lt;mutex&gt; lck{ mmutex }; // acquire mmutex 	mcond.wait(lck); /* do nothing */ // release lck and wait; 	// re-acquire lck upon wakeup  cout &lt;&lt; &#34;queue size: &#34; &lt;&lt; mqueue.size() &lt;&lt; endl; auto m = mqueue....</p>
+    <p>注意 join() 与 detach() 的区别 注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显示调用 std::ref）  condition_variable #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;queue&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt;#include &lt;chrono&gt;#include &lt;algorithm&gt; using namespace std; queue&lt;string&gt; mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lock&lt;mutex&gt; lck{ mmutex }; // acquire mmutex 	mcond.wait(lck); /* do nothing */ // release lck and wait; 	// re-acquire lck upon wakeup  cout &lt;&lt; &#34;queue size: &#34; &lt;&lt; mqueue.size() &lt;&lt; endl; auto m = mqueue....</p>
   </section>
   <footer class="entry-footer"><span title='2024-12-17 22:10:14 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43;——Multithreading Concurrency" href="https://874656645.github.io/posts/294-c&#43;&#43;-multithreading-concurrency/"></a>
@@ -226,7 +226,7 @@ if (!doNotTrack) {
     
 <footer class="footer">
     <span>"Take time for all things: great haste makes great waste." – Benjamin Franklin</span><br/>
-    <span>&copy; 2024 <a href="https://874656645.github.io">Slow is Smooth and Smooth is Fast</a></span>
+    <span>&copy; 2025 <a href="https://874656645.github.io">Slow is Smooth and Smooth is Fast</a></span>
     
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
