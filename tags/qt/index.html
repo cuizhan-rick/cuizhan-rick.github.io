@@ -145,6 +145,30 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Qt——QML 连接信号和槽
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>QML 类似网页开发，qt 魔改谷歌浏览器 v8 引擎 QML 采用 MVC 的编程思想 一个 qml 页面只能有一个根节点  qml 内部也可使用信号和槽连接的方式  Main.qml 文件  Window { id: win width: 420 height: 380 visible: true title: qsTr(&#34;Hello World&#34;) // 信号  signal qmlSig(int v, string s) // 槽函数  // 感觉像是一个 JavaScript 函数  function qmlSlot(v, s){ console.log(&#34;qmlSlot:&#34;, v, s) } // 连接 qml 端的信号和槽  // 方式一：通过 Connections 方式连接  Connections{ target: win // 注意函数名的规则  function onQmlSig(v, s){ console....</p>
+  </section>
+  <footer class="entry-footer"><span title='2025-04-19 09:48:32 +0800 CST'>April 19, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to Qt——QML 连接信号和槽" href="https://cuizhan-rick.github.io/posts/296-qt-qml-%E8%BF%9E%E6%8E%A5%E4%BF%A1%E5%8F%B7%E5%92%8C%E6%A7%BD/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Qt——Beginner Knowledge
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Qt 常用工具  qmake——》生成 pro 工程文件，并将 Qt 的 pro 工程编译出 makefile 文件 uic——》将 ui 设计界面的 xml 格式编译为 C&#43;&#43; 文件  Qt 工程编译 Qt string 编码问题  QTextCodec  信号和槽 语法要求</p>
+  </section>
+  <footer class="entry-footer"><span title='2025-04-16 19:31:26 +0800 CST'>April 16, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to Qt——Beginner Knowledge" href="https://cuizhan-rick.github.io/posts/295-qt-beginner-knowledge/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>Qt 多线程
     </h2>
   </header>
@@ -180,30 +204,6 @@ class MyThreadPro : public QObject { Q_OBJECT public: explicit MyThreadPro(QObje
   </section>
   <footer class="entry-footer"><span title='2022-07-15 21:13:10 +0800 CST'>July 15, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to Qt TCP" href="https://cuizhan-rick.github.io/posts/208-qt-tcp/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>Qt CMake
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>cmake_minimum_required(VERSION 3.5)project(07_TCP LANGUAGES CXX)# 将编译目录包含到Include目录 set(CMAKE_INCLUDE_CURRENT_DIR ON)set(CMAKE_AUTOUIC ON)set(CMAKE_AUTOMOC ON)set(CMAKE_AUTORCC ON)# 根据 Qt 版本的环境变量，设置使用的 Qt 版本 set(CMAKE_PREFIX_PATH $ENV{QTDIR5141_64})set(CMAKE_CXX_STANDARD 11)set(CMAKE_CXX_STANDARD_REQUIRED ON)# QtCreator supports the following variables for Android, which are identical to qmake Android variables. # Check http://doc.qt.io/qt-5/deployment-android.html for more information. # They need to be set before the find_package(Qt5 ...) call. #if(ANDROID) # set(ANDROID_PACKAGE_SOURCE_DIR &#34;${CMAKE_CURRENT_SOURCE_DIR}/android&#34;) # if (ANDROID_ABI STREQUAL &#34;armeabi-v7a&#34;) # set(ANDROID_EXTRA_LIBS # ${CMAKE_CURRENT_SOURCE_DIR}/path/to/libcrypto.so # ${CMAKE_CURRENT_SOURCE_DIR}/path/to/libssl.so) # endif() #endif() # 工程中会用到的Qt模块 find_package(Qt5 COMPONENTS Widgets Network REQUIRED)if(ANDROID) add_library(07_TCP SHARED main....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-07-15 16:10:27 +0800 CST'>July 15, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to Qt CMake" href="https://cuizhan-rick.github.io/posts/207-qt-cmake/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>Qt 信号和槽
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p> 信号函数没有返回值，且只是一个函数声明，必须有 signals: 声明 槽函数的函数标签必须和信号函数相同（相同的返回值类型和形参列表） Qt5 后成员函数也可作为 slots，可以不用 slots: 声明 slots: 声明前要添加访问权限修饰符 信号函数和槽函数其实都可以被重载  // signal 和 slots 都可以重载  // Qt5的方式  void(subWindow::*pFun1)() = &amp;subWindow::showMainWindow; void(MainWindow::*pSlot1)() = &amp;MainWindow::onShowMainWindow; connect(&amp;sw, pFun1, this, pSlot1); void(subWindow::*pFun2)(int,QString) = &amp;subWindow::showMainWindow; void(MainWindow::*pSlot2)(int,QString) = &amp;MainWindow::onShowMainWindow; connect(&amp;sw, pFun2, this, pSlot2); // Qt4的方式  // 1. SIGNAL、SLOT宏会把信号和槽转成字符串，所以就不能进行编译期错误检查  // 2. 槽函数前面必须有 slots 标签，否则无法识别为槽函数  connect(&amp;sw, SIGNAL(showMainWindow()), this, SLOT(onShowMainWindow())); connect(&amp;sw, SIGNAL(showMainWindow(int,QString)) , this, SLOT(onShowMainWindow(int,QString))); // Lambda 表达式  void(subWindow::*pFun1)() = &amp;subWindow::showMainWindow; connect(&amp;sw, pFun1, [](){ qDebug()&lt;&lt;&#34;没有参数的信号&#34;; } ); void(subWindow::*pFun2)(int,QString) = &amp;subWindow::showMainWindow; connect(&amp;sw, pFun2, [](int a, QString msg){ qDebug()&lt;&lt;a&lt;&lt;msg; } ); // Lambda 表达式使用注意事项  // 如果b3是局部变量或者成员变量，lambda不要使用引用传值  QPushButton *b3 = new QPushButton(this); b3-&gt;setText(&#34;Lambda&#34;); int a = 10, b = 100; connect(&amp;b2/*b3*/, &amp;QPushButton::clicked, [=](){ // 此处使用 &amp; 传值会有问题  qDebug()&lt;&lt;a&lt;&lt;b; } ); </p>
-  </section>
-  <footer class="entry-footer"><span title='2022-06-14 09:45:15 +0800 CST'>June 14, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to Qt 信号和槽" href="https://cuizhan-rick.github.io/posts/193-qt-%E4%BF%A1%E5%8F%B7%E5%92%8C%E6%A7%BD/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Qt——QML 连接信号和槽 | Slow is Smooth and Smooth is Fast</title>
+<meta name="keywords" content="Qt" />
+<meta name="description" content="QML 类似网页开发，qt 魔改谷歌浏览器 v8 引擎 QML 采用 MVC 的编程思想 一个 qml 页面只能有一个根节点  qml 内部也可使用信号和槽连接的方式  Main.qml 文件  Window { id: win width: 420 height: 380 visible: true title: qsTr(&#34;Hello World&#34;) // 信号  signal qmlSig(int v, string s) // 槽函数  // 感觉像是一个 JavaScript 函数  function qmlSlot(v, s){ console.log(&#34;qmlSlot:&#34;, v, s) } // 连接 qml 端的信号和槽  // 方式一：通过 Connections 方式连接  Connections{ target: win // 注意函数名的规则  function onQmlSig(v, s){ console.">
+<meta name="author" content="Rick Cui">
+<link rel="canonical" href="https://cuizhan-rick.github.io/posts/296-qt-qml-%E8%BF%9E%E6%8E%A5%E4%BF%A1%E5%8F%B7%E5%92%8C%E6%A7%BD/" />
+<meta name="google-site-verification" content="XYZabc" />
+<meta name="yandex-verification" content="XYZabc" />
+<meta name="msvalidate.01" content="XYZabc" />
+
+<script defer src="https://hm.baidu.com/hm.js?c4f60a311141f59e46a3c3223ff62c0b"></script>
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.a8d96e9fdcfb04de6ce842f2e3dc4f0df9ca7b9e31b230fd17e775ab09b8c508.css" integrity="sha256-qNlun9z7BN5s6ELy49xPDfnKe54xsjD9F&#43;d1qwm4xQg=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://cuizhan-rick.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cuizhan-rick.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cuizhan-rick.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://cuizhan-rick.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://cuizhan-rick.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="Qt——QML 连接信号和槽" />
+<meta property="og:description" content="QML 类似网页开发，qt 魔改谷歌浏览器 v8 引擎 QML 采用 MVC 的编程思想 一个 qml 页面只能有一个根节点  qml 内部也可使用信号和槽连接的方式  Main.qml 文件  Window { id: win width: 420 height: 380 visible: true title: qsTr(&#34;Hello World&#34;) // 信号  signal qmlSig(int v, string s) // 槽函数  // 感觉像是一个 JavaScript 函数  function qmlSlot(v, s){ console.log(&#34;qmlSlot:&#34;, v, s) } // 连接 qml 端的信号和槽  // 方式一：通过 Connections 方式连接  Connections{ target: win // 注意函数名的规则  function onQmlSig(v, s){ console." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cuizhan-rick.github.io/posts/296-qt-qml-%E8%BF%9E%E6%8E%A5%E4%BF%A1%E5%8F%B7%E5%92%8C%E6%A7%BD/" /><meta property="og:image" content="https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2025-04-19T09:48:32&#43;08:00" />
+<meta property="article:modified_time" content="2025-04-19T09:48:32&#43;08:00" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/>
+
+<meta name="twitter:title" content="Qt——QML 连接信号和槽"/>
+<meta name="twitter:description" content="QML 类似网页开发，qt 魔改谷歌浏览器 v8 引擎 QML 采用 MVC 的编程思想 一个 qml 页面只能有一个根节点  qml 内部也可使用信号和槽连接的方式  Main.qml 文件  Window { id: win width: 420 height: 380 visible: true title: qsTr(&#34;Hello World&#34;) // 信号  signal qmlSig(int v, string s) // 槽函数  // 感觉像是一个 JavaScript 函数  function qmlSlot(v, s){ console.log(&#34;qmlSlot:&#34;, v, s) } // 连接 qml 端的信号和槽  // 方式一：通过 Connections 方式连接  Connections{ target: win // 注意函数名的规则  function onQmlSig(v, s){ console."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://cuizhan-rick.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Qt——QML 连接信号和槽",
+      "item": "https://cuizhan-rick.github.io/posts/296-qt-qml-%E8%BF%9E%E6%8E%A5%E4%BF%A1%E5%8F%B7%E5%92%8C%E6%A7%BD/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Qt——QML 连接信号和槽",
+  "name": "Qt——QML 连接信号和槽",
+  "description": "QML 类似网页开发，qt 魔改谷歌浏览器 v8 引擎 QML 采用 MVC 的编程思想 一个 qml 页面只能有一个根节点  qml 内部也可使用信号和槽连接的方式  Main.qml 文件  Window { id: win width: 420 height: 380 visible: true title: qsTr(\u0026#34;Hello World\u0026#34;) // 信号  signal qmlSig(int v, string s) // 槽函数  // 感觉像是一个 JavaScript 函数  function qmlSlot(v, s){ console.log(\u0026#34;qmlSlot:\u0026#34;, v, s) } // 连接 qml 端的信号和槽  // 方式一：通过 Connections 方式连接  Connections{ target: win // 注意函数名的规则  function onQmlSig(v, s){ console.",
+  "keywords": [
+    "Qt"
+  ],
+  "articleBody": " QML 类似网页开发，qt 魔改谷歌浏览器 v8 引擎 QML 采用 MVC 的编程思想 一个 qml 页面只能有一个根节点  qml 内部也可使用信号和槽连接的方式  Main.qml 文件  Window { id: win width: 420 height: 380 visible: true title: qsTr(\"Hello World\") // 信号  signal qmlSig(int v, string s) // 槽函数  // 感觉像是一个 JavaScript 函数  function qmlSlot(v, s){ console.log(\"qmlSlot:\", v, s) } // 连接 qml 端的信号和槽  // 方式一：通过 Connections 方式连接  Connections{ target: win // 注意函数名的规则  function onQmlSig(v, s){ console.log(\"我是通过 Connections 的方式连接的 qml 端的槽函数：v is\", v, \"and s is\", s) } } // 方式二：通过 connect 方式连接  Component.onCompleted: { // 连接 qml 端的信号和槽  qmlSig.connect(win.qmlSlot) } Button{ text: \"按钮\" width: 80 height: 30 onClicked: { // 触发 qml 端的信号  // qmlSig(1, \"我是 qml 信号\")  // 方式三：也可直接调用槽函数  qmlSlot(1, \"我是 qml 信号\") } } } 方式一输出： qml: 我是通过 Connections 的方式连接的 qml 端的槽函数：v is 1 and s is 我是 qml 信号 方式二输出： qml: qmlSlot: 1 我是 qml 信号 方式三输出： qml: qmlSlot: 1 我是 qml 信号 qml 端导入并使用自定义 C++ 类  必须继承自 QObject 基类 添加 Q_OBJECT 宏  第一步：创建自定义的对象类\nmycppobj.h #ifndef MYCPPOBJ_H #define MYCPPOBJ_H  #include #include  class MyCppObj : public QObject { int m_age; QString m_name; Q_OBJECT public: explicit MyCppObj(QObject *parent = nullptr); static MyCppObj* getInstance(); int age() const; void setAge(int newAge); QString name() const; void setName(const QString \u0026newName); // 可在 qml 端直接调用 cpp 类中的函数，需要用 Q_INVOKABLE 修饰  // 功能和定义 slots 槽函数等同，qml 端的信号也可以通过信号连接到该函数  Q_INVOKABLE void cppFunc(int v, QString msg); public slots: void cppSlot(int v, QString s); signals: void ageChanged(); void nameChanged(); void cppSig(QVariant v, QVariant s); private: // 也可以用 MEMBER 的方式绑定  // Q_PROPERTY(int age MEMBER m_age NOTIFY ageChanged FINAL)  Q_PROPERTY(int age READ age WRITE setAge NOTIFY ageChanged FINAL) Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged FINAL) }; #endif // MYCPPOBJ_H  mycppobj.cpp #include \"mycppobj.h\"#include  int MyCppObj::age() const { return m_age; } void MyCppObj::setAge(int newAge) { if (m_age == newAge) return; m_age = newAge; emit ageChanged(); } QString MyCppObj::name() const { return m_name; } void MyCppObj::setName(const QString \u0026newName) { if (m_name == newName) return; m_name = newName; emit nameChanged(); } void MyCppObj::cppFunc(int v, QString msg) { qDebug()\"我是 cpp 端的 Q_INVOKABLE 函数：v is\"  v  \"s is\"  msg; emit cppSig(101, \"我是 cpp 端的信号\"); } void MyCppObj::cppSlot(int v, QString s) { qDebug()\"我是 cpp 端的槽函数：v is\"v\"s is\"s; } MyCppObj::MyCppObj(QObject *parent) : QObject{parent} , m_age{30} , m_name{\"Rick\"} { } MyCppObj *MyCppObj::getInstance() { static MyCppObj* obj = new MyCppObj(); return obj; } 第二步：在 main.cpp 中注册自定义的类\nint main(int argc, char *argv[]) { QGuiApplication app(argc, argv); QQmlApplicationEngine engine; // 获取全局上下文  QQmlContext* rootContext = engine.rootContext(); // 设置全局上下文变量  rootContext-setContextProperty(\"GLOBAL_WIDTH\", 500); // 注册  qmlRegisterTypeMyCppObj(\"MyObj\", 1, 0, \"MyCppObj\"); const QUrl url(QStringLiteral(\"qrc:/VirtualKeyBoard_qml/Main.qml\")); QObject::connect( \u0026engine, \u0026QQmlApplicationEngine::objectCreated, \u0026app, [url](QObject *obj, const QUrl \u0026objUrl) { if (!obj \u0026\u0026 url == objUrl) QCoreApplication::exit(-1); }, Qt::QueuedConnection); engine.load(url); return app.exec(); } 第三步：在 qml 文件中导入并使用自定义对象\nimport QtQuick import QtQuick.Controls // 导入自定义类型 import MyObj 1.0 Window { id: win width: GLOBAL_WIDTH height: 300 visible: true title: qsTr(\"Hello World\") signal qmlSig(int v, string s) function qmlSlot(v, s){ console.log(\"qmlSlot:\", v, s) } Component.onCompleted: { // 将 qml 端的信号连接到 cpp 端的槽函数或者 Q_INVOKABLE 的函数  qmlSig.connect(cppObj.cppSlot); qmlSig.connect(cppObj.cppFunc); // 将 cpp 端的信号连接到 qml 端的槽函数  cppObj.cppSig.connect(qmlSlot) } // cpp 自定义的类  MyCppObj{ id: cppObj age: 20 name: \"Rick\" Component.onCompleted: { console.log(\"name is\", name, \"and age is\", age); } } Label{ text: \"姓名是：\" + cppObj.name + \", 年龄是：\" + cppObj.age x: 100 } Button{ text: \"Change\" width: 80 height: 30 onClicked: { cppObj.name = \"QML\" cppObj.age = 99 // 直接调用 cpp 类中的函数  // 需要 Q_INVOKABLE 宏修饰  cppObj.cppFunc(11, \"你好，我是 qml 端\"); // 直接调用 cpp 类中的槽函数  cppObj.cppSlot(10, \"我调用了槽函数\"); // 通过发送信号的方式调用 cpp 类中的槽函数  qmlSig(1, \"我发送了 qml 信号\") } } } // 输出  qml: name is Rick and age is 36 我是 cpp 端的 Q_INVOKABLE 函数：v is 11 s is \"你好，我是 qml 端\" qml: qmlSlot: 101 我是 cpp 端的信号 我是 cpp 端的槽函数：v is 10 s is \"我调用了槽函数\" 我是 cpp 端的槽函数：v is 1 s is \"我发送了 qml 信号\" 我是 cpp 端的 Q_INVOKABLE 函数：v is 1 s is \"我发送了 qml 信号\" qml: qmlSlot: 101 我是 cpp 端的信号 点击按钮后，标签上绑定的数据会自动更新\n另一种在 qml 中使用自定义 C++ 类的方式 在 main.cpp 文件中，通过 C++ 代码的形式连接信号和槽\n#include #include #include #include \"mycppobj.h\" int main(int argc, char *argv[]) { QGuiApplication app(argc, argv); QQmlApplicationEngine engine; QQmlContext* rootContext = engine.rootContext(); // 设置全局上下文变量  rootContext-setContextProperty(\"GLOBAL_WIDTH\", 500); // 注册单例  qmlRegisterSingletonInstance(\"MyObj\", 1, 0, \"MyCppObjInstance\", MyCppObj::getInstance()); const QUrl url(QStringLiteral(\"qrc:/VirtualKeyBoard_qml/Main.qml\")); QObject::connect( \u0026engine, \u0026QQmlApplicationEngine::objectCreated, \u0026app, [url](QObject *obj, const QUrl \u0026objUrl) { if (!obj \u0026\u0026 url == objUrl) QCoreApplication::exit(-1); }, Qt::QueuedConnection); engine.load(url); // 注意：必须在 engine 的 load 函数之后  // 获取 qml 端的元素，绑定信号和槽  auto nodeList = engine.rootObjects(); auto rootNode = nodeList.first(); // qml 端的信号连接接 Q_INVOKABLE 函数  QObject::connect(rootNode, SIGNAL(qmlSig(int,QString)) , MyCppObj::getInstance(), SLOT(cppFunc(int,QString))); // qml 端的信号连接接槽函数  QObject::connect(rootNode, SIGNAL(qmlSig(int,QString)) , MyCppObj::getInstance(), SLOT(cppSlot(int,QString))); // cpp 端的信号连接 qml 端的槽函数  QObject::connect(MyCppObj::getInstance(), SIGNAL(cppSig(QVariant,QVariant)) , rootNode, SLOT(qmlSlot(QVariant,QVariant))); return app.exec(); } 输出： 我是 cpp 端的 Q_INVOKABLE 函数：v is 1 s is \"我发送了 qml 信号\" qml: qmlSlot: 101 我是 cpp 端的信号 我是 cpp 端的槽函数：v is 1 s is \"我发送了 qml 信号\" ",
+  "wordCount" : "775",
+  "inLanguage": "en",
+  "datePublished": "2025-04-19T09:48:32+08:00",
+  "dateModified": "2025-04-19T09:48:32+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Rick Cui"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cuizhan-rick.github.io/posts/296-qt-qml-%E8%BF%9E%E6%8E%A5%E4%BF%A1%E5%8F%B7%E5%92%8C%E6%A7%BD/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Slow is Smooth and Smooth is Fast",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cuizhan-rick.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://cuizhan-rick.github.io" accesskey="h" title="Welcome Aboard (Alt + H)">Welcome Aboard</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://cuizhan-rick.github.io/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cuizhan-rick.github.io/categories" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cuizhan-rick.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cuizhan-rick.github.io/series" title="Series">
+                    <span>Series</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cuizhan-rick.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://cuizhan-rick.github.io">Home</a>&nbsp;»&nbsp;<a href="https://cuizhan-rick.github.io/posts/">Posts</a></div>
+    <h1 class="post-title">
+      Qt——QML 连接信号和槽
+    </h1>
+    <div class="post-meta"><span title='2025-04-19 09:48:32 +0800 CST'>April 19, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Rick Cui
+
+</div>
+  </header> <div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#qml-%e5%86%85%e9%83%a8%e4%b9%9f%e5%8f%af%e4%bd%bf%e7%94%a8%e4%bf%a1%e5%8f%b7%e5%92%8c%e6%a7%bd%e8%bf%9e%e6%8e%a5%e7%9a%84%e6%96%b9%e5%bc%8f" aria-label="qml 内部也可使用信号和槽连接的方式">qml 内部也可使用信号和槽连接的方式</a></li>
+                <li>
+                    <a href="#qml-%e7%ab%af%e5%af%bc%e5%85%a5%e5%b9%b6%e4%bd%bf%e7%94%a8%e8%87%aa%e5%ae%9a%e4%b9%89-c-%e7%b1%bb" aria-label="qml 端导入并使用自定义 C&#43;&#43; 类">qml 端导入并使用自定义 C++ 类</a></li>
+                <li>
+                    <a href="#%e5%8f%a6%e4%b8%80%e7%a7%8d%e5%9c%a8-qml-%e4%b8%ad%e4%bd%bf%e7%94%a8%e8%87%aa%e5%ae%9a%e4%b9%89-c-%e7%b1%bb%e7%9a%84%e6%96%b9%e5%bc%8f" aria-label="另一种在 qml 中使用自定义 C&#43;&#43; 类的方式">另一种在 qml 中使用自定义 C++ 类的方式</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><ul>
+<li>QML 类似网页开发，qt 魔改谷歌浏览器 v8 引擎</li>
+<li>QML 采用 MVC 的编程思想</li>
+<li>一个 qml 页面只能有一个根节点</li>
+</ul>
+<h2 id="qml-内部也可使用信号和槽连接的方式">qml 内部也可使用信号和槽连接的方式<a hidden class="anchor" aria-hidden="true" href="#qml-内部也可使用信号和槽连接的方式">#</a></h2>
+<ul>
+<li>Main.qml 文件</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Window</span> {
+    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">win</span>
+    <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">420</span>
+    <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">380</span>
+    <span style="color:#a6e22e">visible</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+    <span style="color:#a6e22e">title</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">qsTr</span>(<span style="color:#e6db74">&#34;Hello World&#34;</span>)
+
+    <span style="color:#75715e">// 信号
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">signal</span> <span style="color:#a6e22e">qmlSig</span>(<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">string</span> <span style="color:#a6e22e">s</span>)
+    <span style="color:#75715e">// 槽函数
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 感觉像是一个 JavaScript 函数
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">qmlSlot</span>(<span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">s</span>){
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;qmlSlot:&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">s</span>)
+    }
+    <span style="color:#75715e">// 连接 qml 端的信号和槽
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 方式一：通过 Connections 方式连接
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Connections</span>{
+        <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">win</span>
+        <span style="color:#75715e">// 注意函数名的规则
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">onQmlSig</span>(<span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">s</span>){
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;我是通过 Connections 的方式连接的 qml 端的槽函数：v is&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#e6db74">&#34;and s is&#34;</span>, <span style="color:#a6e22e">s</span>)
+        }
+    }
+    <span style="color:#75715e">// 方式二：通过 connect 方式连接
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">Component</span>.<span style="color:#a6e22e">onCompleted</span><span style="color:#f92672">:</span> {
+        <span style="color:#75715e">// 连接 qml 端的信号和槽
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">qmlSig</span>.<span style="color:#a6e22e">connect</span>(<span style="color:#a6e22e">win</span>.<span style="color:#a6e22e">qmlSlot</span>)
+    }
+
+    <span style="color:#a6e22e">Button</span>{
+        <span style="color:#a6e22e">text</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;按钮&#34;</span>
+        <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">80</span>
+        <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">30</span>
+        <span style="color:#a6e22e">onClicked</span><span style="color:#f92672">:</span> {
+            <span style="color:#75715e">// 触发 qml 端的信号
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// qmlSig(1, &#34;我是 qml 信号&#34;)
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// 方式三：也可直接调用槽函数
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">qmlSlot</span>(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;我是 qml 信号&#34;</span>)
+
+        }
+    }
+}
+
+<span style="color:#a6e22e">方式一输出</span><span style="color:#960050;background-color:#1e0010">：</span>
+    <span style="color:#a6e22e">qml</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">我是通过</span> <span style="color:#a6e22e">Connections</span> <span style="color:#a6e22e">的方式连接的</span> <span style="color:#a6e22e">qml</span> <span style="color:#a6e22e">端的槽函数</span><span style="color:#960050;background-color:#1e0010">：</span><span style="color:#a6e22e">v</span> <span style="color:#a6e22e">is</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">s</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">我是</span> <span style="color:#a6e22e">qml</span> <span style="color:#a6e22e">信号</span>
+<span style="color:#a6e22e">方式二输出</span><span style="color:#960050;background-color:#1e0010">：</span>
+    <span style="color:#a6e22e">qml</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">qmlSlot</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">我是</span> <span style="color:#a6e22e">qml</span> <span style="color:#a6e22e">信号</span>
+<span style="color:#a6e22e">方式三输出</span><span style="color:#960050;background-color:#1e0010">：</span>
+    <span style="color:#a6e22e">qml</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">qmlSlot</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> <span style="color:#a6e22e">我是</span> <span style="color:#a6e22e">qml</span> <span style="color:#a6e22e">信号</span>
+</code></pre></div><h2 id="qml-端导入并使用自定义-c-类">qml 端导入并使用自定义 C++ 类<a hidden class="anchor" aria-hidden="true" href="#qml-端导入并使用自定义-c-类">#</a></h2>
+<ul>
+<li>必须继承自 <code>QObject</code> 基类</li>
+<li>添加 <code>Q_OBJECT</code> 宏</li>
+</ul>
+<p>第一步：创建自定义的对象类</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">mycppobj.h
+
+<span style="color:#75715e">#ifndef MYCPPOBJ_H
+</span><span style="color:#75715e">#define MYCPPOBJ_H
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;QObject&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;QVariant&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyCppObj</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> QObject
+{
+    <span style="color:#66d9ef">int</span> m_age;
+    QString m_name;
+
+    Q_OBJECT
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">explicit</span> MyCppObj(QObject <span style="color:#f92672">*</span>parent <span style="color:#f92672">=</span> <span style="color:#66d9ef">nullptr</span>);
+    <span style="color:#66d9ef">static</span> MyCppObj<span style="color:#f92672">*</span> <span style="color:#a6e22e">getInstance</span>();
+
+    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">age</span>() <span style="color:#66d9ef">const</span>;
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setAge</span>(<span style="color:#66d9ef">int</span> newAge);
+
+    QString <span style="color:#a6e22e">name</span>() <span style="color:#66d9ef">const</span>;
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setName</span>(<span style="color:#66d9ef">const</span> QString <span style="color:#f92672">&amp;</span>newName);
+
+    <span style="color:#75715e">// 可在 qml 端直接调用 cpp 类中的函数，需要用 Q_INVOKABLE 修饰
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 功能和定义 slots 槽函数等同，qml 端的信号也可以通过信号连接到该函数
+</span><span style="color:#75715e"></span>    Q_INVOKABLE <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">cppFunc</span>(<span style="color:#66d9ef">int</span> v, QString msg);
+
+<span style="color:#66d9ef">public</span> slots:
+    <span style="color:#66d9ef">void</span> cppSlot(<span style="color:#66d9ef">int</span> v, QString s);
+
+signals:
+    <span style="color:#66d9ef">void</span> ageChanged();
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">nameChanged</span>();
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">cppSig</span>(QVariant v, QVariant s);
+
+<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+    <span style="color:#75715e">// 也可以用 MEMBER 的方式绑定
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Q_PROPERTY(int age MEMBER m_age NOTIFY ageChanged FINAL)
+</span><span style="color:#75715e"></span>    Q_PROPERTY(<span style="color:#66d9ef">int</span> age READ age WRITE setAge NOTIFY ageChanged FINAL)
+    Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged FINAL)
+};
+
+<span style="color:#75715e">#endif </span><span style="color:#75715e">// MYCPPOBJ_H
+</span><span style="color:#75715e"></span>
+mycppobj.cpp
+
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;mycppobj.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;QDebug&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+
+<span style="color:#66d9ef">int</span> MyCppObj<span style="color:#f92672">::</span>age() <span style="color:#66d9ef">const</span>
+{
+    <span style="color:#66d9ef">return</span> m_age;
+}
+
+<span style="color:#66d9ef">void</span> MyCppObj<span style="color:#f92672">::</span>setAge(<span style="color:#66d9ef">int</span> newAge)
+{
+    <span style="color:#66d9ef">if</span> (m_age <span style="color:#f92672">==</span> newAge)
+        <span style="color:#66d9ef">return</span>;
+    m_age <span style="color:#f92672">=</span> newAge;
+    emit <span style="color:#a6e22e">ageChanged</span>();
+}
+
+QString MyCppObj<span style="color:#f92672">::</span>name() <span style="color:#66d9ef">const</span>
+{
+    <span style="color:#66d9ef">return</span> m_name;
+}
+
+<span style="color:#66d9ef">void</span> MyCppObj<span style="color:#f92672">::</span>setName(<span style="color:#66d9ef">const</span> QString <span style="color:#f92672">&amp;</span>newName)
+{
+    <span style="color:#66d9ef">if</span> (m_name <span style="color:#f92672">==</span> newName)
+        <span style="color:#66d9ef">return</span>;
+    m_name <span style="color:#f92672">=</span> newName;
+    emit <span style="color:#a6e22e">nameChanged</span>();
+}
+
+<span style="color:#66d9ef">void</span> MyCppObj<span style="color:#f92672">::</span>cppFunc(<span style="color:#66d9ef">int</span> v, QString msg)
+{
+    qDebug()<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;我是 cpp 端的 Q_INVOKABLE 函数：v is&#34;</span> <span style="color:#f92672">&lt;&lt;</span> v <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;s is&#34;</span> <span style="color:#f92672">&lt;&lt;</span> msg;
+    emit <span style="color:#a6e22e">cppSig</span>(<span style="color:#ae81ff">101</span>, <span style="color:#e6db74">&#34;我是 cpp 端的信号&#34;</span>);
+}
+
+<span style="color:#66d9ef">void</span> MyCppObj<span style="color:#f92672">::</span>cppSlot(<span style="color:#66d9ef">int</span> v, QString s)
+{
+    qDebug()<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;我是 cpp 端的槽函数：v is&#34;</span><span style="color:#f92672">&lt;&lt;</span>v<span style="color:#f92672">&lt;&lt;</span><span style="color:#e6db74">&#34;s is&#34;</span><span style="color:#f92672">&lt;&lt;</span>s;
+}
+
+MyCppObj<span style="color:#f92672">::</span>MyCppObj(QObject <span style="color:#f92672">*</span>parent)
+    <span style="color:#f92672">:</span> QObject{parent}
+    , m_age{<span style="color:#ae81ff">30</span>}
+    , m_name{<span style="color:#e6db74">&#34;Rick&#34;</span>}
+{
+}
+
+MyCppObj <span style="color:#f92672">*</span>MyCppObj<span style="color:#f92672">::</span>getInstance()
+{
+    <span style="color:#66d9ef">static</span> MyCppObj<span style="color:#f92672">*</span> obj <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MyCppObj();
+    <span style="color:#66d9ef">return</span> obj;
+}
+</code></pre></div><p>第二步：在 <code>main.cpp</code> 中注册自定义的类</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
+{
+    QGuiApplication app(argc, argv);
+
+    QQmlApplicationEngine engine;
+    <span style="color:#75715e">// 获取全局上下文
+</span><span style="color:#75715e"></span>    QQmlContext<span style="color:#f92672">*</span> rootContext <span style="color:#f92672">=</span> engine.rootContext();
+    <span style="color:#75715e">// 设置全局上下文变量
+</span><span style="color:#75715e"></span>    rootContext<span style="color:#f92672">-&gt;</span>setContextProperty(<span style="color:#e6db74">&#34;GLOBAL_WIDTH&#34;</span>, <span style="color:#ae81ff">500</span>);
+
+    <span style="color:#75715e">// 注册
+</span><span style="color:#75715e"></span>    qmlRegisterType<span style="color:#f92672">&lt;</span>MyCppObj<span style="color:#f92672">&gt;</span>(<span style="color:#e6db74">&#34;MyObj&#34;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;MyCppObj&#34;</span>);
+
+    <span style="color:#66d9ef">const</span> QUrl url(QStringLiteral(<span style="color:#e6db74">&#34;qrc:/VirtualKeyBoard_qml/Main.qml&#34;</span>));
+    QObject<span style="color:#f92672">::</span>connect(
+        <span style="color:#f92672">&amp;</span>engine,
+        <span style="color:#f92672">&amp;</span>QQmlApplicationEngine<span style="color:#f92672">::</span>objectCreated,
+        <span style="color:#f92672">&amp;</span>app,
+        [url](QObject <span style="color:#f92672">*</span>obj, <span style="color:#66d9ef">const</span> QUrl <span style="color:#f92672">&amp;</span>objUrl) {
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>obj <span style="color:#f92672">&amp;&amp;</span> url <span style="color:#f92672">==</span> objUrl)
+                QCoreApplication<span style="color:#f92672">::</span>exit(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+        },
+        Qt<span style="color:#f92672">::</span>QueuedConnection);
+    engine.load(url);
+
+    <span style="color:#66d9ef">return</span> app.exec();
+}
+</code></pre></div><p>第三步：在 qml 文件中导入并使用自定义对象</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++">import QtQuick
+import QtQuick.Controls
+<span style="color:#75715e">// 导入自定义类型
+</span><span style="color:#75715e"></span>import MyObj <span style="color:#ae81ff">1.0</span>
+
+Window {
+    id: win
+    width: GLOBAL_WIDTH
+    height: <span style="color:#ae81ff">300</span>
+    visible: true
+    title: qsTr(<span style="color:#e6db74">&#34;Hello World&#34;</span>)
+    
+    signal qmlSig(<span style="color:#66d9ef">int</span> v, string s)
+
+    function qmlSlot(v, s){
+        console.log(<span style="color:#e6db74">&#34;qmlSlot:&#34;</span>, v, s)
+    }
+
+    Component.onCompleted: {
+        <span style="color:#75715e">// 将 qml 端的信号连接到 cpp 端的槽函数或者 Q_INVOKABLE 的函数
+</span><span style="color:#75715e"></span>        qmlSig.connect(cppObj.cppSlot);
+        qmlSig.connect(cppObj.cppFunc);
+
+        <span style="color:#75715e">// 将 cpp 端的信号连接到 qml 端的槽函数
+</span><span style="color:#75715e"></span>        cppObj.cppSig.connect(qmlSlot)
+    }
+
+    <span style="color:#75715e">// cpp 自定义的类
+</span><span style="color:#75715e"></span>    MyCppObj{
+        id: cppObj
+        age: <span style="color:#ae81ff">20</span>
+        name: <span style="color:#e6db74">&#34;Rick&#34;</span>
+
+        Component.onCompleted: {
+            console.log(<span style="color:#e6db74">&#34;name is&#34;</span>, name, <span style="color:#e6db74">&#34;and age is&#34;</span>, age);
+        }
+    }
+
+    Label{
+        text: <span style="color:#e6db74">&#34;姓名是：&#34;</span> <span style="color:#f92672">+</span> cppObj.name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;, 年龄是：&#34;</span> <span style="color:#f92672">+</span> cppObj.age
+        x: <span style="color:#ae81ff">100</span>
+    }
+
+    Button{
+        text: <span style="color:#e6db74">&#34;Change&#34;</span>
+        width: <span style="color:#ae81ff">80</span>
+        height: <span style="color:#ae81ff">30</span>
+        onClicked: {
+            cppObj.name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;QML&#34;</span>
+            cppObj.age <span style="color:#f92672">=</span> <span style="color:#ae81ff">99</span>
+
+            <span style="color:#75715e">// 直接调用 cpp 类中的函数
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// 需要 Q_INVOKABLE 宏修饰
+</span><span style="color:#75715e"></span>            cppObj.cppFunc(<span style="color:#ae81ff">11</span>, <span style="color:#e6db74">&#34;你好，我是 qml 端&#34;</span>);
+
+            <span style="color:#75715e">// 直接调用 cpp 类中的槽函数
+</span><span style="color:#75715e"></span>            cppObj.cppSlot(<span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;我调用了槽函数&#34;</span>);
+
+            <span style="color:#75715e">// 通过发送信号的方式调用 cpp 类中的槽函数
+</span><span style="color:#75715e"></span>            qmlSig(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;我发送了 qml 信号&#34;</span>)
+        }
+    }
+}
+
+<span style="color:#75715e">// 输出
+</span><span style="color:#75715e"></span>
+qml: name is Rick and age is <span style="color:#ae81ff">36</span>
+<span style="color:#960050;background-color:#1e0010">我是</span> cpp <span style="color:#960050;background-color:#1e0010">端的</span> Q_INVOKABLE <span style="color:#960050;background-color:#1e0010">函数：</span>v is <span style="color:#ae81ff">11</span> s is <span style="color:#e6db74">&#34;你好，我是 qml 端&#34;</span>
+qml: qmlSlot: <span style="color:#ae81ff">101</span> <span style="color:#960050;background-color:#1e0010">我是</span> cpp <span style="color:#960050;background-color:#1e0010">端的信号</span>
+<span style="color:#960050;background-color:#1e0010">我是</span> cpp <span style="color:#960050;background-color:#1e0010">端的槽函数：</span>v is <span style="color:#ae81ff">10</span> s is <span style="color:#e6db74">&#34;我调用了槽函数&#34;</span>
+<span style="color:#960050;background-color:#1e0010">我是</span> cpp <span style="color:#960050;background-color:#1e0010">端的槽函数：</span>v is <span style="color:#ae81ff">1</span> s is <span style="color:#e6db74">&#34;我发送了 qml 信号&#34;</span>
+<span style="color:#960050;background-color:#1e0010">我是</span> cpp <span style="color:#960050;background-color:#1e0010">端的</span> Q_INVOKABLE <span style="color:#960050;background-color:#1e0010">函数：</span>v is <span style="color:#ae81ff">1</span> s is <span style="color:#e6db74">&#34;我发送了 qml 信号&#34;</span>
+qml: qmlSlot: <span style="color:#ae81ff">101</span> <span style="color:#960050;background-color:#1e0010">我是</span> cpp <span style="color:#960050;background-color:#1e0010">端的信号</span>
+</code></pre></div><p>点击按钮后，标签上绑定的数据会自动更新</p>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Qt-qml-%e5%af%bc%e5%85%a5%e8%87%aa%e5%ae%9a%e4%b9%89-cpp-%e7%b1%bb%e5%9e%8b.jpg" alt="Qt-qml-导入自定义-cpp-类型"  />
+</p>
+<h2 id="另一种在-qml-中使用自定义-c-类的方式">另一种在 qml 中使用自定义 C++ 类的方式<a hidden class="anchor" aria-hidden="true" href="#另一种在-qml-中使用自定义-c-类的方式">#</a></h2>
+<p>在 <code>main.cpp</code> 文件中，通过 C++ 代码的形式连接信号和槽</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;QGuiApplication&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;QQmlApplicationEngine&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;QQmlContext&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;mycppobj.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>argv[])
+{
+    QGuiApplication app(argc, argv);
+
+    QQmlApplicationEngine engine;
+    QQmlContext<span style="color:#f92672">*</span> rootContext <span style="color:#f92672">=</span> engine.rootContext();
+    <span style="color:#75715e">// 设置全局上下文变量
+</span><span style="color:#75715e"></span>    rootContext<span style="color:#f92672">-&gt;</span>setContextProperty(<span style="color:#e6db74">&#34;GLOBAL_WIDTH&#34;</span>, <span style="color:#ae81ff">500</span>);
+
+    <span style="color:#75715e">// 注册单例
+</span><span style="color:#75715e"></span>    qmlRegisterSingletonInstance(<span style="color:#e6db74">&#34;MyObj&#34;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#e6db74">&#34;MyCppObjInstance&#34;</span>, MyCppObj<span style="color:#f92672">::</span>getInstance());
+
+    <span style="color:#66d9ef">const</span> QUrl url(QStringLiteral(<span style="color:#e6db74">&#34;qrc:/VirtualKeyBoard_qml/Main.qml&#34;</span>));
+    QObject<span style="color:#f92672">::</span>connect(
+        <span style="color:#f92672">&amp;</span>engine,
+        <span style="color:#f92672">&amp;</span>QQmlApplicationEngine<span style="color:#f92672">::</span>objectCreated,
+        <span style="color:#f92672">&amp;</span>app,
+        [url](QObject <span style="color:#f92672">*</span>obj, <span style="color:#66d9ef">const</span> QUrl <span style="color:#f92672">&amp;</span>objUrl) {
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>obj <span style="color:#f92672">&amp;&amp;</span> url <span style="color:#f92672">==</span> objUrl)
+                QCoreApplication<span style="color:#f92672">::</span>exit(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+        },
+        Qt<span style="color:#f92672">::</span>QueuedConnection);
+    engine.load(url);
+
+    <span style="color:#75715e">// 注意：必须在 engine 的 load 函数之后
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 获取 qml 端的元素，绑定信号和槽
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">auto</span> nodeList <span style="color:#f92672">=</span> engine.rootObjects();
+    <span style="color:#66d9ef">auto</span> rootNode <span style="color:#f92672">=</span> nodeList.first();
+    <span style="color:#75715e">// qml 端的信号连接接 Q_INVOKABLE 函数
+</span><span style="color:#75715e"></span>    QObject<span style="color:#f92672">::</span>connect(rootNode, SIGNAL(qmlSig(<span style="color:#66d9ef">int</span>,QString))
+                     , MyCppObj<span style="color:#f92672">::</span>getInstance(), SLOT(cppFunc(<span style="color:#66d9ef">int</span>,QString)));
+    
+    <span style="color:#75715e">// qml 端的信号连接接槽函数
+</span><span style="color:#75715e"></span>    QObject<span style="color:#f92672">::</span>connect(rootNode, SIGNAL(qmlSig(<span style="color:#66d9ef">int</span>,QString))
+                     , MyCppObj<span style="color:#f92672">::</span>getInstance(), SLOT(cppSlot(<span style="color:#66d9ef">int</span>,QString)));
+
+    <span style="color:#75715e">// cpp 端的信号连接 qml 端的槽函数
+</span><span style="color:#75715e"></span>    QObject<span style="color:#f92672">::</span>connect(MyCppObj<span style="color:#f92672">::</span>getInstance(), SIGNAL(cppSig(QVariant,QVariant))
+                     , rootNode, SLOT(qmlSlot(QVariant,QVariant)));
+
+    <span style="color:#66d9ef">return</span> app.exec();
+}
+
+<span style="color:#960050;background-color:#1e0010">输出：</span>
+<span style="color:#960050;background-color:#1e0010">我是</span> cpp <span style="color:#960050;background-color:#1e0010">端的</span> Q_INVOKABLE <span style="color:#960050;background-color:#1e0010">函数：</span>v is <span style="color:#ae81ff">1</span> s is <span style="color:#e6db74">&#34;我发送了 qml 信号&#34;</span>
+qml: qmlSlot: <span style="color:#ae81ff">101</span> <span style="color:#960050;background-color:#1e0010">我是</span> cpp <span style="color:#960050;background-color:#1e0010">端的信号</span>
+<span style="color:#960050;background-color:#1e0010">我是</span> cpp <span style="color:#960050;background-color:#1e0010">端的槽函数：</span>v is <span style="color:#ae81ff">1</span> s is <span style="color:#e6db74">&#34;我发送了 qml 信号&#34;</span>
+</code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://cuizhan-rick.github.io/tags/qt/">Qt</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://cuizhan-rick.github.io/posts/295-qt-beginner-knowledge/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>Qt——Beginner Knowledge</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>"Take time for all things: great haste makes great waste." – Benjamin Franklin</span><br/>
+    <span>&copy; 2025 <a href="https://cuizhan-rick.github.io">Slow is Smooth and Smooth is Fast</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+
+
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

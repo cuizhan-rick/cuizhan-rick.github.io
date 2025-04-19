@@ -145,11 +145,35 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Qt——QML 连接信号和槽
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>QML 类似网页开发，qt 魔改谷歌浏览器 v8 引擎 QML 采用 MVC 的编程思想 一个 qml 页面只能有一个根节点  qml 内部也可使用信号和槽连接的方式  Main.qml 文件  Window { id: win width: 420 height: 380 visible: true title: qsTr(&#34;Hello World&#34;) // 信号  signal qmlSig(int v, string s) // 槽函数  // 感觉像是一个 JavaScript 函数  function qmlSlot(v, s){ console.log(&#34;qmlSlot:&#34;, v, s) } // 连接 qml 端的信号和槽  // 方式一：通过 Connections 方式连接  Connections{ target: win // 注意函数名的规则  function onQmlSig(v, s){ console....</p>
+  </section>
+  <footer class="entry-footer"><span title='2025-04-19 09:48:32 +0800 CST'>April 19, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to Qt——QML 连接信号和槽" href="https://cuizhan-rick.github.io/posts/296-qt-qml-%E8%BF%9E%E6%8E%A5%E4%BF%A1%E5%8F%B7%E5%92%8C%E6%A7%BD/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>Qt——Beginner Knowledge
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Qt 常用工具  qmake——》生成 pro 工程文件，并将 Qt 的 pro 工程编译出 makefile 文件 uic——》将 ui 设计界面的 xml 格式编译为 C&#43;&#43; 文件  Qt 工程编译 Qt string 编码问题  QTextCodec  信号和槽 语法要求</p>
+  </section>
+  <footer class="entry-footer"><span title='2025-04-16 19:31:26 +0800 CST'>April 16, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to Qt——Beginner Knowledge" href="https://cuizhan-rick.github.io/posts/295-qt-beginner-knowledge/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>C&#43;&#43;——Multithreading Concurrency
     </h2>
   </header>
   <section class="entry-content">
-    <p>注意 join() 与 detach() 的区别 注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显示调用 std::ref）  condition_variable #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;queue&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt;#include &lt;chrono&gt;#include &lt;algorithm&gt; using namespace std; queue&lt;string&gt; mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lock&lt;mutex&gt; lck{ mmutex }; // acquire mmutex 	mcond.wait(lck); /* do nothing */ // release lck and wait; 	// re-acquire lck upon wakeup  cout &lt;&lt; &#34;queue size: &#34; &lt;&lt; mqueue.size() &lt;&lt; endl; auto m = mqueue....</p>
+    <p>注意 join() 与 detach() 的区别 注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显式调用 std::ref）  condition_variable #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;queue&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt;#include &lt;chrono&gt;#include &lt;algorithm&gt; using namespace std; queue&lt;string&gt; mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lock&lt;mutex&gt; lck{ mmutex }; // acquire mmutex 	mcond.wait(lck); /* do nothing */ // release lck and wait; 	// re-acquire lck upon wakeup  cout &lt;&lt; &#34;queue size: &#34; &lt;&lt; mqueue.size() &lt;&lt; endl; auto m = mqueue....</p>
   </section>
   <footer class="entry-footer"><span title='2024-12-17 22:10:14 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43;——Multithreading Concurrency" href="https://cuizhan-rick.github.io/posts/294-c&#43;&#43;-multithreading-concurrency/"></a>
@@ -177,30 +201,6 @@ if (!doNotTrack) {
   </section>
   <footer class="entry-footer"><span title='2024-12-17 21:05:56 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43;——template iterator-find_all" href="https://cuizhan-rick.github.io/posts/292-c&#43;&#43;-template-iterator-find-all/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>C&#43;&#43;——stream iterator and unique copy
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>unique_copy 被拷贝序列需要是有序的  #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;algorithm&gt; using namespace std; int main() try { //ostream_iterator&lt;string&gt; oo{ cout }; 	//*oo = &#34;hello &#34;; 	//&#43;&#43;oo; 	//*oo = &#34;world!\n&#34;;  // 效果等于 cout &lt;&lt; &#34;hello world!\n&#34;;  // C:\Users\cui_z\source\repos\Practices\Debug\from.txt 	// C:\Users\cui_z\source\repos\Practices\Debug\to.txt 	//string from, to; 	//cin &gt;&gt; from &gt;&gt; to;	// get source and target file names 	//ifstream is{ from };	// input stream for file &#34;from&#34; 	//istream_iterator&lt;string&gt; ii{ is };	// input iterator for stream 	//istream_iterator&lt;string&gt; eos{};	// input sentinel 	//ofstream os{ to };	// output stream for file &#34;to&#34; 	//ostream_iterator&lt;string&gt; oo{ os,&#34;\n&#34; };	// output iterator for stream....</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-17 20:19:06 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to C&#43;&#43;——stream iterator and unique copy" href="https://cuizhan-rick.github.io/posts/291-c&#43;&#43;-stream-iterator-and-unique-copy/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>C&#43;&#43;——std equal range
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>函数操作的序列需是一个有序的，返回与目标值相等的序列（左闭右开） 算法通过实现 &lt; 操作符实现判断 = 的效果（交换前后两个操作数）  #include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;#include &lt;type_traits&gt;#include &lt;exception&gt; using namespace std; struct S { int number; char name; // note: name is ignored by this comparison operator  bool operator&lt;(const S&amp; s) const { return number &lt; s.number; } }; struct Comp { bool operator()(const S&amp; s, int i) const { return s.number &lt; i; } bool operator()(int i, const S&amp; s) const { return i &lt; s....</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-17 19:35:26 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to C&#43;&#43;——std equal range" href="https://cuizhan-rick.github.io/posts/290-c&#43;&#43;-std-equal-range-/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

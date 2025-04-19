@@ -149,9 +149,9 @@ if (!doNotTrack) {
     </h2>
   </header>
   <section class="entry-content">
-    <p>使用模板类 重载 -&gt; 操作符 重载 * 操作符  template&lt;typename T&gt; class MyAutoPtr{ public: MyAutoPtr(T * t){ ptr = t; } ~MyAutoPtr(){ if(ptr != NULL){ delete ptr; ptr = NULL; } } T* operator-&gt;(){ // 相当于 ptr-&gt; , 所以返回 ptr 指针即可，将所有操作转发给真正的指针变量  return ptr; } T&amp; operator*(){ // 相当于 (*ptr) ，所以返回 ptr 指向的对象引用即可  return *ptr; } private: T* ptr; }; class A{ public: A(int a){ cout &lt;&lt; &#34;A(int)...&#34; &lt;&lt; endl; this-&gt;a = a; } ~A(){ cout &lt;&lt; &#34;~A()....</p>
+    <p>使用模板类 重载 -&gt; 操作符 重载 * 操作符  #include &lt;iostream&gt; using namespace std; template&lt;typename T&gt; class SharedPtr { public: int* m_count; T* m_ptr{ nullptr }; public: SharedPtr(T* p) :m_ptr{ p }, m_count{ new int(1) } { } SharedPtr(const SharedPtr&lt;T&gt;&amp; ref) { m_ptr = ref.m_ptr; m_count = ref.m_count; *m_count &#43;= 1; } SharedPtr(SharedPtr&lt;T&gt;&amp;&amp; ref) { m_ptr = ref.m_ptr; m_count = ref.m_count; ref.m_ptr = nullptr; ref.m_count = nullptr; } SharedPtr&lt;T&gt;&amp; operator = (const SharedPtr&lt;T&gt;&amp; ref){ *m_count -= 1; if (*m_count == 0) { cout &lt;&lt; &#34;拷贝赋值：delete\n&#34;; delete m_ptr; } m_ptr = ref....</p>
   </section>
-  <footer class="entry-footer"><span title='2022-01-04 21:07:15 +0800 CST'>January 4, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <footer class="entry-footer"><span title='2022-01-04 21:07:15 +0800 CST'>January 4, 2022</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to 自定义智能指针" href="https://cuizhan-rick.github.io/posts/62-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/"></a>
 </article>
 

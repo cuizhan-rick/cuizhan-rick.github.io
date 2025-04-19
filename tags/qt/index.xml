@@ -9,7 +9,25 @@
       <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Jul 2022 22:17:00 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/tags/qt/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Apr 2025 09:48:32 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/tags/qt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qt——QML 连接信号和槽</title>
+      <link>https://cuizhan-rick.github.io/posts/296-qt-qml-%E8%BF%9E%E6%8E%A5%E4%BF%A1%E5%8F%B7%E5%92%8C%E6%A7%BD/</link>
+      <pubDate>Sat, 19 Apr 2025 09:48:32 +0800</pubDate>
+      
+      <guid>https://cuizhan-rick.github.io/posts/296-qt-qml-%E8%BF%9E%E6%8E%A5%E4%BF%A1%E5%8F%B7%E5%92%8C%E6%A7%BD/</guid>
+      <description>QML 类似网页开发，qt 魔改谷歌浏览器 v8 引擎 QML 采用 MVC 的编程思想 一个 qml 页面只能有一个根节点  qml 内部也可使用信号和槽连接的方式  Main.qml 文件  Window { id: win width: 420 height: 380 visible: true title: qsTr(&amp;#34;Hello World&amp;#34;) // 信号  signal qmlSig(int v, string s) // 槽函数  // 感觉像是一个 JavaScript 函数  function qmlSlot(v, s){ console.log(&amp;#34;qmlSlot:&amp;#34;, v, s) } // 连接 qml 端的信号和槽  // 方式一：通过 Connections 方式连接  Connections{ target: win // 注意函数名的规则  function onQmlSig(v, s){ console.</description>
+    </item>
+    
+    <item>
+      <title>Qt——Beginner Knowledge</title>
+      <link>https://cuizhan-rick.github.io/posts/295-qt-beginner-knowledge/</link>
+      <pubDate>Wed, 16 Apr 2025 19:31:26 +0800</pubDate>
+      
+      <guid>https://cuizhan-rick.github.io/posts/295-qt-beginner-knowledge/</guid>
+      <description>Qt 常用工具  qmake——》生成 pro 工程文件，并将 Qt 的 pro 工程编译出 makefile 文件 uic——》将 ui 设计界面的 xml 格式编译为 C++ 文件  Qt 工程编译 Qt string 编码问题  QTextCodec  信号和槽 语法要求</description>
+    </item>
+    
     <item>
       <title>Qt 多线程</title>
       <link>https://cuizhan-rick.github.io/posts/212-qt-%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>

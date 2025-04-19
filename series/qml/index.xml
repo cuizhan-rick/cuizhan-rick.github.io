@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>QML on Slow is Smooth and Smooth is Fast</title>
+    <link>https://cuizhan-rick.github.io/series/qml/</link>
+    <description>Recent content in QML on Slow is Smooth and Smooth is Fast</description>
+    <image>
+      <url>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 19 Apr 2025 09:48:32 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/series/qml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qt——QML 连接信号和槽</title>
+      <link>https://cuizhan-rick.github.io/posts/296-qt-qml-%E8%BF%9E%E6%8E%A5%E4%BF%A1%E5%8F%B7%E5%92%8C%E6%A7%BD/</link>
+      <pubDate>Sat, 19 Apr 2025 09:48:32 +0800</pubDate>
+      
+      <guid>https://cuizhan-rick.github.io/posts/296-qt-qml-%E8%BF%9E%E6%8E%A5%E4%BF%A1%E5%8F%B7%E5%92%8C%E6%A7%BD/</guid>
+      <description>QML 类似网页开发，qt 魔改谷歌浏览器 v8 引擎 QML 采用 MVC 的编程思想 一个 qml 页面只能有一个根节点  qml 内部也可使用信号和槽连接的方式  Main.qml 文件  Window { id: win width: 420 height: 380 visible: true title: qsTr(&amp;#34;Hello World&amp;#34;) // 信号  signal qmlSig(int v, string s) // 槽函数  // 感觉像是一个 JavaScript 函数  function qmlSlot(v, s){ console.log(&amp;#34;qmlSlot:&amp;#34;, v, s) } // 连接 qml 端的信号和槽  // 方式一：通过 Connections 方式连接  Connections{ target: win // 注意函数名的规则  function onQmlSig(v, s){ console.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -2,6 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://cuizhan-rick.github.io/categories/</loc>
+    <lastmod>2025-04-19T09:48:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cuizhan-rick.github.io/categories/code/</loc>
+    <lastmod>2025-04-19T09:48:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cuizhan-rick.github.io/posts/</loc>
+    <lastmod>2025-04-19T09:48:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cuizhan-rick.github.io/series/qml/</loc>
+    <lastmod>2025-04-19T09:48:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cuizhan-rick.github.io/tags/qt/</loc>
+    <lastmod>2025-04-19T09:48:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cuizhan-rick.github.io/posts/296-qt-qml-%E8%BF%9E%E6%8E%A5%E4%BF%A1%E5%8F%B7%E5%92%8C%E6%A7%BD/</loc>
+    <lastmod>2025-04-19T09:48:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cuizhan-rick.github.io/series/</loc>
+    <lastmod>2025-04-19T09:48:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cuizhan-rick.github.io/</loc>
+    <lastmod>2025-04-19T09:48:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cuizhan-rick.github.io/tags/</loc>
+    <lastmod>2025-04-19T09:48:32+08:00</lastmod>
+  </url><url>
+    <loc>https://cuizhan-rick.github.io/series/qt/</loc>
+    <lastmod>2025-04-16T19:31:26+08:00</lastmod>
+  </url><url>
+    <loc>https://cuizhan-rick.github.io/posts/295-qt-beginner-knowledge/</loc>
+    <lastmod>2025-04-16T19:31:26+08:00</lastmod>
+  </url><url>
     <loc>https://cuizhan-rick.github.io/tags/c&#43;&#43;/</loc>
     <lastmod>2024-12-17T22:10:14+08:00</lastmod>
   </url><url>
@@ -9,24 +42,6 @@
     <lastmod>2024-12-17T22:10:14+08:00</lastmod>
   </url><url>
     <loc>https://cuizhan-rick.github.io/posts/294-c&#43;&#43;-multithreading-concurrency/</loc>
-    <lastmod>2024-12-17T22:10:14+08:00</lastmod>
-  </url><url>
-    <loc>https://cuizhan-rick.github.io/categories/</loc>
-    <lastmod>2024-12-17T22:10:14+08:00</lastmod>
-  </url><url>
-    <loc>https://cuizhan-rick.github.io/categories/code/</loc>
-    <lastmod>2024-12-17T22:10:14+08:00</lastmod>
-  </url><url>
-    <loc>https://cuizhan-rick.github.io/posts/</loc>
-    <lastmod>2024-12-17T22:10:14+08:00</lastmod>
-  </url><url>
-    <loc>https://cuizhan-rick.github.io/series/</loc>
-    <lastmod>2024-12-17T22:10:14+08:00</lastmod>
-  </url><url>
-    <loc>https://cuizhan-rick.github.io/</loc>
-    <lastmod>2024-12-17T22:10:14+08:00</lastmod>
-  </url><url>
-    <loc>https://cuizhan-rick.github.io/tags/</loc>
     <lastmod>2024-12-17T22:10:14+08:00</lastmod>
   </url><url>
     <loc>https://cuizhan-rick.github.io/posts/293-c&#43;&#43;-use-algorithm-sort-with-c-array/</loc>
@@ -393,12 +408,6 @@
     <lastmod>2022-08-02T17:43:53+08:00</lastmod>
   </url><url>
     <loc>https://cuizhan-rick.github.io/tags/cmake/</loc>
-    <lastmod>2022-07-18T22:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://cuizhan-rick.github.io/tags/qt/</loc>
-    <lastmod>2022-07-18T22:17:00+08:00</lastmod>
-  </url><url>
-    <loc>https://cuizhan-rick.github.io/series/qt/</loc>
     <lastmod>2022-07-18T22:17:00+08:00</lastmod>
   </url><url>
     <loc>https://cuizhan-rick.github.io/posts/212-qt-%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>

@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>C&#43;&#43;——Multithreading Concurrency | Slow is Smooth and Smooth is Fast</title>
 <meta name="keywords" content="C&#43;&#43;" />
-<meta name="description" content="注意 join() 与 detach() 的区别 注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显示调用 std::ref）  condition_variable #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;queue&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt;#include &lt;chrono&gt;#include &lt;algorithm&gt; using namespace std; queue&lt;string&gt; mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lock&lt;mutex&gt; lck{ mmutex }; // acquire mmutex 	mcond.wait(lck); /* do nothing */ // release lck and wait; 	// re-acquire lck upon wakeup  cout &lt;&lt; &#34;queue size: &#34; &lt;&lt; mqueue.size() &lt;&lt; endl; auto m = mqueue.">
+<meta name="description" content="注意 join() 与 detach() 的区别 注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显式调用 std::ref）  condition_variable #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;queue&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt;#include &lt;chrono&gt;#include &lt;algorithm&gt; using namespace std; queue&lt;string&gt; mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lock&lt;mutex&gt; lck{ mmutex }; // acquire mmutex 	mcond.wait(lck); /* do nothing */ // release lck and wait; 	// re-acquire lck upon wakeup  cout &lt;&lt; &#34;queue size: &#34; &lt;&lt; mqueue.size() &lt;&lt; endl; auto m = mqueue.">
 <meta name="author" content="Rick Cui">
 <link rel="canonical" href="https://cuizhan-rick.github.io/posts/294-c&#43;&#43;-multithreading-concurrency/" />
 <meta name="google-site-verification" content="XYZabc" />
@@ -46,7 +46,7 @@ if (!doNotTrack) {
 	ga('send', 'pageview');
 }
 </script><meta property="og:title" content="C&#43;&#43;——Multithreading Concurrency" />
-<meta property="og:description" content="注意 join() 与 detach() 的区别 注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显示调用 std::ref）  condition_variable #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;queue&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt;#include &lt;chrono&gt;#include &lt;algorithm&gt; using namespace std; queue&lt;string&gt; mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lock&lt;mutex&gt; lck{ mmutex }; // acquire mmutex 	mcond.wait(lck); /* do nothing */ // release lck and wait; 	// re-acquire lck upon wakeup  cout &lt;&lt; &#34;queue size: &#34; &lt;&lt; mqueue.size() &lt;&lt; endl; auto m = mqueue." />
+<meta property="og:description" content="注意 join() 与 detach() 的区别 注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显式调用 std::ref）  condition_variable #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;queue&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt;#include &lt;chrono&gt;#include &lt;algorithm&gt; using namespace std; queue&lt;string&gt; mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lock&lt;mutex&gt; lck{ mmutex }; // acquire mmutex 	mcond.wait(lck); /* do nothing */ // release lck and wait; 	// re-acquire lck upon wakeup  cout &lt;&lt; &#34;queue size: &#34; &lt;&lt; mqueue.size() &lt;&lt; endl; auto m = mqueue." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cuizhan-rick.github.io/posts/294-c&#43;&#43;-multithreading-concurrency/" /><meta property="og:image" content="https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-12-17T22:10:14&#43;08:00" />
@@ -57,7 +57,7 @@ if (!doNotTrack) {
 <meta name="twitter:image" content="https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/>
 
 <meta name="twitter:title" content="C&#43;&#43;——Multithreading Concurrency"/>
-<meta name="twitter:description" content="注意 join() 与 detach() 的区别 注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显示调用 std::ref）  condition_variable #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;queue&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt;#include &lt;chrono&gt;#include &lt;algorithm&gt; using namespace std; queue&lt;string&gt; mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lock&lt;mutex&gt; lck{ mmutex }; // acquire mmutex 	mcond.wait(lck); /* do nothing */ // release lck and wait; 	// re-acquire lck upon wakeup  cout &lt;&lt; &#34;queue size: &#34; &lt;&lt; mqueue.size() &lt;&lt; endl; auto m = mqueue."/>
+<meta name="twitter:description" content="注意 join() 与 detach() 的区别 注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显式调用 std::ref）  condition_variable #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;queue&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt;#include &lt;chrono&gt;#include &lt;algorithm&gt; using namespace std; queue&lt;string&gt; mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lock&lt;mutex&gt; lck{ mmutex }; // acquire mmutex 	mcond.wait(lck); /* do nothing */ // release lck and wait; 	// re-acquire lck upon wakeup  cout &lt;&lt; &#34;queue size: &#34; &lt;&lt; mqueue.size() &lt;&lt; endl; auto m = mqueue."/>
 
 
 <script type="application/ld+json">
@@ -86,11 +86,11 @@ if (!doNotTrack) {
   "@type": "BlogPosting",
   "headline": "C++——Multithreading Concurrency",
   "name": "C\u002b\u002b——Multithreading Concurrency",
-  "description": "注意 join() 与 detach() 的区别 注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显示调用 std::ref）  condition_variable #include \u0026lt;iostream\u0026gt;#include \u0026lt;fstream\u0026gt;#include \u0026lt;string\u0026gt;#include \u0026lt;vector\u0026gt;#include \u0026lt;set\u0026gt;#include \u0026lt;queue\u0026gt;#include \u0026lt;thread\u0026gt;#include \u0026lt;mutex\u0026gt;#include \u0026lt;condition_variable\u0026gt;#include \u0026lt;chrono\u0026gt;#include \u0026lt;algorithm\u0026gt; using namespace std; queue\u0026lt;string\u0026gt; mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lock\u0026lt;mutex\u0026gt; lck{ mmutex }; // acquire mmutex \tmcond.wait(lck); /* do nothing */ // release lck and wait; \t// re-acquire lck upon wakeup  cout \u0026lt;\u0026lt; \u0026#34;queue size: \u0026#34; \u0026lt;\u0026lt; mqueue.size() \u0026lt;\u0026lt; endl; auto m = mqueue.",
+  "description": "注意 join() 与 detach() 的区别 注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显式调用 std::ref）  condition_variable #include \u0026lt;iostream\u0026gt;#include \u0026lt;fstream\u0026gt;#include \u0026lt;string\u0026gt;#include \u0026lt;vector\u0026gt;#include \u0026lt;set\u0026gt;#include \u0026lt;queue\u0026gt;#include \u0026lt;thread\u0026gt;#include \u0026lt;mutex\u0026gt;#include \u0026lt;condition_variable\u0026gt;#include \u0026lt;chrono\u0026gt;#include \u0026lt;algorithm\u0026gt; using namespace std; queue\u0026lt;string\u0026gt; mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lock\u0026lt;mutex\u0026gt; lck{ mmutex }; // acquire mmutex \tmcond.wait(lck); /* do nothing */ // release lck and wait; \t// re-acquire lck upon wakeup  cout \u0026lt;\u0026lt; \u0026#34;queue size: \u0026#34; \u0026lt;\u0026lt; mqueue.size() \u0026lt;\u0026lt; endl; auto m = mqueue.",
   "keywords": [
     "C++"
   ],
-  "articleBody": " 注意 join() 与 detach() 的区别 注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显示调用 std::ref）  condition_variable #include #include #include #include #include #include #include #include #include #include #include  using namespace std; queuestring mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lockmutex lck{ mmutex }; // acquire mmutex \tmcond.wait(lck); /* do nothing */ // release lck and wait; \t// re-acquire lck upon wakeup  cout  \"queue size: \"  mqueue.size()  endl; auto m = mqueue.front(); // get the message \tmqueue.pop(); cout  this_thread::get_id()  \" pop: \"  m  endl; lck.unlock(); // release lck \t// ... process m ... \t//cout \t} } void producer(){ int x{ 0 }; while (true) { // ... fill the message ... \tunique_lockmutex lck{ mmutex }; // protect operations \tstring m = to_string(x); mqueue.push(m); x++; cout  this_thread::get_id()  \" push into queue\\n\"; mcond.notify_one(); // notify  lck.unlock(); // this_thread::sleep_for(chrono::seconds{ 1 }); \t} // release lock (at end of scope) } void threadTest() { thread tc{ consumer }; thread tp{ producer }; tc.join(); tp.join(); } int main() try { threadTest(); return 0; } catch (const std::exception\u0026) { cout  \"exception\"  endl; } ",
+  "articleBody": " 注意 join() 与 detach() 的区别 注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显式调用 std::ref）  condition_variable #include #include #include #include #include #include #include #include #include #include #include  using namespace std; queuestring mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lockmutex lck{ mmutex }; // acquire mmutex \tmcond.wait(lck); /* do nothing */ // release lck and wait; \t// re-acquire lck upon wakeup  cout  \"queue size: \"  mqueue.size()  endl; auto m = mqueue.front(); // get the message \tmqueue.pop(); cout  this_thread::get_id()  \" pop: \"  m  endl; lck.unlock(); // release lck \t// ... process m ... \t//cout \t} } void producer(){ int x{ 0 }; while (true) { // ... fill the message ... \tunique_lockmutex lck{ mmutex }; // protect operations \tstring m = to_string(x); mqueue.push(m); x++; cout  this_thread::get_id()  \" push into queue\\n\"; mcond.notify_one(); // notify  lck.unlock(); // this_thread::sleep_for(chrono::seconds{ 1 }); \t} // release lock (at end of scope) } void threadTest() { thread tc{ consumer }; thread tp{ producer }; tc.join(); tp.join(); } int main() try { threadTest(); return 0; } catch (const std::exception\u0026) { cout  \"exception\"  endl; } ",
   "wordCount" : "187",
   "inLanguage": "en",
   "datePublished": "2024-12-17T22:10:14+08:00",
@@ -208,7 +208,7 @@ if (!doNotTrack) {
 
   <div class="post-content"><ul>
 <li>注意 <code>join()</code> 与 <code>detach()</code> 的区别</li>
-<li>注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显示调用 <code>std::ref</code>）</li>
+<li>注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显式调用 <code>std::ref</code>）</li>
 </ul>
 <p><img loading="lazy" style="margin: auto;" src=".././img/C&#43;&#43;-multithreading-concurrency.png" alt="C&#43;&#43;-multithreading-concurrency"  />
 </p>
@@ -292,6 +292,11 @@ mutex mmutex;
       <li><a href="https://cuizhan-rick.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
     </ul>
 <nav class="paginav">
+  <a class="prev" href="https://cuizhan-rick.github.io/posts/295-qt-beginner-knowledge/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>Qt——Beginner Knowledge</span>
+  </a>
   <a class="next" href="https://cuizhan-rick.github.io/posts/293-c&#43;&#43;-use-algorithm-sort-with-c-array/">
     <span class="title">Next Page »</span>
     <br>

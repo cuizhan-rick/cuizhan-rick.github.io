@@ -157,6 +157,30 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>C&#43;&#43;——stream iterator and unique copy
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>unique_copy 被拷贝序列需要是有序的  #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;algorithm&gt; using namespace std; int main() try { //ostream_iterator&lt;string&gt; oo{ cout }; 	//*oo = &#34;hello &#34;; 	//&#43;&#43;oo; 	//*oo = &#34;world!\n&#34;;  // 效果等于 cout &lt;&lt; &#34;hello world!\n&#34;;  // C:\Users\cui_z\source\repos\Practices\Debug\from.txt 	// C:\Users\cui_z\source\repos\Practices\Debug\to.txt 	//string from, to; 	//cin &gt;&gt; from &gt;&gt; to;	// get source and target file names 	//ifstream is{ from };	// input stream for file &#34;from&#34; 	//istream_iterator&lt;string&gt; ii{ is };	// input iterator for stream 	//istream_iterator&lt;string&gt; eos{};	// input sentinel 	//ofstream os{ to };	// output stream for file &#34;to&#34; 	//ostream_iterator&lt;string&gt; oo{ os,&#34;\n&#34; };	// output iterator for stream....</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-12-17 20:19:06 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to C&#43;&#43;——stream iterator and unique copy" href="https://cuizhan-rick.github.io/posts/291-c&#43;&#43;-stream-iterator-and-unique-copy/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>C&#43;&#43;——std equal range
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>函数操作的序列需是一个有序的，返回与目标值相等的序列（左闭右开） 算法通过实现 &lt; 操作符实现判断 = 的效果（交换前后两个操作数）  #include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;#include &lt;type_traits&gt;#include &lt;exception&gt; using namespace std; struct S { int number; char name; // note: name is ignored by this comparison operator  bool operator&lt;(const S&amp; s) const { return number &lt; s.number; } }; struct Comp { bool operator()(const S&amp; s, int i) const { return s.number &lt; i; } bool operator()(int i, const S&amp; s) const { return i &lt; s....</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-12-17 19:35:26 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to C&#43;&#43;——std equal range" href="https://cuizhan-rick.github.io/posts/290-c&#43;&#43;-std-equal-range-/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>SDF 生成有向距离场图片
     </h2>
   </header>
@@ -197,35 +221,6 @@ import argparse import subprocess import sys import os print(sys.version) def ex
   </section>
   <footer class="entry-footer"><span title='2024-12-15 14:54:27 +0800 CST'>December 15, 2024</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to Python 脚本生成火焰图" href="https://cuizhan-rick.github.io/posts/287-python-%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90%E7%81%AB%E7%84%B0%E5%9B%BE/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Python——tkinter 界面库
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>现在的 python 安装包中集成了 tkinter 库，无需单独安装。
-检查 tkinter 是否已安装
-测试脚本一：
-import tkinter as tk tk._test() 测试脚本二：
-import tkinter as tk # 创建一个简单的Tkinter窗口 root = tk.Tk() root.title(&#34;Tkinter检查&#34;) # 添加一个标签 label = tk.Label(root, text=&#34;Tkinter已安装！&#34;) label.pack() # 启动主事件循环 root.mainloop() </p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-15 12:46:31 +0800 CST'>December 15, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to Python——tkinter 界面库" href="https://cuizhan-rick.github.io/posts/286-python-tkinter-%E7%95%8C%E9%9D%A2%E5%BA%93/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>clip-tif-by-China-polygon
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>利用 QGIS，通过 Python 脚本批量实现根据矢量面数据对 Tiff 栅格数据进行裁切
-import os,sys,json # import gdal # from osgeo import gdal import concurrent.futures from multiprocessing import cpu_count MAX_WORKERS = cpu_count() # * 0.75 # 线程池的最大线程数 # gdal 命令 # &#34;C:\Program Files\QGIS 3.28.10\bin\gdalwarp.exe&#34; -overwrite -s_srs EPSG:4326 -t_srs EPSG:4326 -of GTiff -cutline D:/Work/dem/23M6版本国界/国界面.MIF -cl 国界面 -dstnodata -1000.0 D:/Work/dem/Quanguo_DEM_TIF_300/Quanguo300/quanguo300_06_37.tif D:/Work/dem/Quanguo_DEM_TIF_300/test.tif # 获得当前工作目录 current_path = os.path.abspath(__file__) current_dir = os.path.dirname(current_path) mask_layer_file = r&#34;{}/23M6版本国界/国界面.MIF&#34;.format(current_dir) if os.path.exists(mask_layer_file) == False: msg = &#34;ERROR: {}does not exit....</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-15 11:58:55 +0800 CST'>December 15, 2024</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to clip-tif-by-China-polygon" href="https://cuizhan-rick.github.io/posts/285-clip-tif-by-china-polygon/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
