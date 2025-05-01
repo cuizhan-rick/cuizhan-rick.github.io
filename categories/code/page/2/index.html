@@ -145,6 +145,18 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>C&#43;&#43;——template iterator-find_all
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>声明迭代器别名，typename 表示后面的内容为一种类型  #include &lt;iostream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;list&gt;#include &lt;memory&gt;using namespace std; template&lt;typename T&gt; using Iter = typename T::iterator; // 迭代器别名  template&lt;typename C, typename V&gt; vector&lt;Iter&lt;C&gt;&gt; find_all(C&amp; c, V v) // find all occurrences of v in c { vector&lt;Iter&lt;C&gt;&gt; res; for (auto p = c.begin(); p!=c.end(); &#43;&#43;p) if (*p==v) res.push_back(p); return res; } int main() { string m {&#34;Mary had a little lamb&#34;}; for (auto p : find_all(m,&#39;a&#39;)) // p is a string::iterator  if (*p!...</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-12-17 21:05:56 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to C&#43;&#43;——template iterator-find_all" href="https://cuizhan-rick.github.io/posts/292-c&#43;&#43;-template-iterator-find-all/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>C&#43;&#43;——stream iterator and unique copy
     </h2>
   </header>
@@ -197,20 +209,6 @@ class Solution { int sn; public: /** * 代码中的类名、方法名、参数�
   </section>
   <footer class="entry-footer"><span title='2024-12-13 14:52:14 +0800 CST'>December 13, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to 数据结构与算法——括号生成" href="https://cuizhan-rick.github.io/posts/284-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>数据结构与算法——矩阵的最小路径和
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>问题链接
-思路： 动态规划
-#include &lt;climits&gt;class Solution { public: /** * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可 * * * @param matrix int整型vector&lt;vector&lt;&gt;&gt; the matrix * @return int整型 */ int minPathSum(vector&lt;vector&lt;int&gt; &gt;&amp; matrix) { // write code here  auto rowNum = matrix.size(); auto colNum = matrix[0].size(); vector&lt;vector&lt;int&gt;&gt; sumMat(rowNum, vector&lt;int&gt;(colNum)); sumMat[0][0] = matrix[0][0]; // 初始化首行  for (auto i = 1; i != colNum; &#43;&#43;i) { sumMat[0][i] = sumMat[0][i - 1] &#43; matrix[0][i]; } // 初始化首列  for (auto i = 1; i !...</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-13 14:33:39 +0800 CST'>December 13, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to 数据结构与算法——矩阵的最小路径和" href="https://cuizhan-rick.github.io/posts/283-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

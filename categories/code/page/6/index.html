@@ -145,6 +145,30 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>WSL Ubuntu_2204 使用
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>WSL 中使用 Ubuntu_2204 参考：Windows 10 中的 Linux 子系统
+配置开发环境   Linux 常用命令参考
+  安装常用开发环境
+sudo apt-get install build-essential
+  安装 python 2.7  注意：Ubuntu_2204 中自带 python3，所以 python2 需要进行手动安装和配置。    查看已安装的版本
+ls /usr/bin/python*
+  安装 python2
+sudo apt-get install python2
+  设置默认版本
+sudo update-alternatives --list python
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
+sudo update-alternatives --config python...</p>
+  </section>
+  <footer class="entry-footer"><span title='2023-09-10 14:55:17 +0800 CST'>September 10, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to WSL Ubuntu_2204 使用" href="https://cuizhan-rick.github.io/posts/262-wsl-ubuntu_2204-%E4%BD%BF%E7%94%A8/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>C&#43;&#43;——打印枚举常量字符串
     </h2>
   </header>
@@ -207,20 +231,6 @@ git config --global user.name &#34;Git账号&#34; git config --global user.email
   </section>
   <footer class="entry-footer"><span title='2023-02-22 17:10:24 +0800 CST'>February 22, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to Git——stash TortoiseGit 将一个分支上的修改转移到另一个分支上" href="https://cuizhan-rick.github.io/posts/258-git-stash-%E5%B0%86%E4%B8%80%E4%B8%AA%E5%88%86%E6%94%AF%E4%B8%8A%E7%9A%84%E4%BF%AE%E6%94%B9%E8%BD%AC%E7%A7%BB%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%88%86%E6%94%AF%E4%B8%8A/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>数据结构与算法——二叉树遍历
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>先序遍历
-template&lt;typename T&gt; void PreOrder(BinaryTreeNode&lt;T&gt;* root){ stack&lt;BinaryTreeNode&lt;T&gt;*&gt; aStack; BinaryTreeNode&lt;T&gt;* pointer = root; aStack.push(nullptr); // 栈底监视哨  while(pointer){ // 或者 !aStack.empty()  Visit(pointer); // 访问当前结点  if(pointer-&gt;rightchild() != nullptr){ // 右孩子入栈  aStack.push(pointer-&gt;rightchild()); } if(pointer-&gt;leftchild() != nullptr){ // 左路下降  pointer = pointer-&gt;leftchild(); }else{ // 左子树访问完毕，转向访问右子树  pointer = aStack.top(); aStack.pop(); } } }   中序遍历
-template&lt;typename T&gt; void InOrder(BinaryTreeNode&lt;T&gt;* root){ stack&lt;BinaryTreeNode&lt;T&gt;*&gt; aStack; BinaryTreeNode&lt;T&gt;* pointer = root; while(!aStack.empty() || pointer){ if(pointer){ // Visit(pointer); // 前序访问点  aStack....</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-11-13 19:46:40 +0800 CST'>November 13, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to 数据结构与算法——二叉树遍历" href="https://cuizhan-rick.github.io/posts/255-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -160,6 +160,22 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Python 脚本生成火焰图
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>首先下载脚本代码。
+  安装 ActivePerl_5.16.2.3010812913.msi 并配置环境变量。
+  将 Python 脚本放到 FlameGraph-master 目录下运行。
+  python 脚本：
+import argparse import subprocess import sys import os print(sys.version) def execute_cmd(cmd): ret = subprocess.run(cmd, capture_output=True, shell=True, encoding=&#39;gb2312&#39;) if ret.returncode == 0: print(f&#39;command executed successfully: {cmd}.&#39;) else: print(ret.stderr) print(f&#39;command executed failed: {cmd}.&#39;) return ret def execute_cmd_redirect_to_file(cmd, file_name): with open(file_name, &#39;w&#39;) as f: ret = subprocess.run(cmd, text=True, stdout=f, shell=True, encoding=&#39;utf-8&#39;) if ret.returncode == 0: print(f&#39;command executed successfully: {cmd}....</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-12-15 14:54:27 +0800 CST'>December 15, 2024</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to Python 脚本生成火焰图" href="https://cuizhan-rick.github.io/posts/287-python-%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90%E7%81%AB%E7%84%B0%E5%9B%BE/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Python——tkinter 界面库
     </h2>
   </header>
@@ -215,23 +231,6 @@ class Solution { int sn; public: /** * 代码中的类名、方法名、参数�
   </section>
   <footer class="entry-footer"><span title='2024-12-13 14:33:39 +0800 CST'>December 13, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to 数据结构与算法——矩阵的最小路径和" href="https://cuizhan-rick.github.io/posts/283-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>数据结构与算法——旋转数组的最小数字
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>问题链接
-要求： 空间复杂度：O(1) ，时间复杂度：O(logn)
-思路： 分治
-方法一：二分查找，如果左半边没有找到 nums[i] &gt; nums[i&#43;1] 的逆序对，则查找右半边的部分，如果都没找到，说明序列是有序的，直接返回索引 0 即可，空间复杂度：O(logn) ，时间复杂度：O(logn)
-方法二：二分查找，如果 nums[mid] &gt; nums[high] 则向右半边查找，如果 nums[mid] &lt; nums[high] 则在左半边查找，如果相等则 high - 1 逐个判断
-class Solution { // 方案一  int calRotateIndex(vector&lt;int&gt;&amp; nums, int l, int h) { if(l &gt;= h) return -1; int mid = (l &#43; h) / 2; if (nums[mid] &gt; nums[mid&#43;1]) { return mid&#43;1; } int res = calRotateIndex(nums, l, mid); if (res == -1) { res = calRotateIndex(nums, mid &#43; 1, h); } return res; } // 方案二  int calRotateIndex2(vector&lt;int&gt;&amp; nums, int l, int h) { while (l &lt; h) { int mid = (l &#43; h) / 2; if (nums[mid] &lt; nums[h]) { h = mid; } else if (nums[mid] &gt; nums[h]) { l = mid &#43; 1; } else { h -= 1; } } return l; } public: /** * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可 * * * @param nums int整型vector * @return int整型 */ int minNumberInRotateArray(vector&lt;int&gt;&amp; nums) { // write code here  int l = 0, h = nums....</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-12 21:35:49 +0800 CST'>December 12, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to 数据结构与算法——旋转数组的最小数字" href="https://cuizhan-rick.github.io/posts/282-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

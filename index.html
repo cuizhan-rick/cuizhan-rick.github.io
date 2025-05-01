@@ -194,6 +194,20 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Qt——QML CMake 资源文件编译
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>在 Qt 6.2 高版本 QML 开发中，设置的图片资源不生效，比如指定窗口的图标
+{ QGuiApplication app(argc, argv); app.setWindowIcon(QIcon(&#34;:/images/music.png&#34;)); } 在工程中添加资源文件后，需要更改 CMake 文件配置
+cmake_minimum_required(VERSION 3.16) project(MyMusicPlayer VERSION 0.1 LANGUAGES CXX) set(CMAKE_CXX_STANDARD_REQUIRED ON) set(CMAKE_AUTORCC ON) # 编译资源文件 find_package(Qt6 REQUIRED COMPONENTS Quick) qt_standard_project_setup(REQUIRES 6.8) qt_add_executable(appMyMusicPlayer App.cpp ) qt_add_qml_module(appMyMusicPlayer URI MyMusicPlayer VERSION 1.0 QML_FILES App.qml RESOURCES images.qrc # 添加的资源文件 ) </p>
+  </section>
+  <footer class="entry-footer"><span title='2025-05-01 10:10:02 +0800 CST'>May 1, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to Qt——QML CMake 资源文件编译" href="https://cuizhan-rick.github.io/posts/297-qt-qml-cmake-%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Qt——QML 连接信号和槽
     </h2>
   </header>
@@ -210,7 +224,8 @@ if (!doNotTrack) {
     </h2>
   </header>
   <section class="entry-content">
-    <p>Qt 常用工具  qmake——》生成 pro 工程文件，并将 Qt 的 pro 工程编译出 makefile 文件 uic——》将 ui 设计界面的 xml 格式编译为 C&#43;&#43; 文件  Qt 工程编译 Qt string 编码问题  QTextCodec  信号和槽 语法要求</p>
+    <p>Qt 常用工具  qmake——》生成 pro 工程文件，并将 Qt 的 pro 工程编译出 makefile 文件 uic——》将 ui 设计界面的 xml 格式编译为 C&#43;&#43; 文件 windeployqt.exe——》打包 exe 运行包  Qt 工程编译 Qt string 编码问题  QTextCodec  信号和槽 语法要求
+数据库操作相关 </p>
   </section>
   <footer class="entry-footer"><span title='2025-04-16 19:31:26 +0800 CST'>April 16, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to Qt——Beginner Knowledge" href="https://cuizhan-rick.github.io/posts/295-qt-beginner-knowledge/"></a>
@@ -238,18 +253,6 @@ if (!doNotTrack) {
   </section>
   <footer class="entry-footer"><span title='2024-12-17 21:33:17 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43;——use algorithm sort with C array" href="https://cuizhan-rick.github.io/posts/293-c&#43;&#43;-use-algorithm-sort-with-c-array/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>C&#43;&#43;——template iterator-find_all
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>声明迭代器别名，typename 表示后面的内容为一种类型  #include &lt;iostream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;list&gt;#include &lt;memory&gt;using namespace std; template&lt;typename T&gt; using Iter = typename T::iterator; // 迭代器别名  template&lt;typename C, typename V&gt; vector&lt;Iter&lt;C&gt;&gt; find_all(C&amp; c, V v) // find all occurrences of v in c { vector&lt;Iter&lt;C&gt;&gt; res; for (auto p = c.begin(); p!=c.end(); &#43;&#43;p) if (*p==v) res.push_back(p); return res; } int main() { string m {&#34;Mary had a little lamb&#34;}; for (auto p : find_all(m,&#39;a&#39;)) // p is a string::iterator  if (*p!...</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-17 21:05:56 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to C&#43;&#43;——template iterator-find_all" href="https://cuizhan-rick.github.io/posts/292-c&#43;&#43;-template-iterator-find-all/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

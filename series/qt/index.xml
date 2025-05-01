@@ -16,7 +16,8 @@
       <pubDate>Wed, 16 Apr 2025 19:31:26 +0800</pubDate>
       
       <guid>https://cuizhan-rick.github.io/posts/295-qt-beginner-knowledge/</guid>
-      <description>Qt 常用工具  qmake——》生成 pro 工程文件，并将 Qt 的 pro 工程编译出 makefile 文件 uic——》将 ui 设计界面的 xml 格式编译为 C++ 文件  Qt 工程编译 Qt string 编码问题  QTextCodec  信号和槽 语法要求</description>
+      <description>Qt 常用工具  qmake——》生成 pro 工程文件，并将 Qt 的 pro 工程编译出 makefile 文件 uic——》将 ui 设计界面的 xml 格式编译为 C++ 文件 windeployqt.exe——》打包 exe 运行包  Qt 工程编译 Qt string 编码问题  QTextCodec  信号和槽 语法要求
+数据库操作相关 </description>
     </item>
     
     <item>

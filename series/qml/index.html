@@ -145,6 +145,20 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Qt——QML CMake 资源文件编译
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>在 Qt 6.2 高版本 QML 开发中，设置的图片资源不生效，比如指定窗口的图标
+{ QGuiApplication app(argc, argv); app.setWindowIcon(QIcon(&#34;:/images/music.png&#34;)); } 在工程中添加资源文件后，需要更改 CMake 文件配置
+cmake_minimum_required(VERSION 3.16) project(MyMusicPlayer VERSION 0.1 LANGUAGES CXX) set(CMAKE_CXX_STANDARD_REQUIRED ON) set(CMAKE_AUTORCC ON) # 编译资源文件 find_package(Qt6 REQUIRED COMPONENTS Quick) qt_standard_project_setup(REQUIRES 6.8) qt_add_executable(appMyMusicPlayer App.cpp ) qt_add_qml_module(appMyMusicPlayer URI MyMusicPlayer VERSION 1.0 QML_FILES App.qml RESOURCES images.qrc # 添加的资源文件 ) </p>
+  </section>
+  <footer class="entry-footer"><span title='2025-05-01 10:10:02 +0800 CST'>May 1, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to Qt——QML CMake 资源文件编译" href="https://cuizhan-rick.github.io/posts/297-qt-qml-cmake-%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>Qt——QML 连接信号和槽
     </h2>
   </header>

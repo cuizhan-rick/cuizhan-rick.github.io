@@ -145,6 +145,18 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>数据结构与算法——Shell Sort
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>#include &lt;iostream&gt; void shellSort(int A[], int n){ int gap, i, j, temp; for(gap = n/2; gap &gt;= 1; gap /= 2){ for(i = gap; i &lt; n; &#43;&#43;i){ temp = A[i]; j = i - gap; while(j &gt;= 0 &amp;&amp; A[j] &gt; temp){ A[j&#43;gap] = A[j]; j = j - gap; } A[j &#43; gap] = temp; } } } int main() { int A[] = {8, 3, 7, 4, 9, 2, 6, 5, 1, 11, 10}; int n = 11; shellSort(A, n); for(int i = 0; i &lt; n; &#43;&#43;i){ std::cout&lt;&lt;A[i] &lt;&lt; &#34; &#34;; } return 0; } </p>
+  </section>
+  <footer class="entry-footer"><span title='2024-06-21 21:40:45 +0800 CST'>June 21, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to 数据结构与算法——Shell Sort" href="https://cuizhan-rick.github.io/posts/276-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-shell-sort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>数据结构与算法——Merge Sort
     </h2>
   </header>
@@ -194,33 +206,6 @@ if (!doNotTrack) {
   </section>
   <footer class="entry-footer"><span title='2024-02-21 09:35:58 +0800 CST'>February 21, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43;——Function Style Cast 有歧义" href="https://cuizhan-rick.github.io/posts/272-c&#43;&#43;-function-style-cast-%E6%9C%89%E6%AD%A7%E4%B9%89/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>Ubuntu 升级 GCC 版本
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>GCC 源码网址 https://ftp.gnu.org/gnu/gcc/
-源码安装参考这里
-  添加相应的源
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-如果提示 add-apt-repository: command not found，需要安装 sudo apt-get install software-properties-common
-  更新软件源
-sudo apt-get update
-  安装指定版本的 gcc
-sudo apt-get install gcc-9
-查看 gcc
-find / -name &#34;gcc*&#34;
-dpkg -l | grep gcc
-  指定默认使用的 gcc 版本
-通过 update-alternatives 建立文件关联，如果安装了同一个软件的不同版本，可以使用 update-alternatives 命令设置默认使用哪个
-首先要让系统知道我们安装了多个版本的 gcc
-# 命令最后的 20 和 50 是优先级，如果使用 auto 选择模式，系统将默认使用优先级高的 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 20 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 50   查看 gcc 版本...</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-01-08 18:35:40 +0800 CST'>January 8, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to Ubuntu 升级 GCC 版本" href="https://cuizhan-rick.github.io/posts/271-ubuntu-%E5%8D%87%E7%BA%A7-gcc-%E7%89%88%E6%9C%AC/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

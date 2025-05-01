@@ -157,6 +157,18 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>C&#43;&#43;——template iterator-find_all
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>声明迭代器别名，typename 表示后面的内容为一种类型  #include &lt;iostream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;list&gt;#include &lt;memory&gt;using namespace std; template&lt;typename T&gt; using Iter = typename T::iterator; // 迭代器别名  template&lt;typename C, typename V&gt; vector&lt;Iter&lt;C&gt;&gt; find_all(C&amp; c, V v) // find all occurrences of v in c { vector&lt;Iter&lt;C&gt;&gt; res; for (auto p = c.begin(); p!=c.end(); &#43;&#43;p) if (*p==v) res.push_back(p); return res; } int main() { string m {&#34;Mary had a little lamb&#34;}; for (auto p : find_all(m,&#39;a&#39;)) // p is a string::iterator  if (*p!...</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-12-17 21:05:56 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to C&#43;&#43;——template iterator-find_all" href="https://cuizhan-rick.github.io/posts/292-c&#43;&#43;-template-iterator-find-all/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>C&#43;&#43;——stream iterator and unique copy
     </h2>
   </header>
@@ -205,22 +217,6 @@ class SDFTexture { public: SDFTexture(rs::Texture*, float pixelDist); ~SDFTextur
   </section>
   <footer class="entry-footer"><span title='2024-12-15 15:38:34 +0800 CST'>December 15, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to Python Loop 运行 Command 脚本" href="https://cuizhan-rick.github.io/posts/288-python-loop-%E8%BF%90%E8%A1%8C-command-%E8%84%9A%E6%9C%AC/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Python 脚本生成火焰图
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>首先下载脚本代码。
-  安装 ActivePerl_5.16.2.3010812913.msi 并配置环境变量。
-  将 Python 脚本放到 FlameGraph-master 目录下运行。
-  python 脚本：
-import argparse import subprocess import sys import os print(sys.version) def execute_cmd(cmd): ret = subprocess.run(cmd, capture_output=True, shell=True, encoding=&#39;gb2312&#39;) if ret.returncode == 0: print(f&#39;command executed successfully: {cmd}.&#39;) else: print(ret.stderr) print(f&#39;command executed failed: {cmd}.&#39;) return ret def execute_cmd_redirect_to_file(cmd, file_name): with open(file_name, &#39;w&#39;) as f: ret = subprocess.run(cmd, text=True, stdout=f, shell=True, encoding=&#39;utf-8&#39;) if ret.returncode == 0: print(f&#39;command executed successfully: {cmd}....</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-15 14:54:27 +0800 CST'>December 15, 2024</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to Python 脚本生成火焰图" href="https://cuizhan-rick.github.io/posts/287-python-%E8%84%9A%E6%9C%AC%E7%94%9F%E6%88%90%E7%81%AB%E7%84%B0%E5%9B%BE/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

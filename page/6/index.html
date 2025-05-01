@@ -157,6 +157,18 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>C&#43;&#43;——Function Style Cast 有歧义
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>#include &lt;iostream&gt;#include &lt;string&gt;using namespace std; struct Print { template&lt;typename T&gt; Print(T t){ cout&lt;&lt;(t&#43;=10); } }; struct S { S(int a){ cout &lt;&lt; a &lt;&lt; endl; }; }; void foo(double a) { S w(int(a)); // function declaration // S x(int()); // function declaration  S y((int(a))); // object declaration  S yy((int)a); // object declaration  S z = int(a); // object declaration } template &lt;class T&gt; struct X {}; template &lt;int N&gt; struct Y {}; X&lt;int()&gt; a; // type-id X&lt;int(1)&gt; b; // expression (ill-formed) Y&lt;int()&gt; c; // type-id (ill-formed) Y&lt;int(1)&gt; d; // expression void foo(signed char a) { sizeof(int()); // type-id (ill-formed)  sizeof(int(a)); // expression  sizeof(int(unsigned(a))); // type-id (ill-formed)  (int())&#43;1; // type-id (ill-formed)  (int(a))&#43;1; // expression  (int(unsigned(a)))&#43;1; // type-id (ill-formed)  } int main() { // 这句为什么是一句函数声明而不是变量创建？  double a = 3....</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-02-21 09:35:58 +0800 CST'>February 21, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to C&#43;&#43;——Function Style Cast 有歧义" href="https://cuizhan-rick.github.io/posts/272-c&#43;&#43;-function-style-cast-%E6%9C%89%E6%AD%A7%E4%B9%89/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Ubuntu 升级 GCC 版本
     </h2>
   </header>
@@ -233,27 +245,6 @@ adb shell pm list packages -3...</p>
   </section>
   <footer class="entry-footer"><span title='2023-12-23 11:59:04 +0800 CST'>December 23, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to adb 常用命令" href="https://cuizhan-rick.github.io/posts/268-adb-%E4%B8%8E%E5%AE%89%E5%8D%93%E4%BD%BF%E7%94%A8/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Ubuntu 编译指定版本的 curl 库
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>  卸载原有版本的 curl
-apt-get --purge remove curl
-  下载所需版本的 curl
-wget https://curl.se/download/curl-7.47.1.tar.gz
-  解压并编译
-tar -zxvf curl-7.47.1.tar.gz cd curl-7.47.1 ./configure shared make make install   编译好的可执行文件在 /usr/local/bin 目录下
-编译好的动态库和静态库在 /usr/local/lib 目录下
-  创建可执行文件和动态链接库的软连接
-  参考：
- curl download archive ubuntu卸载安装curl Linux下更新curl版本  </p>
-  </section>
-  <footer class="entry-footer"><span title='2023-11-03 18:18:30 +0800 CST'>November 3, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to Ubuntu 编译指定版本的 curl 库" href="https://cuizhan-rick.github.io/posts/267-ubuntu-%E7%BC%96%E8%AF%91%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC%E7%9A%84-curl-%E5%BA%93/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

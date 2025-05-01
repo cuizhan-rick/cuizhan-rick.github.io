@@ -160,6 +160,23 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>数据结构与算法——旋转数组的最小数字
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>问题链接
+要求： 空间复杂度：O(1) ，时间复杂度：O(logn)
+思路： 分治
+方法一：二分查找，如果左半边没有找到 nums[i] &gt; nums[i&#43;1] 的逆序对，则查找右半边的部分，如果都没找到，说明序列是有序的，直接返回索引 0 即可，空间复杂度：O(logn) ，时间复杂度：O(logn)
+方法二：二分查找，如果 nums[mid] &gt; nums[high] 则向右半边查找，如果 nums[mid] &lt; nums[high] 则在左半边查找，如果相等则 high - 1 逐个判断
+class Solution { // 方案一  int calRotateIndex(vector&lt;int&gt;&amp; nums, int l, int h) { if(l &gt;= h) return -1; int mid = (l &#43; h) / 2; if (nums[mid] &gt; nums[mid&#43;1]) { return mid&#43;1; } int res = calRotateIndex(nums, l, mid); if (res == -1) { res = calRotateIndex(nums, mid &#43; 1, h); } return res; } // 方案二  int calRotateIndex2(vector&lt;int&gt;&amp; nums, int l, int h) { while (l &lt; h) { int mid = (l &#43; h) / 2; if (nums[mid] &lt; nums[h]) { h = mid; } else if (nums[mid] &gt; nums[h]) { l = mid &#43; 1; } else { h -= 1; } } return l; } public: /** * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可 * * * @param nums int整型vector * @return int整型 */ int minNumberInRotateArray(vector&lt;int&gt;&amp; nums) { // write code here  int l = 0, h = nums....</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-12-12 21:35:49 +0800 CST'>December 12, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to 数据结构与算法——旋转数组的最小数字" href="https://cuizhan-rick.github.io/posts/282-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>数据结构与算法——数组中的逆序对
     </h2>
   </header>
@@ -217,24 +234,6 @@ if (!doNotTrack) {
   </section>
   <footer class="entry-footer"><span title='2024-10-12 20:41:33 +0800 CST'>October 12, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to 数据结构与算法——Hamiltonian Cycles" href="https://cuizhan-rick.github.io/posts/278-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-hamiltonian-cycles/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>数据结构与算法——Permutation a String
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>state space tree
-Back Tracking (DFS)
-brute force
-recursion
-Branch and Bound (BFS)
-算法一：
-#include &lt;iostream&gt;using namespace std; void permutation(char S[], int k){ static int A[10] = {0}; static char res[10] = {0}; if(S[k] == &#39;\0&#39;){ res[k] = &#39;\0&#39;; printf(&#34;%s\n&#34;, res); } else{ for(int i = 0; S[i] != &#39;\0&#39;; &#43;&#43;i){ if(A[i] == 0){ A[i] = 1; res[k] = S[i]; permutation(S, k&#43;1); A[i] = 0; } } } } int main() { char S[] = &#34;ABC&#34;; permutation(S, 0); return 0; } output:...</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-09-27 22:06:51 +0800 CST'>September 27, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to 数据结构与算法——Permutation a String" href="https://cuizhan-rick.github.io/posts/277-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-permutation-a-string/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

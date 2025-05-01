@@ -145,6 +145,20 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>数据结构与算法——矩阵的最小路径和
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>问题链接
+思路： 动态规划
+#include &lt;climits&gt;class Solution { public: /** * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可 * * * @param matrix int整型vector&lt;vector&lt;&gt;&gt; the matrix * @return int整型 */ int minPathSum(vector&lt;vector&lt;int&gt; &gt;&amp; matrix) { // write code here  auto rowNum = matrix.size(); auto colNum = matrix[0].size(); vector&lt;vector&lt;int&gt;&gt; sumMat(rowNum, vector&lt;int&gt;(colNum)); sumMat[0][0] = matrix[0][0]; // 初始化首行  for (auto i = 1; i != colNum; &#43;&#43;i) { sumMat[0][i] = sumMat[0][i - 1] &#43; matrix[0][i]; } // 初始化首列  for (auto i = 1; i !...</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-12-13 14:33:39 +0800 CST'>December 13, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to 数据结构与算法——矩阵的最小路径和" href="https://cuizhan-rick.github.io/posts/283-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>数据结构与算法——单链表的排序
     </h2>
   </header>
@@ -205,18 +219,6 @@ Branch and Bound (BFS)
   </section>
   <footer class="entry-footer"><span title='2024-09-27 22:06:51 +0800 CST'>September 27, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to 数据结构与算法——Permutation a String" href="https://cuizhan-rick.github.io/posts/277-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-permutation-a-string/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>数据结构与算法——Shell Sort
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>#include &lt;iostream&gt; void shellSort(int A[], int n){ int gap, i, j, temp; for(gap = n/2; gap &gt;= 1; gap /= 2){ for(i = gap; i &lt; n; &#43;&#43;i){ temp = A[i]; j = i - gap; while(j &gt;= 0 &amp;&amp; A[j] &gt; temp){ A[j&#43;gap] = A[j]; j = j - gap; } A[j &#43; gap] = temp; } } } int main() { int A[] = {8, 3, 7, 4, 9, 2, 6, 5, 1, 11, 10}; int n = 11; shellSort(A, n); for(int i = 0; i &lt; n; &#43;&#43;i){ std::cout&lt;&lt;A[i] &lt;&lt; &#34; &#34;; } return 0; } </p>
-  </section>
-  <footer class="entry-footer"><span title='2024-06-21 21:40:45 +0800 CST'>June 21, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to 数据结构与算法——Shell Sort" href="https://cuizhan-rick.github.io/posts/276-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-shell-sort/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -145,6 +145,18 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Qt TCP
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>一、总结  TCP 就像打电话，安全，不会丢包 Linux TCP 通信  Qt TCP 通信   二、服务器端  TCP 服务器端有两个套接字，一个是监听套接字，一个是通信套接字  tcpServer = nullptr; // 服务监听套接字  tcpSocket = nullptr; // 通信套接字  // 创建tcp服务监听套接字  tcpServer = new QTcpServer(this); // tcp服务开启监听（bind端口号并开启监听）  tcpServer-&gt;listen(QHostAddress::Any, 8008); // 绑定连接成功信号  connect(tcpServer, &amp;QTcpServer::newConnection,[=](){ // 获取通信套接字  tcpSocket = tcpServer-&gt;nextPendingConnection(); // 获取客户端 IP 和 端口  QString ip = tcpSocket-&gt;peerAddress().toString(); quint16 port = tcpSocket-&gt;peerPort(); QString msg = QString(&#34;[%1:%2] 连接成功&#34;)....</p>
+  </section>
+  <footer class="entry-footer"><span title='2022-07-15 21:13:10 +0800 CST'>July 15, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to Qt TCP" href="https://cuizhan-rick.github.io/posts/208-qt-tcp/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>Qt CMake
     </h2>
   </header>

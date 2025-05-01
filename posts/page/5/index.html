@@ -160,6 +160,24 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>数据结构与算法——Permutation a String
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>state space tree
+Back Tracking (DFS)
+brute force
+recursion
+Branch and Bound (BFS)
+算法一：
+#include &lt;iostream&gt;using namespace std; void permutation(char S[], int k){ static int A[10] = {0}; static char res[10] = {0}; if(S[k] == &#39;\0&#39;){ res[k] = &#39;\0&#39;; printf(&#34;%s\n&#34;, res); } else{ for(int i = 0; S[i] != &#39;\0&#39;; &#43;&#43;i){ if(A[i] == 0){ A[i] = 1; res[k] = S[i]; permutation(S, k&#43;1); A[i] = 0; } } } } int main() { char S[] = &#34;ABC&#34;; permutation(S, 0); return 0; } output:...</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-09-27 22:06:51 +0800 CST'>September 27, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to 数据结构与算法——Permutation a String" href="https://cuizhan-rick.github.io/posts/277-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-permutation-a-string/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>数据结构与算法——Shell Sort
     </h2>
   </header>
@@ -209,18 +227,6 @@ if (!doNotTrack) {
   </section>
   <footer class="entry-footer"><span title='2024-04-02 18:27:04 +0800 CST'>April 2, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43;——统计代码行数" href="https://cuizhan-rick.github.io/posts/273-c&#43;&#43;-%E7%BB%9F%E8%AE%A1%E4%BB%A3%E7%A0%81%E8%A1%8C%E6%95%B0/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>C&#43;&#43;——Function Style Cast 有歧义
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>#include &lt;iostream&gt;#include &lt;string&gt;using namespace std; struct Print { template&lt;typename T&gt; Print(T t){ cout&lt;&lt;(t&#43;=10); } }; struct S { S(int a){ cout &lt;&lt; a &lt;&lt; endl; }; }; void foo(double a) { S w(int(a)); // function declaration // S x(int()); // function declaration  S y((int(a))); // object declaration  S yy((int)a); // object declaration  S z = int(a); // object declaration } template &lt;class T&gt; struct X {}; template &lt;int N&gt; struct Y {}; X&lt;int()&gt; a; // type-id X&lt;int(1)&gt; b; // expression (ill-formed) Y&lt;int()&gt; c; // type-id (ill-formed) Y&lt;int(1)&gt; d; // expression void foo(signed char a) { sizeof(int()); // type-id (ill-formed)  sizeof(int(a)); // expression  sizeof(int(unsigned(a))); // type-id (ill-formed)  (int())&#43;1; // type-id (ill-formed)  (int(a))&#43;1; // expression  (int(unsigned(a)))&#43;1; // type-id (ill-formed)  } int main() { // 这句为什么是一句函数声明而不是变量创建？  double a = 3....</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-02-21 09:35:58 +0800 CST'>February 21, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to C&#43;&#43;——Function Style Cast 有歧义" href="https://cuizhan-rick.github.io/posts/272-c&#43;&#43;-function-style-cast-%E6%9C%89%E6%AD%A7%E4%B9%89/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

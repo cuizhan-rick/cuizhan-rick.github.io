@@ -9,7 +9,18 @@
       <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 19 Apr 2025 09:48:32 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 May 2025 10:10:02 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qt——QML CMake 资源文件编译</title>
+      <link>https://cuizhan-rick.github.io/posts/297-qt-qml-cmake-%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Thu, 01 May 2025 10:10:02 +0800</pubDate>
+      
+      <guid>https://cuizhan-rick.github.io/posts/297-qt-qml-cmake-%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91/</guid>
+      <description>在 Qt 6.2 高版本 QML 开发中，设置的图片资源不生效，比如指定窗口的图标
+{ QGuiApplication app(argc, argv); app.setWindowIcon(QIcon(&amp;#34;:/images/music.png&amp;#34;)); } 在工程中添加资源文件后，需要更改 CMake 文件配置
+cmake_minimum_required(VERSION 3.16) project(MyMusicPlayer VERSION 0.1 LANGUAGES CXX) set(CMAKE_CXX_STANDARD_REQUIRED ON) set(CMAKE_AUTORCC ON) # 编译资源文件 find_package(Qt6 REQUIRED COMPONENTS Quick) qt_standard_project_setup(REQUIRES 6.8) qt_add_executable(appMyMusicPlayer App.cpp ) qt_add_qml_module(appMyMusicPlayer URI MyMusicPlayer VERSION 1.0 QML_FILES App.qml RESOURCES images.qrc # 添加的资源文件 ) </description>
+    </item>
+    
     <item>
       <title>Qt——QML 连接信号和槽</title>
       <link>https://cuizhan-rick.github.io/posts/296-qt-qml-%E8%BF%9E%E6%8E%A5%E4%BF%A1%E5%8F%B7%E5%92%8C%E6%A7%BD/</link>
@@ -25,7 +36,8 @@
       <pubDate>Wed, 16 Apr 2025 19:31:26 +0800</pubDate>
       
       <guid>https://cuizhan-rick.github.io/posts/295-qt-beginner-knowledge/</guid>
-      <description>Qt 常用工具  qmake——》生成 pro 工程文件，并将 Qt 的 pro 工程编译出 makefile 文件 uic——》将 ui 设计界面的 xml 格式编译为 C++ 文件  Qt 工程编译 Qt string 编码问题  QTextCodec  信号和槽 语法要求</description>
+      <description>Qt 常用工具  qmake——》生成 pro 工程文件，并将 Qt 的 pro 工程编译出 makefile 文件 uic——》将 ui 设计界面的 xml 格式编译为 C++ 文件 windeployqt.exe——》打包 exe 运行包  Qt 工程编译 Qt string 编码问题  QTextCodec  信号和槽 语法要求
+数据库操作相关 </description>
     </item>
     
     <item>

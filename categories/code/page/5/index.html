@@ -145,6 +145,33 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Ubuntu 升级 GCC 版本
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>GCC 源码网址 https://ftp.gnu.org/gnu/gcc/
+源码安装参考这里
+  添加相应的源
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+如果提示 add-apt-repository: command not found，需要安装 sudo apt-get install software-properties-common
+  更新软件源
+sudo apt-get update
+  安装指定版本的 gcc
+sudo apt-get install gcc-9
+查看 gcc
+find / -name &#34;gcc*&#34;
+dpkg -l | grep gcc
+  指定默认使用的 gcc 版本
+通过 update-alternatives 建立文件关联，如果安装了同一个软件的不同版本，可以使用 update-alternatives 命令设置默认使用哪个
+首先要让系统知道我们安装了多个版本的 gcc
+# 命令最后的 20 和 50 是优先级，如果使用 auto 选择模式，系统将默认使用优先级高的 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 20 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 50   查看 gcc 版本...</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-01-08 18:35:40 +0800 CST'>January 8, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to Ubuntu 升级 GCC 版本" href="https://cuizhan-rick.github.io/posts/271-ubuntu-%E5%8D%87%E7%BA%A7-gcc-%E7%89%88%E6%9C%AC/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>Ubuntu 编译指定版本的 curl 库
     </h2>
   </header>
@@ -239,30 +266,6 @@ sudo apt install gcovr
   </section>
   <footer class="entry-footer"><span title='2023-09-11 09:34:47 +0800 CST'>September 11, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to WSL Ubuntu 使用 SonarQube" href="https://cuizhan-rick.github.io/posts/263-wsl-ubuntu_%E4%BD%BF%E7%94%A8-sonarqube/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>WSL Ubuntu_2204 使用
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>WSL 中使用 Ubuntu_2204 参考：Windows 10 中的 Linux 子系统
-配置开发环境   Linux 常用命令参考
-  安装常用开发环境
-sudo apt-get install build-essential
-  安装 python 2.7  注意：Ubuntu_2204 中自带 python3，所以 python2 需要进行手动安装和配置。    查看已安装的版本
-ls /usr/bin/python*
-  安装 python2
-sudo apt-get install python2
-  设置默认版本
-sudo update-alternatives --list python
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
-sudo update-alternatives --config python...</p>
-  </section>
-  <footer class="entry-footer"><span title='2023-09-10 14:55:17 +0800 CST'>September 10, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to WSL Ubuntu_2204 使用" href="https://cuizhan-rick.github.io/posts/262-wsl-ubuntu_2204-%E4%BD%BF%E7%94%A8/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
