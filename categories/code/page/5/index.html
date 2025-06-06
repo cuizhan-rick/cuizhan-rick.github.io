@@ -145,6 +145,18 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>C&#43;&#43;——Function Style Cast 有歧义
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>#include &lt;iostream&gt;#include &lt;string&gt;using namespace std; struct Print { template&lt;typename T&gt; Print(T t){ cout&lt;&lt;(t&#43;=10); } }; struct S { S(int a){ cout &lt;&lt; a &lt;&lt; endl; }; }; void foo(double a) { S w(int(a)); // function declaration // S x(int()); // function declaration  S y((int(a))); // object declaration  S yy((int)a); // object declaration  S z = int(a); // object declaration } template &lt;class T&gt; struct X {}; template &lt;int N&gt; struct Y {}; X&lt;int()&gt; a; // type-id X&lt;int(1)&gt; b; // expression (ill-formed) Y&lt;int()&gt; c; // type-id (ill-formed) Y&lt;int(1)&gt; d; // expression void foo(signed char a) { sizeof(int()); // type-id (ill-formed)  sizeof(int(a)); // expression  sizeof(int(unsigned(a))); // type-id (ill-formed)  (int())&#43;1; // type-id (ill-formed)  (int(a))&#43;1; // expression  (int(unsigned(a)))&#43;1; // type-id (ill-formed)  } int main() { // 这句为什么是一句函数声明而不是变量创建？  double a = 3....</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-02-21 09:35:58 +0800 CST'>February 21, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to C&#43;&#43;——Function Style Cast 有歧义" href="https://cuizhan-rick.github.io/posts/272-c&#43;&#43;-function-style-cast-%E6%9C%89%E6%AD%A7%E4%B9%89/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>Ubuntu 升级 GCC 版本
     </h2>
   </header>
@@ -242,30 +254,6 @@ apt install python-pip
   </section>
   <footer class="entry-footer"><span title='2023-10-30 21:47:38 +0800 CST'>October 30, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to Docker Ubuntu 16.04 Sonnar" href="https://cuizhan-rick.github.io/posts/265-docker-ubuntu-16.04-sonnar/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>WSL Ubuntu 使用 SonarQube
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>下载 Build Wrapper：
-{SonarQube URL}/static/cpp/build-wrapper-linux-x86.zip
-  下载 SonarScanner：
-https://docs.sonarqube.org/latest//analyzing-source-code/scanners/sonarscanner/#running-from-zip-file
-  配置环境变量：
-export PATH=&#34;/home/rick/sonar/build-wrapper-linux-x86:/home/rick/sonar/sonar-scanner-5.0.1.3006-linux/bin:$PATH&#34;
-注意：
- 配置的 build-wrapper-linux-x86 和 sonar-scanner-5.0.1.3006-linux 文件夹要有 可执行权限 sonar-scanner-5.0.1.3006-linux 中有 jre 环境，不用再安装 jre 了，但文件夹也要有可执行权限    安装 CMake
-sudo apt install cmake
-  安装 gcovr（计算 gtest 单元测试分支覆盖率）
-sudo apt install gcovr
-注意：
- Ubuntu 1804 系统中通过 apt 安装的 gcovr 版本太低，不支持参数 --sonarqube，可通过 pip3 安装 5.0 版本  pip3 install pip_search pip_search gcovr pip3 install -U gcovr pip3 show gcovr   安装 gtest 库...</p>
-  </section>
-  <footer class="entry-footer"><span title='2023-09-11 09:34:47 +0800 CST'>September 11, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to WSL Ubuntu 使用 SonarQube" href="https://cuizhan-rick.github.io/posts/263-wsl-ubuntu_%E4%BD%BF%E7%94%A8-sonarqube/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

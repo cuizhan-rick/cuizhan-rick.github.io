@@ -145,6 +145,18 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>C&#43;&#43;——两个线程交替打印输出
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>#include &lt;iostream&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt; using namespace std; mutex cv_m; condition_variable cv; int main() { bool isA = true; thread t1([&amp;isA]() {	// lambda 表达式只能捕获局部变量，不能捕获具有静态变量时长的变量 	// 全局变量不用捕获 	while (1) { unique_lock&lt;mutex&gt; lc(cv_m); cv.wait(lc, [&amp;isA]() {return isA; });	// 如果第二个参数（谓词）是 false，则线程进行等待，并释放锁 	cout &lt;&lt; &#34;A\n&#34;; isA = false; cv.notify_one();	// 通知另外的线程 	this_thread::sleep_for(chrono::seconds(1));	// 该进程睡眠一秒钟，虽然通知了 t2 线程，但 t1 线程仍占有锁， 	// 所以 t2 线程只能继续等待 	} }); thread t2([&amp;isA]() { while (1) { unique_lock&lt;mutex&gt; lc(cv_m); cv....</p>
+  </section>
+  <footer class="entry-footer"><span title='2025-05-16 22:44:15 +0800 CST'>May 16, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to C&#43;&#43;——两个线程交替打印输出" href="https://cuizhan-rick.github.io/posts/298-c&#43;&#43;-%E4%B8%A4%E4%B8%AA%E7%BA%BF%E7%A8%8B%E4%BA%A4%E6%9B%BF%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>Qt——QML CMake 资源文件编译
     </h2>
   </header>
@@ -192,18 +204,6 @@ cmake_minimum_required(VERSION 3.16) project(MyMusicPlayer VERSION 0.1 LANGUAGES
   </section>
   <footer class="entry-footer"><span title='2024-12-17 22:10:14 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43;——Multithreading Concurrency" href="https://cuizhan-rick.github.io/posts/294-c&#43;&#43;-multithreading-concurrency/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>C&#43;&#43;——use algorithm sort with C array
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>注意数组形参的声明  #include &lt;iostream&gt;#include &lt;algorithm&gt; using namespace std; template&lt;typename T, size_t N&gt; T* begin(T (*arr)[N]){ return arr; } template&lt;typename T, size_t N&gt; T* end(T (*arr)[N]){ return arr &#43; N; } int main() { int arr[]{9,8,7,6,5,4,3,2,1}; // auto n = sizeof(arr) / sizeof(arr[0]);  // sort(arr, arr &#43; n);  // for(auto i = 0; i &lt; n; &#43;&#43;i)  // cout &lt;&lt; arr[i] &lt;&lt; &#34; &#34;;  sort(begin(arr), end(arr)); for(auto&amp; it : arr) cout &lt;&lt; it &lt;&lt; &#34; &#34;; return 0; } 参考：...</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-17 21:33:17 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to C&#43;&#43;——use algorithm sort with C array" href="https://cuizhan-rick.github.io/posts/293-c&#43;&#43;-use-algorithm-sort-with-c-array/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

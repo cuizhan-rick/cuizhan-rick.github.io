@@ -157,6 +157,18 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Python Loop 运行 Command 脚本
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>import sys import os from threading import Timer import datetime print(sys.version) file_name = &#34;D:/gpu.txt&#34; def printHello(): with open(file_name,&#39;a&#39;) as f1: command=&#39;adb shell &#34;cat /sys/kernel/debug/pvr/status | grep GPU&#34;&#39; tt=os.popen(command) tmp=tt.read() res = f&#39;{datetime.datetime.now()}{tmp}&#39;.replace(&#39;\r&#39;,&#39;&#39;).replace(&#39;\n&#39;,&#39;&#39;) print(res) f1.write(res&#43;&#39;\n&#39;) def loop_func(func, second): while True: timer = Timer(second, func) timer.start() timer.join() loop_func(printHello, 1) </p>
+  </section>
+  <footer class="entry-footer"><span title='2024-12-15 15:38:34 +0800 CST'>December 15, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to Python Loop 运行 Command 脚本" href="https://cuizhan-rick.github.io/posts/288-python-loop-%E8%BF%90%E8%A1%8C-command-%E8%84%9A%E6%9C%AC/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Python 脚本生成火焰图
     </h2>
   </header>
@@ -214,20 +226,6 @@ class Solution { int sn; public: /** * 代码中的类名、方法名、参数�
   </section>
   <footer class="entry-footer"><span title='2024-12-13 14:52:14 +0800 CST'>December 13, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to 数据结构与算法——括号生成" href="https://cuizhan-rick.github.io/posts/284-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>数据结构与算法——矩阵的最小路径和
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>问题链接
-思路： 动态规划
-#include &lt;climits&gt;class Solution { public: /** * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可 * * * @param matrix int整型vector&lt;vector&lt;&gt;&gt; the matrix * @return int整型 */ int minPathSum(vector&lt;vector&lt;int&gt; &gt;&amp; matrix) { // write code here  auto rowNum = matrix.size(); auto colNum = matrix[0].size(); vector&lt;vector&lt;int&gt;&gt; sumMat(rowNum, vector&lt;int&gt;(colNum)); sumMat[0][0] = matrix[0][0]; // 初始化首行  for (auto i = 1; i != colNum; &#43;&#43;i) { sumMat[0][i] = sumMat[0][i - 1] &#43; matrix[0][i]; } // 初始化首列  for (auto i = 1; i !...</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-13 14:33:39 +0800 CST'>December 13, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to 数据结构与算法——矩阵的最小路径和" href="https://cuizhan-rick.github.io/posts/283-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E8%B7%AF%E5%BE%84%E5%92%8C/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

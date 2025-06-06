@@ -145,6 +145,18 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>C&#43;&#43;——std equal range
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>函数操作的序列需是一个有序的，返回与目标值相等的序列（左闭右开） 算法通过实现 &lt; 操作符实现判断 = 的效果（交换前后两个操作数）  #include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;#include &lt;type_traits&gt;#include &lt;exception&gt; using namespace std; struct S { int number; char name; // note: name is ignored by this comparison operator  bool operator&lt;(const S&amp; s) const { return number &lt; s.number; } }; struct Comp { bool operator()(const S&amp; s, int i) const { return s.number &lt; i; } bool operator()(int i, const S&amp; s) const { return i &lt; s....</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-12-17 19:35:26 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to C&#43;&#43;——std equal range" href="https://cuizhan-rick.github.io/posts/290-c&#43;&#43;-std-equal-range-/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>C&#43;&#43; 类的内存布局
     </h2>
   </header>
@@ -196,18 +208,6 @@ MyType_One HELLO_WORLD MY_INT 7777 参考：
   </section>
   <footer class="entry-footer"><span title='2023-04-12 22:02:53 +0800 CST'>April 12, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43;——打印枚举常量字符串" href="https://cuizhan-rick.github.io/posts/261-c&#43;&#43;-%E6%89%93%E5%8D%B0%E6%9E%9A%E4%B8%BE%E5%B8%B8%E9%87%8F%E5%AD%97%E7%AC%A6%E4%B8%B2/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>C&#43;&#43;——malloc、calloc、realloc、指针杂记
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>void printArr(int *A, int size){ printf(&#34;Elements of array: &#34;); for(int i = 0; i &lt; size; &#43;&#43;i){ printf(&#34;%d\t&#34;, A[i]); } printf(&#34;\n&#34;); } int main() { int C[3][2][2] = {{{1,2},{3,4}},{{5,6},{7,8}},{{9,10},{11,12}}}; // 虽然地址相同，但代表的意义却不相同  printf(&#34;%p\t%p\t%p\t%p\t%p\t%p \n&#34;, C, *C, C[0], C[0][0], &amp;C[0][0], &amp;C[0][0][0]); printf(&#34;%p\t%p\t%p\n&#34;, *C&#43;1, C[0]&#43;1, C[0][1]); printf(&#34;%p\t%p\n&#34;, C, C[0][0] &#43; 1); printf(&#34;%p\t%p\n&#34;, C, &amp;C[0][0] &#43; 1); // 分配空间，但不会对元素进行初始化  int *A = (int*)malloc(3 * sizeof(int)); for(int i = 0; i &lt; 3; &#43;&#43;i){ A[i] = i&#43;1; } printArr(A, 3); // 分配空间，并将元素初始化为0  int *B = (int*)calloc(3, sizeof(int)); printArr(B, 3); // 重新分配一块空间（新空间可大可小）  // 并把原来的数据拷贝过来  // 如果新空间首地址与原来空间地址不同，会将原来的内存空间释放  // ，注意：此时不能再继续访问原来的地址，虽然原来的指针并未置空  int *D = (int*)realloc(A, 10 * sizeof(int)); printf(&#34;%p\t%p\n&#34;, A, D); printArr(A, 3); // 此时不能访问 A 了，这是危险的行为  printArr(D, 10); // 等同于重新分配了空间  D = (int*)realloc(NULL, 3 * sizeof(int)); // int *D = (int*)malloc(3 * sizeof(int));  printf(&#34;%p\t%p\n&#34;, A, D); printArr(D, 3); // 等同于释放了内存空间并将指针置为空值  D = (int*)realloc(D, 0); // free(D);D = nullptr;  printf(&#34;%p\n&#34;, D); return 0; } 输出：...</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-10-02 22:18:02 +0800 CST'>October 2, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to C&#43;&#43;——malloc、calloc、realloc、指针杂记" href="https://cuizhan-rick.github.io/posts/249-c&#43;&#43;-malloc-calloc-realloc-%E6%8C%87%E9%92%88%E6%9D%82%E8%AE%B0/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -157,6 +157,18 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>C&#43;&#43;——use algorithm sort with C array
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>注意数组形参的声明  #include &lt;iostream&gt;#include &lt;algorithm&gt; using namespace std; template&lt;typename T, size_t N&gt; T* begin(T (*arr)[N]){ return arr; } template&lt;typename T, size_t N&gt; T* end(T (*arr)[N]){ return arr &#43; N; } int main() { int arr[]{9,8,7,6,5,4,3,2,1}; // auto n = sizeof(arr) / sizeof(arr[0]);  // sort(arr, arr &#43; n);  // for(auto i = 0; i &lt; n; &#43;&#43;i)  // cout &lt;&lt; arr[i] &lt;&lt; &#34; &#34;;  sort(begin(arr), end(arr)); for(auto&amp; it : arr) cout &lt;&lt; it &lt;&lt; &#34; &#34;; return 0; } 参考：...</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-12-17 21:33:17 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to C&#43;&#43;——use algorithm sort with C array" href="https://cuizhan-rick.github.io/posts/293-c&#43;&#43;-use-algorithm-sort-with-c-array/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>C&#43;&#43;——template iterator-find_all
     </h2>
   </header>
@@ -205,18 +217,6 @@ class SDFTexture { public: SDFTexture(rs::Texture*, float pixelDist); ~SDFTextur
   </section>
   <footer class="entry-footer"><span title='2024-12-15 16:43:15 +0800 CST'>December 15, 2024</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to SDF 生成有向距离场图片" href="https://cuizhan-rick.github.io/posts/289-sdf-%E7%94%9F%E6%88%90%E6%9C%89%E5%90%91%E8%B7%9D%E7%A6%BB%E5%9C%BA%E5%9B%BE%E7%89%87/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Python Loop 运行 Command 脚本
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>import sys import os from threading import Timer import datetime print(sys.version) file_name = &#34;D:/gpu.txt&#34; def printHello(): with open(file_name,&#39;a&#39;) as f1: command=&#39;adb shell &#34;cat /sys/kernel/debug/pvr/status | grep GPU&#34;&#39; tt=os.popen(command) tmp=tt.read() res = f&#39;{datetime.datetime.now()}{tmp}&#39;.replace(&#39;\r&#39;,&#39;&#39;).replace(&#39;\n&#39;,&#39;&#39;) print(res) f1.write(res&#43;&#39;\n&#39;) def loop_func(func, second): while True: timer = Timer(second, func) timer.start() timer.join() loop_func(printHello, 1) </p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-15 15:38:34 +0800 CST'>December 15, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to Python Loop 运行 Command 脚本" href="https://cuizhan-rick.github.io/posts/288-python-loop-%E8%BF%90%E8%A1%8C-command-%E8%84%9A%E6%9C%AC/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

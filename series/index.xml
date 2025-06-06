@@ -9,7 +9,16 @@
       <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 01 May 2025 10:10:02 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 May 2025 22:44:15 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; 基础</title>
+      <link>https://cuizhan-rick.github.io/series/c&#43;&#43;-%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 16 May 2025 22:44:15 +0800</pubDate>
+      
+      <guid>https://cuizhan-rick.github.io/series/c&#43;&#43;-%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>QML</title>
       <link>https://cuizhan-rick.github.io/series/qml/</link>
@@ -25,15 +34,6 @@
       <pubDate>Wed, 16 Apr 2025 19:31:26 +0800</pubDate>
       
       <guid>https://cuizhan-rick.github.io/series/qt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C&#43;&#43; 基础</title>
-      <link>https://cuizhan-rick.github.io/series/c&#43;&#43;-%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Tue, 17 Dec 2024 22:10:14 +0800</pubDate>
-      
-      <guid>https://cuizhan-rick.github.io/series/c&#43;&#43;-%E5%9F%BA%E7%A1%80/</guid>
       <description></description>
     </item>
     

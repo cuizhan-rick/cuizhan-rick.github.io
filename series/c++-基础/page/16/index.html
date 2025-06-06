@@ -145,6 +145,18 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>函数指针
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>#include &lt;iostream&gt;#include &lt;cstdlib&gt;using namespace std; // 声明函数指针变量 int (*fn)(int) = NULL; // 定义函数指针类型 typedef int (*Fn)(int); int cal(int v){ return v; }; int max(int a, int b){ return a &gt; b ? a : b; } // 函数指针做为参数 void proc(int v, Fn f){ cout &lt;&lt; f(v) &lt;&lt; endl; }; // 函数指针作为函数返回值 int (* retFP(string fName))(int, int){ // lambda 表达式作为函数指针返回  int (*fp)(int,int) = [](int x, int y){ return x &gt; y ?...</p>
+  </section>
+  <footer class="entry-footer"><span title='2021-12-16 14:34:27 +0800 CST'>December 16, 2021</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to 函数指针" href="https://cuizhan-rick.github.io/posts/26-%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>指针函数和函数指针
     </h2>
   </header>

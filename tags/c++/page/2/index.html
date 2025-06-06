@@ -145,6 +145,18 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>C&#43;&#43;——std equal range
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>函数操作的序列需是一个有序的，返回与目标值相等的序列（左闭右开） 算法通过实现 &lt; 操作符实现判断 = 的效果（交换前后两个操作数）  #include &lt;iostream&gt;#include &lt;vector&gt;#include &lt;algorithm&gt;#include &lt;type_traits&gt;#include &lt;exception&gt; using namespace std; struct S { int number; char name; // note: name is ignored by this comparison operator  bool operator&lt;(const S&amp; s) const { return number &lt; s.number; } }; struct Comp { bool operator()(const S&amp; s, int i) const { return s.number &lt; i; } bool operator()(int i, const S&amp; s) const { return i &lt; s....</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-12-17 19:35:26 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to C&#43;&#43;——std equal range" href="https://cuizhan-rick.github.io/posts/290-c&#43;&#43;-std-equal-range-/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>C&#43;&#43; 类的内存布局
     </h2>
   </header>
@@ -203,28 +215,6 @@ tar -zxvf curl-7.47.1.tar.gz cd curl-7.47.1 ./configure shared make make install
   </section>
   <footer class="entry-footer"><span title='2023-11-03 18:18:30 +0800 CST'>November 3, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to Ubuntu 编译指定版本的 curl 库" href="https://cuizhan-rick.github.io/posts/267-ubuntu-%E7%BC%96%E8%AF%91%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC%E7%9A%84-curl-%E5%BA%93/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>Ubuntu 编译指定版本的 OpenSSL 库
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>  重命名原有的 openssl 可执行文件
-mv -f /usr/bin/openssl /usr/bin/openssl.old
-  下载所需版本的 openssl
-wget http://www.openssl.org/source/openssl-1.0.0s.tar.gz
-  解压并编译
-tar zxvf openssl-1.0.0s.tar.gz cd openssl-1.0.0s ./config shared --prefix=/usr/local/openssl1.0 make &amp;&amp; make install   生成的可执行文件在 /usr/local/openssl1.0/bin 目录下
-  生成的动态链接库在 /usr/local/openssl1.0/lib 目录下
-  在 /usr/bin 目录下创建可执行文件的软连接
-  在 /usr/lib/x86_64-linux-gnu/ 目录下创建动态链接库的软连接
-  参考：
- OpenSSL Old Releases Linux openssl 升级、降级 openssl动态库生成以及交叉编译  </p>
-  </section>
-  <footer class="entry-footer"><span title='2023-11-02 20:50:41 +0800 CST'>November 2, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to Ubuntu 编译指定版本的 OpenSSL 库" href="https://cuizhan-rick.github.io/posts/266-ubuntu-%E7%BC%96%E8%AF%91%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC%E7%9A%84-openssl-%E5%BA%93/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

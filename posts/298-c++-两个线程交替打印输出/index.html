@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>C&#43;&#43;——两个线程交替打印输出 | Slow is Smooth and Smooth is Fast</title>
+<meta name="keywords" content="C&#43;&#43;" />
+<meta name="description" content="#include &lt;iostream&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt; using namespace std; mutex cv_m; condition_variable cv; int main() { bool isA = true; thread t1([&amp;isA]() {	// lambda 表达式只能捕获局部变量，不能捕获具有静态变量时长的变量 	// 全局变量不用捕获 	while (1) { unique_lock&lt;mutex&gt; lc(cv_m); cv.wait(lc, [&amp;isA]() {return isA; });	// 如果第二个参数（谓词）是 false，则线程进行等待，并释放锁 	cout &lt;&lt; &#34;A\n&#34;; isA = false; cv.notify_one();	// 通知另外的线程 	this_thread::sleep_for(chrono::seconds(1));	// 该进程睡眠一秒钟，虽然通知了 t2 线程，但 t1 线程仍占有锁， 	// 所以 t2 线程只能继续等待 	} }); thread t2([&amp;isA]() { while (1) { unique_lock&lt;mutex&gt; lc(cv_m); cv.">
+<meta name="author" content="Rick Cui">
+<link rel="canonical" href="https://cuizhan-rick.github.io/posts/298-c&#43;&#43;-%E4%B8%A4%E4%B8%AA%E7%BA%BF%E7%A8%8B%E4%BA%A4%E6%9B%BF%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA/" />
+<meta name="google-site-verification" content="XYZabc" />
+<meta name="yandex-verification" content="XYZabc" />
+<meta name="msvalidate.01" content="XYZabc" />
+
+<script defer src="https://hm.baidu.com/hm.js?c4f60a311141f59e46a3c3223ff62c0b"></script>
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.a8d96e9fdcfb04de6ce842f2e3dc4f0df9ca7b9e31b230fd17e775ab09b8c508.css" integrity="sha256-qNlun9z7BN5s6ELy49xPDfnKe54xsjD9F&#43;d1qwm4xQg=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://cuizhan-rick.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cuizhan-rick.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cuizhan-rick.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://cuizhan-rick.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://cuizhan-rick.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><meta property="og:title" content="C&#43;&#43;——两个线程交替打印输出" />
+<meta property="og:description" content="#include &lt;iostream&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt; using namespace std; mutex cv_m; condition_variable cv; int main() { bool isA = true; thread t1([&amp;isA]() {	// lambda 表达式只能捕获局部变量，不能捕获具有静态变量时长的变量 	// 全局变量不用捕获 	while (1) { unique_lock&lt;mutex&gt; lc(cv_m); cv.wait(lc, [&amp;isA]() {return isA; });	// 如果第二个参数（谓词）是 false，则线程进行等待，并释放锁 	cout &lt;&lt; &#34;A\n&#34;; isA = false; cv.notify_one();	// 通知另外的线程 	this_thread::sleep_for(chrono::seconds(1));	// 该进程睡眠一秒钟，虽然通知了 t2 线程，但 t1 线程仍占有锁， 	// 所以 t2 线程只能继续等待 	} }); thread t2([&amp;isA]() { while (1) { unique_lock&lt;mutex&gt; lc(cv_m); cv." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cuizhan-rick.github.io/posts/298-c&#43;&#43;-%E4%B8%A4%E4%B8%AA%E7%BA%BF%E7%A8%8B%E4%BA%A4%E6%9B%BF%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA/" /><meta property="og:image" content="https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2025-05-16T22:44:15&#43;08:00" />
+<meta property="article:modified_time" content="2025-05-16T22:44:15&#43;08:00" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/>
+
+<meta name="twitter:title" content="C&#43;&#43;——两个线程交替打印输出"/>
+<meta name="twitter:description" content="#include &lt;iostream&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt; using namespace std; mutex cv_m; condition_variable cv; int main() { bool isA = true; thread t1([&amp;isA]() {	// lambda 表达式只能捕获局部变量，不能捕获具有静态变量时长的变量 	// 全局变量不用捕获 	while (1) { unique_lock&lt;mutex&gt; lc(cv_m); cv.wait(lc, [&amp;isA]() {return isA; });	// 如果第二个参数（谓词）是 false，则线程进行等待，并释放锁 	cout &lt;&lt; &#34;A\n&#34;; isA = false; cv.notify_one();	// 通知另外的线程 	this_thread::sleep_for(chrono::seconds(1));	// 该进程睡眠一秒钟，虽然通知了 t2 线程，但 t1 线程仍占有锁， 	// 所以 t2 线程只能继续等待 	} }); thread t2([&amp;isA]() { while (1) { unique_lock&lt;mutex&gt; lc(cv_m); cv."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Posts",
+      "item": "https://cuizhan-rick.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "C++——两个线程交替打印输出",
+      "item": "https://cuizhan-rick.github.io/posts/298-c++-%E4%B8%A4%E4%B8%AA%E7%BA%BF%E7%A8%8B%E4%BA%A4%E6%9B%BF%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "C++——两个线程交替打印输出",
+  "name": "C\u002b\u002b——两个线程交替打印输出",
+  "description": "#include \u0026lt;iostream\u0026gt;#include \u0026lt;thread\u0026gt;#include \u0026lt;mutex\u0026gt;#include \u0026lt;condition_variable\u0026gt; using namespace std; mutex cv_m; condition_variable cv; int main() { bool isA = true; thread t1([\u0026amp;isA]() {\t// lambda 表达式只能捕获局部变量，不能捕获具有静态变量时长的变量 \t// 全局变量不用捕获 \twhile (1) { unique_lock\u0026lt;mutex\u0026gt; lc(cv_m); cv.wait(lc, [\u0026amp;isA]() {return isA; });\t// 如果第二个参数（谓词）是 false，则线程进行等待，并释放锁 \tcout \u0026lt;\u0026lt; \u0026#34;A\\n\u0026#34;; isA = false; cv.notify_one();\t// 通知另外的线程 \tthis_thread::sleep_for(chrono::seconds(1));\t// 该进程睡眠一秒钟，虽然通知了 t2 线程，但 t1 线程仍占有锁， \t// 所以 t2 线程只能继续等待 \t} }); thread t2([\u0026amp;isA]() { while (1) { unique_lock\u0026lt;mutex\u0026gt; lc(cv_m); cv.",
+  "keywords": [
+    "C++"
+  ],
+  "articleBody": "#include #include #include #include  using namespace std; mutex cv_m; condition_variable cv; int main() { bool isA = true; thread t1([\u0026isA]() {\t// lambda 表达式只能捕获局部变量，不能捕获具有静态变量时长的变量 \t// 全局变量不用捕获 \twhile (1) { unique_lockmutex lc(cv_m); cv.wait(lc, [\u0026isA]() {return isA; });\t// 如果第二个参数（谓词）是 false，则线程进行等待，并释放锁 \tcout  \"A\\n\"; isA = false; cv.notify_one();\t// 通知另外的线程 \tthis_thread::sleep_for(chrono::seconds(1));\t// 该进程睡眠一秒钟，虽然通知了 t2 线程，但 t1 线程仍占有锁， \t// 所以 t2 线程只能继续等待 \t} }); thread t2([\u0026isA]() { while (1) { unique_lockmutex lc(cv_m); cv.wait(lc, [\u0026isA]() {return !isA; }); cout  \"B\\n\"; isA = true; cv.notify_one(); this_thread::sleep_for(chrono::seconds(1)); } }); t1.join(); t2.join(); return 0; } 输出：每隔 1 秒钟，两个线程交替打印\nA B A B A B 这是高亮",
+  "wordCount" : "100",
+  "inLanguage": "en",
+  "datePublished": "2025-05-16T22:44:15+08:00",
+  "dateModified": "2025-05-16T22:44:15+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Rick Cui"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cuizhan-rick.github.io/posts/298-c++-%E4%B8%A4%E4%B8%AA%E7%BA%BF%E7%A8%8B%E4%BA%A4%E6%9B%BF%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Slow is Smooth and Smooth is Fast",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cuizhan-rick.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://cuizhan-rick.github.io" accesskey="h" title="Welcome Aboard (Alt + H)">Welcome Aboard</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://cuizhan-rick.github.io/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cuizhan-rick.github.io/categories" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cuizhan-rick.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cuizhan-rick.github.io/series" title="Series">
+                    <span>Series</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cuizhan-rick.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://cuizhan-rick.github.io">Home</a>&nbsp;»&nbsp;<a href="https://cuizhan-rick.github.io/posts/">Posts</a></div>
+    <h1 class="post-title">
+      C&#43;&#43;——两个线程交替打印输出
+    </h1>
+    <div class="post-meta"><span title='2025-05-16 22:44:15 +0800 CST'>May 16, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui
+
+</div>
+  </header> 
+
+  <div class="post-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;thread&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;mutex&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;condition_variable&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+mutex cv_m;
+condition_variable cv;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#66d9ef">bool</span> isA <span style="color:#f92672">=</span> true;
+	<span style="color:#66d9ef">thread</span> t1([<span style="color:#f92672">&amp;</span>isA]() {	                            <span style="color:#75715e">// lambda 表达式只能捕获局部变量，不能捕获具有静态变量时长的变量
+</span><span style="color:#75715e"></span>							                            <span style="color:#75715e">// 全局变量不用捕获
+</span><span style="color:#75715e"></span>		<span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>) {
+			unique_lock<span style="color:#f92672">&lt;</span>mutex<span style="color:#f92672">&gt;</span> lc(cv_m);
+			cv.wait(lc, [<span style="color:#f92672">&amp;</span>isA]() {<span style="color:#66d9ef">return</span> isA; });		<span style="color:#75715e">// 如果第二个参数（谓词）是 false，则线程进行等待，并释放锁
+</span><span style="color:#75715e"></span>			cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;A</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+			isA <span style="color:#f92672">=</span> false;
+			cv.notify_one();							<span style="color:#75715e">// 通知另外的线程
+</span><span style="color:#75715e"></span>			this_thread<span style="color:#f92672">::</span>sleep_for(chrono<span style="color:#f92672">::</span>seconds(<span style="color:#ae81ff">1</span>));	<span style="color:#75715e">// 该进程睡眠一秒钟，虽然通知了 t2 线程，但 t1 线程仍占有锁，
+</span><span style="color:#75715e"></span>														<span style="color:#75715e">// 所以 t2 线程只能继续等待
+</span><span style="color:#75715e"></span>		}
+	});
+	<span style="color:#66d9ef">thread</span> t2([<span style="color:#f92672">&amp;</span>isA]() {
+
+		<span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>) {
+			unique_lock<span style="color:#f92672">&lt;</span>mutex<span style="color:#f92672">&gt;</span> lc(cv_m);
+			cv.wait(lc, [<span style="color:#f92672">&amp;</span>isA]() {<span style="color:#66d9ef">return</span> <span style="color:#f92672">!</span>isA; });
+			cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;B</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+			isA <span style="color:#f92672">=</span> true;
+			cv.notify_one();
+			this_thread<span style="color:#f92672">::</span>sleep_for(chrono<span style="color:#f92672">::</span>seconds(<span style="color:#ae81ff">1</span>));
+		}
+	});
+
+	t1.join();
+	t2.join();
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>输出：每隔 1 秒钟，两个线程交替打印</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-txt" data-lang="txt">A
+B
+A
+B
+A
+B
+</code></pre></div><p><!-- raw HTML omitted -->这是高亮<!-- raw HTML omitted --></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://cuizhan-rick.github.io/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://cuizhan-rick.github.io/posts/297-qt-qml-cmake-%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6%E7%BC%96%E8%AF%91/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>Qt——QML CMake 资源文件编译</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>"Take time for all things: great haste makes great waste." – Benjamin Franklin</span><br/>
+    <span>&copy; 2025 <a href="https://cuizhan-rick.github.io">Slow is Smooth and Smooth is Fast</a></span>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+
+
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -145,6 +145,18 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>C&#43;&#43;——use algorithm sort with C array
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>注意数组形参的声明  #include &lt;iostream&gt;#include &lt;algorithm&gt; using namespace std; template&lt;typename T, size_t N&gt; T* begin(T (*arr)[N]){ return arr; } template&lt;typename T, size_t N&gt; T* end(T (*arr)[N]){ return arr &#43; N; } int main() { int arr[]{9,8,7,6,5,4,3,2,1}; // auto n = sizeof(arr) / sizeof(arr[0]);  // sort(arr, arr &#43; n);  // for(auto i = 0; i &lt; n; &#43;&#43;i)  // cout &lt;&lt; arr[i] &lt;&lt; &#34; &#34;;  sort(begin(arr), end(arr)); for(auto&amp; it : arr) cout &lt;&lt; it &lt;&lt; &#34; &#34;; return 0; } 参考：...</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-12-17 21:33:17 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to C&#43;&#43;——use algorithm sort with C array" href="https://cuizhan-rick.github.io/posts/293-c&#43;&#43;-use-algorithm-sort-with-c-array/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>C&#43;&#43;——template iterator-find_all
     </h2>
   </header>
@@ -193,22 +205,6 @@ class SDFTexture { public: SDFTexture(rs::Texture*, float pixelDist); ~SDFTextur
   </section>
   <footer class="entry-footer"><span title='2024-12-15 16:43:15 +0800 CST'>December 15, 2024</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to SDF 生成有向距离场图片" href="https://cuizhan-rick.github.io/posts/289-sdf-%E7%94%9F%E6%88%90%E6%9C%89%E5%90%91%E8%B7%9D%E7%A6%BB%E5%9C%BA%E5%9B%BE%E7%89%87/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>数据结构与算法——括号生成
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>问题链接
-思路： 递归的使用
-左边括号数量小于总数
-右边括号数量比左边括号数量少
-class Solution { int sn; public: /** * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可 * * * @param n int整型 * @return string字符串vector */ vector&lt;string&gt; generateParenthesis(int n) { // write code here  vector&lt;string&gt; res; string tmp; sn = n; genP(0, 0, tmp, res); return res; } void genP(int left, int right, string tmp, vector&lt;string&gt;&amp; res){ if (left == sn &amp;&amp; right == sn) { res.push_back(tmp); return; } if (left &lt; sn) { genP(left&#43;1, right, tmp&#43;&#39;(&#39;, res); } if (right &lt; left) { genP(left, right&#43;1, tmp&#43;&#39;)&#39;, res); } } }; </p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-13 14:52:14 +0800 CST'>December 13, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to 数据结构与算法——括号生成" href="https://cuizhan-rick.github.io/posts/284-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
