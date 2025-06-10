@@ -2174,7 +2174,7 @@ Windows:
 g++ -c main.s -o main.obj
 Linux:
 g++ -c main.s -o main.o .o 文件经过 链接器 生成可执行目标文件 .exe .dll
-g++ main.s -o main  </description>
+g++ main.o -o main  </description>
     </item>
     
     <item>

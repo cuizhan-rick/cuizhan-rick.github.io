@@ -145,6 +145,18 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>C&#43;&#43;——stream iterator and unique copy
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>unique_copy 被拷贝序列需要是有序的  #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;algorithm&gt; using namespace std; int main() try { //ostream_iterator&lt;string&gt; oo{ cout }; 	//*oo = &#34;hello &#34;; 	//&#43;&#43;oo; 	//*oo = &#34;world!\n&#34;;  // 效果等于 cout &lt;&lt; &#34;hello world!\n&#34;;  // C:\Users\cui_z\source\repos\Practices\Debug\from.txt 	// C:\Users\cui_z\source\repos\Practices\Debug\to.txt 	//string from, to; 	//cin &gt;&gt; from &gt;&gt; to;	// get source and target file names 	//ifstream is{ from };	// input stream for file &#34;from&#34; 	//istream_iterator&lt;string&gt; ii{ is };	// input iterator for stream 	//istream_iterator&lt;string&gt; eos{};	// input sentinel 	//ofstream os{ to };	// output stream for file &#34;to&#34; 	//ostream_iterator&lt;string&gt; oo{ os,&#34;\n&#34; };	// output iterator for stream....</p>
+  </section>
+  <footer class="entry-footer"><span title='2024-12-17 20:19:06 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to C&#43;&#43;——stream iterator and unique copy" href="https://cuizhan-rick.github.io/posts/291-c&#43;&#43;-stream-iterator-and-unique-copy/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>C&#43;&#43;——std equal range
     </h2>
   </header>
@@ -194,27 +206,6 @@ if (!doNotTrack) {
   </section>
   <footer class="entry-footer"><span title='2024-02-21 09:35:58 +0800 CST'>February 21, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43;——Function Style Cast 有歧义" href="https://cuizhan-rick.github.io/posts/272-c&#43;&#43;-function-style-cast-%E6%9C%89%E6%AD%A7%E4%B9%89/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>Ubuntu 编译指定版本的 curl 库
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>  卸载原有版本的 curl
-apt-get --purge remove curl
-  下载所需版本的 curl
-wget https://curl.se/download/curl-7.47.1.tar.gz
-  解压并编译
-tar -zxvf curl-7.47.1.tar.gz cd curl-7.47.1 ./configure shared make make install   编译好的可执行文件在 /usr/local/bin 目录下
-编译好的动态库和静态库在 /usr/local/lib 目录下
-  创建可执行文件和动态链接库的软连接
-  参考：
- curl download archive ubuntu卸载安装curl Linux下更新curl版本  </p>
-  </section>
-  <footer class="entry-footer"><span title='2023-11-03 18:18:30 +0800 CST'>November 3, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to Ubuntu 编译指定版本的 curl 库" href="https://cuizhan-rick.github.io/posts/267-ubuntu-%E7%BC%96%E8%AF%91%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC%E7%9A%84-curl-%E5%BA%93/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

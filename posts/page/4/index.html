@@ -160,6 +160,22 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>数据结构与算法——括号生成
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>问题链接
+思路： 递归的使用
+左边括号数量小于总数
+右边括号数量比左边括号数量少
+class Solution { int sn; public: /** * 代码中的类名、方法名、参数名已经指定，请勿修改，直接返回方法规定的值即可 * * * @param n int整型 * @return string字符串vector */ vector&lt;string&gt; generateParenthesis(int n) { // write code here  vector&lt;string&gt; res; string tmp; sn = n; genP(0, 0, tmp, res); return res; } void genP(int left, int right, string tmp, vector&lt;string&gt;&amp; res){ if (left == sn &amp;&amp; right == sn) { res.push_back(tmp); return; } if (left &lt; sn) { genP(left&#43;1, right, tmp&#43;&#39;(&#39;, res); } if (right &lt; left) { genP(left, right&#43;1, tmp&#43;&#39;)&#39;, res); } } }; </p>
+  </section>
+  <footer class="entry-footer"><span title='2024-12-13 14:52:14 +0800 CST'>December 13, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to 数据结构与算法——括号生成" href="https://cuizhan-rick.github.io/posts/284-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E6%8B%AC%E5%8F%B7%E7%94%9F%E6%88%90/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>数据结构与算法——矩阵的最小路径和
     </h2>
   </header>
@@ -219,22 +235,6 @@ class Solution { // 方案一  int calRotateIndex(vector&lt;int&gt;&amp; nums, i
   </section>
   <footer class="entry-footer"><span title='2024-12-12 21:11:55 +0800 CST'>December 12, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to 数据结构与算法——单链表的排序" href="https://cuizhan-rick.github.io/posts/280-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%8E%92%E5%BA%8F/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>数据结构与算法——合并 K 个已排序的链表
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>问题链接
-要求： 时间复杂度 O(nlogn)
-思路： 分治法，归并排序的思想
-注意： 空集合的情况
-/** * struct ListNode { *	int val; *	struct ListNode *next; *	ListNode(int x) : val(x), next(nullptr) {} * }; */ class Solution { ListNode* mergeList(vector&lt;ListNode*&gt;&amp; lists, int l, int h){ if(l &gt;= h) return lists[l]; int mid = (l &#43; h) / 2; ListNode* left = mergeList(lists, l, mid); ListNode* right = mergeList(lists, mid&#43;1, h); ListNode* head = new ListNode(0); auto tmp = head; while(left &amp;&amp; right){ if(left-&gt;val &lt; right-&gt;val){ tmp-&gt;next = left; left = left-&gt;next; }else{ tmp-&gt;next = right; right = right-&gt;next; } tmp = tmp-&gt;next; } tmp-&gt;next = left ?...</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-12 20:41:48 +0800 CST'>December 12, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to 数据结构与算法——合并 K 个已排序的链表" href="https://cuizhan-rick.github.io/posts/279-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-%E5%90%88%E5%B9%B6-k-%E4%B8%AA%E5%B7%B2%E6%8E%92%E5%BA%8F%E7%9A%84%E9%93%BE%E8%A1%A8/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

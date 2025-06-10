@@ -15,7 +15,7 @@ Windows:
 g&#43;&#43; -c main.s -o main.obj
 Linux:
 g&#43;&#43; -c main.s -o main.o .o 文件经过 链接器 生成可执行目标文件 .exe .dll
-g&#43;&#43; main.s -o main  ">
+g&#43;&#43; main.o -o main  ">
 <meta name="author" content="Rick Cui">
 <link rel="canonical" href="https://874656645.github.io/rick" />
 <meta name="google-site-verification" content="XYZabc" />
@@ -62,7 +62,7 @@ Windows:
 g&#43;&#43; -c main.s -o main.obj
 Linux:
 g&#43;&#43; -c main.s -o main.o .o 文件经过 链接器 生成可执行目标文件 .exe .dll
-g&#43;&#43; main.s -o main  " />
+g&#43;&#43; main.o -o main  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cuizhan-rick.github.io/posts/70-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" /><meta property="og:image" content="https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-01-12T20:12:00&#43;08:00" />
@@ -81,7 +81,7 @@ Windows:
 g&#43;&#43; -c main.s -o main.obj
 Linux:
 g&#43;&#43; -c main.s -o main.o .o 文件经过 链接器 生成可执行目标文件 .exe .dll
-g&#43;&#43; main.s -o main  "/>
+g&#43;&#43; main.o -o main  "/>
 
 
 <script type="application/ld+json">
@@ -110,11 +110,11 @@ g&#43;&#43; main.s -o main  "/>
   "@type": "BlogPosting",
   "headline": "编译过程",
   "name": "编译过程",
-  "description": "各个 .cpp 文件是独立编译的，如果有其它的类和函数会先在本 .o 文件中生成符号，由最后的链接器去其它 .o 文件找具体的函数定义\n .c .cpp 文件经过 预编译器拷贝头文件、宏展开 生成 .i 文件（文本文件）\ng++ -E main.cpp -o main.i .i 文件经过 编译器 生成汇编程序 .s（文本文件）\ng++ -S main.i -o main.s .s 文件经过 汇编器 生成可定位目标文件 .o （二进制）\nWindows:\ng++ -c main.s -o main.obj\nLinux:\ng++ -c main.s -o main.o .o 文件经过 链接器 生成可执行目标文件 .exe .dll\ng++ main.s -o main  ",
+  "description": "各个 .cpp 文件是独立编译的，如果有其它的类和函数会先在本 .o 文件中生成符号，由最后的链接器去其它 .o 文件找具体的函数定义\n .c .cpp 文件经过 预编译器拷贝头文件、宏展开 生成 .i 文件（文本文件）\ng++ -E main.cpp -o main.i .i 文件经过 编译器 生成汇编程序 .s（文本文件）\ng++ -S main.i -o main.s .s 文件经过 汇编器 生成可定位目标文件 .o （二进制）\nWindows:\ng++ -c main.s -o main.obj\nLinux:\ng++ -c main.s -o main.o .o 文件经过 链接器 生成可执行目标文件 .exe .dll\ng++ main.o -o main  ",
   "keywords": [
     "C++"
   ],
-  "articleBody": "各个 .cpp 文件是独立编译的，如果有其它的类和函数会先在本 .o 文件中生成符号，由最后的链接器去其它 .o 文件找具体的函数定义\n .c .cpp 文件经过 预编译器拷贝头文件、宏展开 生成 .i 文件（文本文件）\ng++ -E main.cpp -o main.i .i 文件经过 编译器 生成汇编程序 .s（文本文件）\ng++ -S main.i -o main.s .s 文件经过 汇编器 生成可定位目标文件 .o （二进制）\nWindows:\ng++ -c main.s -o main.obj\nLinux:\ng++ -c main.s -o main.o .o 文件经过 链接器 生成可执行目标文件 .exe .dll\ng++ main.s -o main  ",
+  "articleBody": "各个 .cpp 文件是独立编译的，如果有其它的类和函数会先在本 .o 文件中生成符号，由最后的链接器去其它 .o 文件找具体的函数定义\n .c .cpp 文件经过 预编译器拷贝头文件、宏展开 生成 .i 文件（文本文件）\ng++ -E main.cpp -o main.i .i 文件经过 编译器 生成汇编程序 .s（文本文件）\ng++ -S main.i -o main.s .s 文件经过 汇编器 生成可定位目标文件 .o （二进制）\nWindows:\ng++ -c main.s -o main.obj\nLinux:\ng++ -c main.s -o main.o .o 文件经过 链接器 生成可执行目标文件 .exe .dll\ng++ main.o -o main  ",
   "wordCount" : "57",
   "inLanguage": "en",
   "datePublished": "2022-01-12T20:12:00+08:00",
@@ -231,7 +231,7 @@ g&#43;&#43; main.s -o main  "/>
 <em>Linux:</em><br>
 <code>g++ -c main.s -o main.o</code></li>
 <li><code>.o</code> 文件经过 <strong>链接器</strong> 生成可执行目标文件 <code>.exe .dll</code><br>
-<code>g++ main.s -o main</code></li>
+<code>g++ main.o -o main</code></li>
 </ol>
 
 

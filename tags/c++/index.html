@@ -145,6 +145,20 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Unix Linux 使用
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>==注意：进程中自定义变量和环境变量的概念==
+静态库制作 ==使用静态库进行链接编译，只会把用到的函数所在的 .o 文件进行加载编译==
+gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a.out # 查看代码列表 l # 设置断点 b 行号 # 运行调试 r # step in 逐行调试 s # 逐过程调试 n # 继续 c # 退出 q 常用工具  man...</p>
+  </section>
+  <footer class="entry-footer"><span title='2025-06-09 21:25:34 +0800 CST'>June 9, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to Unix Linux 使用" href="https://cuizhan-rick.github.io/posts/299-unix-linux-%E4%BD%BF%E7%94%A8/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>C&#43;&#43;——两个线程交替打印输出
     </h2>
   </header>
@@ -189,18 +203,6 @@ if (!doNotTrack) {
   </section>
   <footer class="entry-footer"><span title='2024-12-17 21:05:56 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43;——template iterator-find_all" href="https://cuizhan-rick.github.io/posts/292-c&#43;&#43;-template-iterator-find-all/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>C&#43;&#43;——stream iterator and unique copy
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>unique_copy 被拷贝序列需要是有序的  #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;algorithm&gt; using namespace std; int main() try { //ostream_iterator&lt;string&gt; oo{ cout }; 	//*oo = &#34;hello &#34;; 	//&#43;&#43;oo; 	//*oo = &#34;world!\n&#34;;  // 效果等于 cout &lt;&lt; &#34;hello world!\n&#34;;  // C:\Users\cui_z\source\repos\Practices\Debug\from.txt 	// C:\Users\cui_z\source\repos\Practices\Debug\to.txt 	//string from, to; 	//cin &gt;&gt; from &gt;&gt; to;	// get source and target file names 	//ifstream is{ from };	// input stream for file &#34;from&#34; 	//istream_iterator&lt;string&gt; ii{ is };	// input iterator for stream 	//istream_iterator&lt;string&gt; eos{};	// input sentinel 	//ofstream os{ to };	// output stream for file &#34;to&#34; 	//ostream_iterator&lt;string&gt; oo{ os,&#34;\n&#34; };	// output iterator for stream....</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-17 20:19:06 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to C&#43;&#43;——stream iterator and unique copy" href="https://cuizhan-rick.github.io/posts/291-c&#43;&#43;-stream-iterator-and-unique-copy/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -194,6 +194,20 @@ if (!doNotTrack) {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Unix Linux 使用
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>==注意：进程中自定义变量和环境变量的概念==
+静态库制作 ==使用静态库进行链接编译，只会把用到的函数所在的 .o 文件进行加载编译==
+gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a.out # 查看代码列表 l # 设置断点 b 行号 # 运行调试 r # step in 逐行调试 s # 逐过程调试 n # 继续 c # 退出 q 常用工具  man...</p>
+  </section>
+  <footer class="entry-footer"><span title='2025-06-09 21:25:34 +0800 CST'>June 9, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to Unix Linux 使用" href="https://cuizhan-rick.github.io/posts/299-unix-linux-%E4%BD%BF%E7%94%A8/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>C&#43;&#43;——两个线程交替打印输出
     </h2>
   </header>
@@ -241,18 +255,6 @@ cmake_minimum_required(VERSION 3.16) project(MyMusicPlayer VERSION 0.1 LANGUAGES
   </section>
   <footer class="entry-footer"><span title='2025-04-16 19:31:26 +0800 CST'>April 16, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to Qt——Beginner Knowledge" href="https://cuizhan-rick.github.io/posts/295-qt-beginner-knowledge/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>C&#43;&#43;——Multithreading Concurrency
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>注意 join() 与 detach() 的区别 注意传入线程的参数是值传递还是引用传递（默认都是值拷贝，需要显式调用 std::ref）  condition_variable #include &lt;iostream&gt;#include &lt;fstream&gt;#include &lt;string&gt;#include &lt;vector&gt;#include &lt;set&gt;#include &lt;queue&gt;#include &lt;thread&gt;#include &lt;mutex&gt;#include &lt;condition_variable&gt;#include &lt;chrono&gt;#include &lt;algorithm&gt; using namespace std; queue&lt;string&gt; mqueue; condition_variable mcond; mutex mmutex; void consumer() { while (true) { unique_lock&lt;mutex&gt; lck{ mmutex }; // acquire mmutex 	mcond.wait(lck); /* do nothing */ // release lck and wait; 	// re-acquire lck upon wakeup  cout &lt;&lt; &#34;queue size: &#34; &lt;&lt; mqueue.size() &lt;&lt; endl; auto m = mqueue....</p>
-  </section>
-  <footer class="entry-footer"><span title='2024-12-17 22:10:14 +0800 CST'>December 17, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to C&#43;&#43;——Multithreading Concurrency" href="https://cuizhan-rick.github.io/posts/294-c&#43;&#43;-multithreading-concurrency/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Unix&amp;Linux on Slow is Smooth and Smooth is Fast</title>
+    <link>https://cuizhan-rick.github.io/series/unixlinux/</link>
+    <description>Recent content in Unix&amp;Linux on Slow is Smooth and Smooth is Fast</description>
+    <image>
+      <url>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 09 Jun 2025 21:25:34 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/series/unixlinux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unix Linux 使用</title>
+      <link>https://cuizhan-rick.github.io/posts/299-unix-linux-%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 09 Jun 2025 21:25:34 +0800</pubDate>
+      
+      <guid>https://cuizhan-rick.github.io/posts/299-unix-linux-%E4%BD%BF%E7%94%A8/</guid>
+      <description>==注意：进程中自定义变量和环境变量的概念==
+静态库制作 ==使用静态库进行链接编译，只会把用到的函数所在的 .o 文件进行加载编译==
+gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a.out # 查看代码列表 l # 设置断点 b 行号 # 运行调试 r # step in 逐行调试 s # 逐过程调试 n # 继续 c # 退出 q 常用工具  man</description>
+    </item>
+    
+  </channel>
+</rss>

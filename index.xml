@@ -9,7 +9,18 @@
       <link>https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 16 May 2025 22:44:15 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Jun 2025 21:25:34 +0800</lastBuildDate><atom:link href="https://cuizhan-rick.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unix Linux 使用</title>
+      <link>https://cuizhan-rick.github.io/posts/299-unix-linux-%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 09 Jun 2025 21:25:34 +0800</pubDate>
+      
+      <guid>https://cuizhan-rick.github.io/posts/299-unix-linux-%E4%BD%BF%E7%94%A8/</guid>
+      <description>==注意：进程中自定义变量和环境变量的概念==
+静态库制作 ==使用静态库进行链接编译，只会把用到的函数所在的 .o 文件进行加载编译==
+gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a.out # 查看代码列表 l # 设置断点 b 行号 # 运行调试 r # step in 逐行调试 s # 逐过程调试 n # 继续 c # 退出 q 常用工具  man</description>
+    </item>
+    
     <item>
       <title>C&#43;&#43;——两个线程交替打印输出</title>
       <link>https://cuizhan-rick.github.io/posts/298-c&#43;&#43;-%E4%B8%A4%E4%B8%AA%E7%BA%BF%E7%A8%8B%E4%BA%A4%E6%9B%BF%E6%89%93%E5%8D%B0%E8%BE%93%E5%87%BA/</link>
@@ -2769,7 +2780,7 @@ Windows:
 g++ -c main.s -o main.obj
 Linux:
 g++ -c main.s -o main.o .o 文件经过 链接器 生成可执行目标文件 .exe .dll
-g++ main.s -o main  </description>
+g++ main.o -o main  </description>
     </item>
     
     <item>

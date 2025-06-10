@@ -145,6 +145,27 @@ if (!doNotTrack) {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Ubuntu 编译指定版本的 curl 库
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>  卸载原有版本的 curl
+apt-get --purge remove curl
+  下载所需版本的 curl
+wget https://curl.se/download/curl-7.47.1.tar.gz
+  解压并编译
+tar -zxvf curl-7.47.1.tar.gz cd curl-7.47.1 ./configure shared make make install   编译好的可执行文件在 /usr/local/bin 目录下
+编译好的动态库和静态库在 /usr/local/lib 目录下
+  创建可执行文件和动态链接库的软连接
+  参考：
+ curl download archive ubuntu卸载安装curl Linux下更新curl版本  </p>
+  </section>
+  <footer class="entry-footer"><span title='2023-11-03 18:18:30 +0800 CST'>November 3, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
+  <a class="entry-link" aria-label="post link to Ubuntu 编译指定版本的 curl 库" href="https://cuizhan-rick.github.io/posts/267-ubuntu-%E7%BC%96%E8%AF%91%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC%E7%9A%84-curl-%E5%BA%93/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>Ubuntu 编译指定版本的 OpenSSL 库
     </h2>
   </header>
@@ -220,24 +241,6 @@ MyType_One HELLO_WORLD MY_INT 7777 参考：
   </section>
   <footer class="entry-footer"><span title='2022-10-02 22:18:02 +0800 CST'>October 2, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to C&#43;&#43;——malloc、calloc、realloc、指针杂记" href="https://cuizhan-rick.github.io/posts/249-c&#43;&#43;-malloc-calloc-realloc-%E6%8C%87%E9%92%88%E6%9D%82%E8%AE%B0/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>C&#43;&#43;——计算最大和子矩阵问题
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>描述 计算矩阵中，最大和的子矩阵，并输出最大的和
-测试用例 用例一：
-$$\begin{equation} \begin{bmatrix*}[c] -3 &amp; -5 &amp; -1 &amp; 5 \newline 2 &amp; -4 &amp; -2 &amp; 4 \newline -1 &amp; 3 &amp; -1 &amp; 3 \end{bmatrix*} \end{equation}$$
-用例二：
-$$\begin{equation} \begin{bmatrix*}[c] -3 &amp; -5 &amp; -1 &amp; 5 \newline 9 &amp; -4 &amp; -2 &amp; 4 \newline -1 &amp; 3 &amp; -1 &amp; 3 \end{bmatrix*} \end{equation}$$
-用例三：
-$$\begin{equation} \begin{bmatrix*}[c] -3 &amp; -5 &amp; -1 &amp; 5 \newline 7 &amp; -4 &amp; -2 &amp; 4 \newline -1 &amp; 3 &amp; -1 &amp; 3 \end{bmatrix*} \end{equation}$$...</p>
-  </section>
-  <footer class="entry-footer"><span title='2022-09-27 18:42:52 +0800 CST'>September 27, 2022</span>&nbsp;·&nbsp;8 min&nbsp;·&nbsp;Rick Cui</footer>
-  <a class="entry-link" aria-label="post link to C&#43;&#43;——计算最大和子矩阵问题" href="https://cuizhan-rick.github.io/posts/248-c&#43;&#43;-%E8%AE%A1%E7%AE%97%E6%9C%80%E5%A4%A7%E5%92%8C%E7%9F%A9%E9%98%B5%E9%97%AE%E9%A2%98/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
