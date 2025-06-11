@@ -9,7 +9,7 @@
 <meta name="keywords" content="C&#43;&#43;" />
 <meta name="description" content="==注意：进程中自定义变量和环境变量的概念==
 静态库制作 ==使用静态库进行链接编译，只会把用到的函数所在的 .o 文件进行加载编译==
-gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a.out # 查看代码列表 l # 设置断点 b 行号 # 运行调试 r # step in 逐行调试 s # 逐过程调试 n # 继续 c # 退出 q 常用工具  man">
+gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 将预处理后的文件编译为汇编文件 gcc -S main.i -o main.s # 将汇编文件编译为目标文件(机器码) gcc -c main.s -o main.o # 链接为可执行文件 gcc main.o # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a.">
 <meta name="author" content="Rick Cui">
 <link rel="canonical" href="https://cuizhan-rick.github.io/posts/299-unix-linux-%E4%BD%BF%E7%94%A8/" />
 <meta name="google-site-verification" content="XYZabc" />
@@ -50,7 +50,7 @@ if (!doNotTrack) {
 </script><meta property="og:title" content="Unix Linux 使用" />
 <meta property="og:description" content="==注意：进程中自定义变量和环境变量的概念==
 静态库制作 ==使用静态库进行链接编译，只会把用到的函数所在的 .o 文件进行加载编译==
-gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a.out # 查看代码列表 l # 设置断点 b 行号 # 运行调试 r # step in 逐行调试 s # 逐过程调试 n # 继续 c # 退出 q 常用工具  man" />
+gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 将预处理后的文件编译为汇编文件 gcc -S main.i -o main.s # 将汇编文件编译为目标文件(机器码) gcc -c main.s -o main.o # 链接为可执行文件 gcc main.o # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cuizhan-rick.github.io/posts/299-unix-linux-%E4%BD%BF%E7%94%A8/" /><meta property="og:image" content="https://cuizhan-rick.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2025-06-09T21:25:34&#43;08:00" />
@@ -63,7 +63,7 @@ gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.
 <meta name="twitter:title" content="Unix Linux 使用"/>
 <meta name="twitter:description" content="==注意：进程中自定义变量和环境变量的概念==
 静态库制作 ==使用静态库进行链接编译，只会把用到的函数所在的 .o 文件进行加载编译==
-gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a.out # 查看代码列表 l # 设置断点 b 行号 # 运行调试 r # step in 逐行调试 s # 逐过程调试 n # 继续 c # 退出 q 常用工具  man"/>
+gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 将预处理后的文件编译为汇编文件 gcc -S main.i -o main.s # 将汇编文件编译为目标文件(机器码) gcc -c main.s -o main.o # 链接为可执行文件 gcc main.o # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a."/>
 
 
 <script type="application/ld+json">
@@ -92,12 +92,12 @@ gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.
   "@type": "BlogPosting",
   "headline": "Unix Linux 使用",
   "name": "Unix Linux 使用",
-  "description": "==注意：进程中自定义变量和环境变量的概念==\n静态库制作 ==使用静态库进行链接编译，只会把用到的函数所在的 .o 文件进行加载编译==\ngcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a.out # 查看代码列表 l # 设置断点 b 行号 # 运行调试 r # step in 逐行调试 s # 逐过程调试 n # 继续 c # 退出 q 常用工具  man",
+  "description": "==注意：进程中自定义变量和环境变量的概念==\n静态库制作 ==使用静态库进行链接编译，只会把用到的函数所在的 .o 文件进行加载编译==\ngcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 将预处理后的文件编译为汇编文件 gcc -S main.i -o main.s # 将汇编文件编译为目标文件(机器码) gcc -c main.s -o main.o # 链接为可执行文件 gcc main.o # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a.",
   "keywords": [
     "C++"
   ],
-  "articleBody": "==注意：进程中自定义变量和环境变量的概念==\n静态库制作 ==使用静态库进行链接编译，只会把用到的函数所在的 .o 文件进行加载编译==\ngcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a.out # 查看代码列表 l # 设置断点 b 行号 # 运行调试 r # step in 逐行调试 s # 逐过程调试 n # 继续 c # 退出 q 常用工具  man\n查询手册\n# 查询 man 手册的不同章节 man man # 不指定章节号，默认从命令章节开始查询 man printf man 3 printf man 3 dlopen   ldd\nldd a.out ==查看可执行文件的动态链接库==\n  nm\nnm a.out ==下图为直接编译 .o 文件的结果==\n  file\nfile a.out\n  pstree\n查看系统进程树\n  dl\n动态加载库\n# 如果使用了相关函数，在编译时需要链接 ==dl== 库文件 gcc -ldl # 打开动态库 dlopen() # 关闭，只是动态库的引用计数减一 dlclose() # 查看错误，注意，只能查看最近的一次 ==dlopen== 中出现的错误 dlerror() # 在加载的动态库中查找符号 dlsym()   strace\n查看系统调用\nstrace ./a.out\n  ",
-  "wordCount" : "144",
+  "articleBody": "==注意：进程中自定义变量和环境变量的概念==\n静态库制作 ==使用静态库进行链接编译，只会把用到的函数所在的 .o 文件进行加载编译==\ngcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 将预处理后的文件编译为汇编文件 gcc -S main.i -o main.s # 将汇编文件编译为目标文件(机器码) gcc -c main.s -o main.o # 链接为可执行文件 gcc main.o # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a.out # 查看代码列表 l # 设置断点 b 行号 # 运行调试 r # step in 逐行调试 s # 逐过程调试 n # 继续 c # 退出 q 打印程序执行后的返回值 echo $?\n常用工具  man\n查询手册\n# 查询 man 手册的不同章节 man man # 不指定章节号，默认从命令章节开始查询 man printf man 3 printf man 3 dlopen   ldd\nldd a.out ==查看可执行文件的动态链接库==\n  nm\nnm a.out ==下图为直接编译 .o 文件的结果==\n  file\nfile a.out\n  pstree\n查看系统进程树\n  dl\n动态加载 ==注意与自动加载的区别==\n# 如果使用了相关函数，在编译时需要链接 ==dl== 库文件 gcc -ldl # 打开动态库 dlopen() # 关闭，只是动态库的引用计数减一 dlclose() # 查看错误，注意，只能查看最近的一次 ==dlopen== 中出现的错误 dlerror() # 在加载的动态库中查找符号 dlsym()   strace\n查看系统调用\nstrace ./a.out\n  getpid\n获取当前进程的 PID\n  内存管理 CPU  控制器\nALU 运算器\n寄存器\n缓存\nMMU 内存管理单元\n == 实模式：CPU 直接操作物理内存 ==\n== 保护模式：通过操作系统管理内存（虚拟地址空间）==\nGDT 表与 LDT 表 == GDT 表所有运行的进程都可见，属于操作系统的段 ==\n== LDT 表每个进程所独有==\nproc 文件 vim /proc/$$/maps\n 5868b6ea0000-5868b6f8f000：地址范围 r-xp：访问权限 00030000：库内偏移地址 08:30：映射文件设备号（主设备号:次设备号） 1448：映射文件 i 节点号 /usr/bin/bash: 库路径   r-xp: 可读可执行的，可以理解为 ==代码段==\nr–p: 可读的的，可理解为 ==只读数据段==\nrw-p: 可读可写的，可理解为 ==可写数据段==\ns/p: 共享/私有\nheap: 堆\nstack: 栈\n 进程映射 段的形成  a.out 汇编   链接过程合并目标文件中的段  ",
+  "wordCount" : "228",
   "inLanguage": "en",
   "datePublished": "2025-06-09T21:25:34+08:00",
   "dateModified": "2025-06-09T21:25:34+08:00",
@@ -194,7 +194,7 @@ gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.
     <h1 class="post-title">
       Unix Linux 使用
     </h1>
-    <div class="post-meta"><span title='2025-06-09 21:25:34 +0800 CST'>June 9, 2025</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Rick Cui
+    <div class="post-meta"><span title='2025-06-09 21:25:34 +0800 CST'>June 9, 2025</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Rick Cui
 
 </div>
   </header> <div class="toc">
@@ -213,8 +213,25 @@ gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.
                 <li>
                     <a href="#gdb-%e8%b0%83%e8%af%95" aria-label="gdb 调试">gdb 调试</a></li>
                 <li>
-                    <a href="#%e5%b8%b8%e7%94%a8%e5%b7%a5%e5%85%b7" aria-label="常用工具">常用工具</a>
+                    <a href="#%e6%89%93%e5%8d%b0%e7%a8%8b%e5%ba%8f%e6%89%a7%e8%a1%8c%e5%90%8e%e7%9a%84%e8%bf%94%e5%9b%9e%e5%80%bc" aria-label="打印程序执行后的返回值">打印程序执行后的返回值</a></li>
+                <li>
+                    <a href="#%e5%b8%b8%e7%94%a8%e5%b7%a5%e5%85%b7" aria-label="常用工具">常用工具</a></li>
+                <li>
+                    <a href="#%e5%86%85%e5%ad%98%e7%ae%a1%e7%90%86" aria-label="内存管理">内存管理</a><ul>
+                        
+                <li>
+                    <a href="#cpu" aria-label="CPU">CPU</a></li>
+                <li>
+                    <a href="#gdt-%e8%a1%a8%e4%b8%8e-ldt-%e8%a1%a8" aria-label="GDT 表与 LDT 表">GDT 表与 LDT 表</a></li>
+                <li>
+                    <a href="#proc-%e6%96%87%e4%bb%b6" aria-label="proc 文件">proc 文件</a></li>
+                <li>
+                    <a href="#%e8%bf%9b%e7%a8%8b%e6%98%a0%e5%b0%84" aria-label="进程映射">进程映射</a></li>
+                <li>
+                    <a href="#%e6%ae%b5%e7%9a%84%e5%bd%a2%e6%88%90" aria-label="段的形成">段的形成</a>
                 </li>
+            </ul>
+            </li>
             </ul>
         </div>
     </details>
@@ -236,6 +253,12 @@ gcc -shared -o libpmath.so *.o
 gcc main.c -Ip_math -Lp_math -lpmath
 <span style="color:#75715e"># 查看预编译输出信息</span>
 gcc -E main.c -o main.i -v
+<span style="color:#75715e"># 将预处理后的文件编译为汇编文件</span>
+gcc -S main.i -o main.s
+<span style="color:#75715e"># 将汇编文件编译为目标文件(机器码)</span>
+gcc -c main.s -o main.o
+<span style="color:#75715e"># 链接为可执行文件</span>
+gcc main.o
 <span style="color:#75715e"># 动态库查找路径</span>
 LD_LIBRARY_PATH
 </code></pre></div><h2 id="gdb-调试">gdb 调试<a hidden class="anchor" aria-hidden="true" href="#gdb-调试">#</a></h2>
@@ -257,7 +280,9 @@ n
 c
 <span style="color:#75715e"># 退出</span>
 q
-</code></pre></div><h2 id="常用工具">常用工具<a hidden class="anchor" aria-hidden="true" href="#常用工具">#</a></h2>
+</code></pre></div><h2 id="打印程序执行后的返回值">打印程序执行后的返回值<a hidden class="anchor" aria-hidden="true" href="#打印程序执行后的返回值">#</a></h2>
+<p><code>echo $?</code></p>
+<h2 id="常用工具">常用工具<a hidden class="anchor" aria-hidden="true" href="#常用工具">#</a></h2>
 <ol start="0">
 <li>
 <p>man<br>
@@ -295,7 +320,7 @@ man <span style="color:#ae81ff">3</span> dlopen
 </li>
 <li>
 <p>dl<br>
-动态加载库</p>
+动态加载  ==注意与自动加载的区别==</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># 如果使用了相关函数，在编译时需要链接 ==dl== 库文件</span>
 gcc -ldl
 <span style="color:#75715e"># 打开动态库</span>
@@ -314,7 +339,69 @@ dlsym<span style="color:#f92672">()</span>
 <img loading="lazy" style="margin: auto;" src=".././img/Unix-strace.jpg" alt="Unix-strace"  />
 </p>
 </li>
+<li>
+<p>getpid<br>
+获取当前进程的 PID</p>
+</li>
 </ol>
+<h2 id="内存管理">内存管理<a hidden class="anchor" aria-hidden="true" href="#内存管理">#</a></h2>
+<h3 id="cpu">CPU<a hidden class="anchor" aria-hidden="true" href="#cpu">#</a></h3>
+<blockquote>
+<p>控制器<br>
+<code>ALU</code> 运算器<br>
+寄存器<br>
+缓存<br>
+<code>MMU</code> 内存管理单元</p>
+</blockquote>
+<p>== 实模式：CPU 直接操作物理内存 ==</p>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e5%86%85%e5%ad%98%e7%ae%a1%e7%90%86.jpg" alt="Unix-内存管理"  />
+</p>
+<p>== 保护模式：通过操作系统管理内存（虚拟地址空间）==</p>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e4%bf%9d%e6%8a%a4%e6%a8%a1%e5%bc%8f%e5%86%85%e5%ad%98%e7%ae%a1%e7%90%86.jpg" alt="Unix-保护模式内存管理.jpg"  />
+</p>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e5%86%85%e5%ad%98%e7%ae%a1%e7%90%86.jpg" alt="Unix-操作系统内存管理.jpg"  />
+</p>
+<h3 id="gdt-表与-ldt-表">GDT 表与 LDT 表<a hidden class="anchor" aria-hidden="true" href="#gdt-表与-ldt-表">#</a></h3>
+<p>== <code>GDT</code> 表所有运行的进程都可见，属于操作系统的段 ==<br>
+== <code>LDT</code> 表每个进程所独有==</p>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-GDT-LDT.jpg" alt="Unix-GDT-LDT"  />
+</p>
+<h3 id="proc-文件">proc 文件<a hidden class="anchor" aria-hidden="true" href="#proc-文件">#</a></h3>
+<p><code>vim /proc/$$/maps</code></p>
+<ul>
+<li><code>5868b6ea0000-5868b6f8f000</code>：地址范围</li>
+<li><code>r-xp</code>：访问权限</li>
+<li><code>00030000</code>：库内偏移地址</li>
+<li><code>08:30</code>：映射文件设备号（主设备号:次设备号）</li>
+<li><code>1448</code>：映射文件 i 节点号</li>
+<li><code>/usr/bin/bash</code>: 库路径</li>
+</ul>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-proc%e6%96%87%e4%bb%b6.jpg" alt="Unix-proc文件"  />
+</p>
+<blockquote>
+<p>r-xp: 可读可执行的，可以理解为 ==代码段==<br>
+r&ndash;p: 可读的的，可理解为 ==只读数据段==<br>
+rw-p: 可读可写的，可理解为 ==可写数据段==<br>
+s/p: 共享/私有<br>
+heap: 堆<br>
+stack: 栈</p>
+</blockquote>
+<h3 id="进程映射">进程映射<a hidden class="anchor" aria-hidden="true" href="#进程映射">#</a></h3>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e8%bf%9b%e7%a8%8b%e6%98%a0%e5%b0%84.jpg" alt="Unix-进程映射"  />
+</p>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e8%bf%9b%e7%a8%8b%e6%98%a0%e5%b0%842.jpg" alt="Unix-进程映射2.jpg"  />
+</p>
+<h3 id="段的形成">段的形成<a hidden class="anchor" aria-hidden="true" href="#段的形成">#</a></h3>
+<ul>
+<li><strong><code>a.out</code> 汇编</strong></li>
+</ul>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e6%ae%b5%e7%9a%84%e6%b1%87%e7%bc%96%e6%98%be%e7%a4%ba.jpg" alt="Unix-段的汇编显示.jpg"  />
+</p>
+<ul>
+<li><strong>链接过程合并目标文件中的段</strong></li>
+</ul>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e6%ae%b5%e7%9a%84%e5%bd%a2%e6%88%90.jpg" alt="Unix-段的形成"  />
+</p>
 
 
   </div>
