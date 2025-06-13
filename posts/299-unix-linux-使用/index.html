@@ -96,8 +96,8 @@ gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.
   "keywords": [
     "C++"
   ],
-  "articleBody": "==注意：进程中自定义变量和环境变量的概念==\n静态库制作 ==使用静态库进行链接编译，只会把用到的函数所在的 .o 文件进行加载编译==\ngcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 将预处理后的文件编译为汇编文件 gcc -S main.i -o main.s # 将汇编文件编译为目标文件(机器码) gcc -c main.s -o main.o # 链接为可执行文件 gcc main.o # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a.out # 查看代码列表 l # 设置断点 b 行号 # 运行调试 r # step in 逐行调试 s # 逐过程调试 n # 继续 c # 退出 q 打印程序执行后的返回值 echo $?\nUnix 基础知识  man\n查询手册\n# 查询 man 手册的不同章节 man man # 不指定章节号，默认从命令章节开始查询 man printf man 3 printf man 3 dlopen   ldd\nldd a.out ==查看可执行文件的动态链接库==\n  nm\nnm a.out ==下图为直接编译 .o 文件的结果==\n  file\nfile a.out\n  pstree\n查看系统进程树\n  dl\n动态加载 ==注意与自动加载的区别==\n 如果使用了相关函数，在编译时需要链接 ==dl== 库文件\ngcc -ldl\n # 打开动态库 dlopen() # 关闭，只是动态库的引用计数减一 dlclose() # 查看错误，注意，只能查看最近的一次 ==dlopen== 中出现的错误 dlerror() # 在加载的动态库中查找符号 dlsym() #include #include  typedef int (*fun_t)(int,int); int main(int argc, char* argv[]){ // 加载动态库文件  void* handle = dlopen(argv[1], RTLD_NOW); if(handle == NULL){ printf(\"load failed:%s\\n\", dlerror()); return -1; } printf(\"load success!\\n\"); // 根据函数名查询函数地址  fun_t f = (fun_t)dlsym(handle, \"add\"); if(f == NULL){ printf(\"dlsym error: %s\\n\", dlerror()); return -1; } printf(\"3 + 5 = %d\\n\", f(3, 5)); dlclose(handle); return 0; }   strace\n查看系统调用\nstrace ./a.out\n  getpid\n获取当前进程的 PID\n#include #include  int main(){ printf(\"pid = %d\", getpid()); getchar(); return 0; }   errno 错误号和错误信息\nt_stdio.h 文件\n#ifndef T_STDIO_H #define T_STDIO_H  #include  #define E_MSG(MESSAGE,VAL) do{perror(MESSAGE);return (VAL);}while(0)  #endif #include \"t_stdio.h\"// #include  // #include   int main(int argc, char* argv[]){ FILE* f = fopen(argv[1], \"r\"); #if 0if(f == NULL){ // errno=-1; // 根据 errno 获取错误信息 printf(\"fopen failed...%d\\n\", errno); printf(\"fopen failed...%s\\n\", strerror(errno)); // 直接打印错误信息 perror(\"fopen\"); return -1; } #endif  if(f==NULL) // 对代码简单的宏定义封装  E_MSG(\"fopen\",-1); printf(\"fopen success...\\n\"); fclose(f); return 0; }   内存管理 CPU  控制器\nALU 运算器\n寄存器\n缓存\nMMU 内存管理单元\n == 实模式：CPU 直接操作物理内存 ==\n== 保护模式：通过操作系统管理内存（虚拟地址空间）==\nGDT 表与 LDT 表 == GDT 表所有运行的进程都可见，属于操作系统的段 ==\n== LDT 表每个进程所独有==\nproc 文件 vim /proc/$$/maps\n 5868b6ea0000-5868b6f8f000：地址范围 r-xp：访问权限 00030000：库内偏移地址 08:30：映射文件设备号（主设备号:次设备号） 1448：映射文件 i 节点号 /usr/bin/bash: 库路径   r-xp: 可读可执行的，可以理解为 ==代码段==\nr–p: 可读的的，可理解为 ==只读数据段==\nrw-p: 可读可写的，可理解为 ==可写数据段==\ns/p: 共享/私有\nheap: 堆\nstack: 栈\n 进程映射 段的形成  a.out 汇编   链接过程合并目标文件中的段  栈段和栈帧 文件管理 文件描述符  文件描述符（数组下标）始终是当前最小的未使用的下标\n 文件权限  注意：umask 的影响\n 常用函数  open()\nclose()\nread()\nwrite()\n #include \"t_stdio.h\"#include #include #include int cp_file(int s_fd, int d_fd){ int total = 0; int r, w; char buf[128]; while((r = read(s_fd, buf, 128))  0){ char* tmp = buf; while(r  0){ w = write(d_fd, tmp, r); r = r - w; tmp += w; total += w; } } return total; } int main(int argc, char* argv[]){ char msg[256] = \"\"; //打开源文件，以只读的方式打开  int src_fd = open(argv[1], O_RDONLY); if(src_fd == -1){ sprintf(msg, \"open %s failed\", argv[1]); E_MSG(msg, -1); } //打开目标文件，以写的方式打开  //如果文件不存在，则创建文件，指定文件权限为 0644  //如果文件存在，将文件内容清空  int flags = O_WRONLY | O_CREAT | O_TRUNC; int mod = 0644; int dst_fd = open(argv[2],flags, mod); // 将源文件的内容拷贝到目标文件中  cp_file(src_fd, dst_fd); close(src_fd); close(dst_fd); return 0; } 文件描述符重定向 t_file.h\n#ifndef T_FILE_H #define T_FILE_H  #include #include  #endif #include \"t_stdio.h\"#include \"t_file.h\"#include  int main(int argc, char* argv[]){ // 0 1 2  // std_in std_out std_err  char* msg = \"this is rick from beijing...\\n\"; // 打开要重定向到的文件描述符  int flags = O_WRONLY | O_CREAT | O_TRUNC; int fd = open(argv[1], flags, 0644); if(fd == -1) E_MSG(\"open\", -1); // 备份原来的标准输出文件描述符  int s_fd = dup(1); // 将要重定向到的文件描述符拷贝到标准输出的文件描述符  dup2(fd, 1); close(fd); // 输出到标准输出文件描述符  write(1, msg, strlen(msg)); // 输出到重定向的文件，不会输出到屏幕  // 恢复原来的标准输出  dup2(s_fd, 1); close(s_fd); write(1, msg, strlen(msg)); // 输出到屏幕  return 0; } 内存映射  mmap munmap  #include \"t_stdio.h\"#include #include  int main(void){ // 目标：将物理地址映射到进程的虚拟地址空间  // 如果不映射物理地址，则该虚拟地址空间的指针为野指针  // 野指针是不可使用的  int mapLen = 1024; int port = PROT_READ | PROT_WRITE; int flags = MAP_PRIVATE | MAP_ANONYMOUS; void* p = mmap(NULL, mapLen, port, flags, -1, 0); if(p == MAP_FAILED) E_MSG(\"mmap\", -1); // 对映射的内存进行操作  strcpy(p, \"hi, this is rick...\\n\"); printf(\"%s\", (char*)p); // 解除映射  munmap(p, mapLen); return 0; } ",
-  "wordCount" : "632",
+  "articleBody": "==注意：进程中自定义变量和环境变量的概念==\n静态库制作 ==使用静态库进行链接编译，只会把用到的函数所在的 .o 文件进行加载编译==\ngcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 将预处理后的文件编译为汇编文件 gcc -S main.i -o main.s # 将汇编文件编译为目标文件(机器码) gcc -c main.s -o main.o # 链接为可执行文件 gcc main.o # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a.out # 查看代码列表 l # 设置断点 b 行号 # 运行调试 r # step in 逐行调试 s # 逐过程调试 n # 继续 c # 退出 q 打印程序执行后的返回值 echo $?\nUnix 基础知识  man\n查询手册\n# 查询 man 手册的不同章节 man man # 不指定章节号，默认从命令章节开始查询 man printf man 3 printf man 3 dlopen   ldd\nldd a.out ==查看可执行文件的动态链接库==\n  nm\nnm a.out ==下图为直接编译 .o 文件的结果==\n  file\nfile a.out\n  pstree\n查看系统进程树\n  dl\n动态加载 ==注意与自动加载的区别==\n 如果使用了相关函数，在编译时需要链接 ==dl== 库文件\ngcc -ldl\n # 打开动态库 dlopen() # 关闭，只是动态库的引用计数减一 dlclose() # 查看错误，注意，只能查看最近的一次 ==dlopen== 中出现的错误 dlerror() # 在加载的动态库中查找符号 dlsym() #include #include  typedef int (*fun_t)(int,int); int main(int argc, char* argv[]){ // 加载动态库文件  void* handle = dlopen(argv[1], RTLD_NOW); if(handle == NULL){ printf(\"load failed:%s\\n\", dlerror()); return -1; } printf(\"load success!\\n\"); // 根据函数名查询函数地址  fun_t f = (fun_t)dlsym(handle, \"add\"); if(f == NULL){ printf(\"dlsym error: %s\\n\", dlerror()); return -1; } printf(\"3 + 5 = %d\\n\", f(3, 5)); dlclose(handle); return 0; }   strace\n查看系统调用\nstrace ./a.out\n  getpid\n获取当前进程的 PID\n#include #include  int main(){ printf(\"pid = %d\", getpid()); getchar(); return 0; }   errno 错误号和错误信息\nt_stdio.h 文件\n#ifndef T_STDIO_H #define T_STDIO_H  #include  #define E_MSG(MESSAGE,VAL) do{perror(MESSAGE);return (VAL);}while(0)  #endif #include \"t_stdio.h\"// #include  // #include   int main(int argc, char* argv[]){ FILE* f = fopen(argv[1], \"r\"); #if 0if(f == NULL){ // errno=-1; // 根据 errno 获取错误信息 printf(\"fopen failed...%d\\n\", errno); printf(\"fopen failed...%s\\n\", strerror(errno)); // 直接打印错误信息 perror(\"fopen\"); return -1; } #endif  if(f==NULL) // 对代码简单的宏定义封装  E_MSG(\"fopen\",-1); printf(\"fopen success...\\n\"); fclose(f); return 0; }   内存管理 CPU  控制器\nALU 运算器\n寄存器\n缓存\nMMU 内存管理单元\n == 实模式：CPU 直接操作物理内存 ==\n== 保护模式：通过操作系统管理内存（虚拟地址空间）==\nGDT 表与 LDT 表 == GDT 表所有运行的进程都可见，属于操作系统的段 ==\n== LDT 表每个进程所独有==\nproc 文件 vim /proc/$$/maps\n 5868b6ea0000-5868b6f8f000：地址范围 r-xp：访问权限 00030000：库内偏移地址 08:30：映射文件设备号（主设备号:次设备号） 1448：映射文件 i 节点号 /usr/bin/bash: 库路径   r-xp: 可读可执行的，可以理解为 ==代码段==\nr–p: 可读的的，可理解为 ==只读数据段==\nrw-p: 可读可写的，可理解为 ==可写数据段==\ns/p: 共享/私有\nheap: 堆\nstack: 栈\n 进程映射 段的形成  a.out 汇编   链接过程合并目标文件中的段  栈段和栈帧 文件管理 文件描述符  文件描述符（数组下标）始终是当前最小的未使用的下标\n 文件权限  注意：umask 的影响\n 常用函数  open()\nclose()\nread()\nwrite()\n #include \"t_stdio.h\"#include #include #include int cp_file(int s_fd, int d_fd){ int total = 0; int r, w; char buf[128]; while((r = read(s_fd, buf, 128))  0){ char* tmp = buf; while(r  0){ w = write(d_fd, tmp, r); r = r - w; tmp += w; total += w; } } return total; } int main(int argc, char* argv[]){ char msg[256] = \"\"; //打开源文件，以只读的方式打开  int src_fd = open(argv[1], O_RDONLY); if(src_fd == -1){ sprintf(msg, \"open %s failed\", argv[1]); E_MSG(msg, -1); } //打开目标文件，以写的方式打开  //如果文件不存在，则创建文件，指定文件权限为 0644  //如果文件存在，将文件内容清空  int flags = O_WRONLY | O_CREAT | O_TRUNC; int mod = 0644; int dst_fd = open(argv[2],flags, mod); // 将源文件的内容拷贝到目标文件中  cp_file(src_fd, dst_fd); close(src_fd); close(dst_fd); return 0; } 文件描述符重定向  dup()\ndup2()\n t_file.h\n#ifndef T_FILE_H #define T_FILE_H  #include #include  #endif #include \"t_stdio.h\"#include \"t_file.h\"#include  int main(int argc, char* argv[]){ // 0 1 2  // std_in std_out std_err  char* msg = \"this is rick from beijing...\\n\"; // 打开要重定向到的文件描述符  int flags = O_WRONLY | O_CREAT | O_TRUNC; int fd = open(argv[1], flags, 0644); if(fd == -1) E_MSG(\"open\", -1); // 备份原来的标准输出文件描述符  int s_fd = dup(1); // 将要重定向到的文件描述符拷贝到标准输出的文件描述符  dup2(fd, 1); close(fd); // 输出到标准输出文件描述符  write(1, msg, strlen(msg)); // 输出到重定向的文件，不会输出到屏幕  // 恢复原来的标准输出  dup2(s_fd, 1); close(s_fd); write(1, msg, strlen(msg)); // 输出到屏幕  return 0; } 内存映射  mmap munmap  #include \"t_stdio.h\"#include #include  int main(void){ // 目标：将物理地址映射到进程的虚拟地址空间  // 如果不映射物理地址，则该虚拟地址空间的指针为野指针  // 野指针是不可使用的  int mapLen = 1024; int port = PROT_READ | PROT_WRITE; int flags = MAP_PRIVATE | MAP_ANONYMOUS; void* p = mmap(NULL, mapLen, port, flags, -1, 0); if(p == MAP_FAILED) E_MSG(\"mmap\", -1); // 对映射的内存进行操作  strcpy(p, \"hi, this is rick...\\n\"); printf(\"%s\", (char*)p); // 解除映射  munmap(p, mapLen); return 0; } 文件元数据  stat 查看文件元数据信息   软连接与硬链接原理  文件夹操作 opendir() closedir() readdir() 文件锁  读锁（共享锁） 写锁（互斥锁）   通过 fcntl(2) 操作文件描述符\n如果一个进程对文件加了写锁，则其他进程也无法加读锁和写锁了\n可以对文件的一个区域加锁，也可以对整个文件加锁\n 其他文件操作系统函数 VFS 总结 进程管理 程序和进程  进程间只有父子关系和兄弟关系 pstree 可查看进程树 ps -aux 可查看系统的进程情况 top 可查看进程的实时状态，类似 Windows 的任务管理器  进程的状态 fork 子进程 遗言函数 == 类似收工函数==\n== 开工函数在 main 函数之前执行 ==\n  atexit()\n  on_exit()\n  进程资源回收  父进程回收子进程    wait()\n  waitpid()\n   孤儿进程  父进程退出后，不影响子进程\n 僵尸进程  子进程结束后，未被父进程回收资源\n",
+  "wordCount" : "686",
   "inLanguage": "en",
   "datePublished": "2025-06-09T21:25:34+08:00",
   "dateModified": "2025-06-09T21:25:34+08:00",
@@ -194,7 +194,7 @@ gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.
     <h1 class="post-title">
       Unix Linux 使用
     </h1>
-    <div class="post-meta"><span title='2025-06-09 21:25:34 +0800 CST'>June 9, 2025</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Rick Cui
+    <div class="post-meta"><span title='2025-06-09 21:25:34 +0800 CST'>June 9, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Rick Cui
 
 </div>
   </header> <div class="toc">
@@ -230,7 +230,8 @@ gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.
                 <li>
                     <a href="#%e6%ae%b5%e7%9a%84%e5%bd%a2%e6%88%90" aria-label="段的形成">段的形成</a></li>
                 <li>
-                    <a href="#%e6%a0%88%e6%ae%b5%e5%92%8c%e6%a0%88%e5%b8%a7" aria-label="栈段和栈帧">栈段和栈帧</a></li>
+                    <a href="#%e6%a0%88%e6%ae%b5%e5%92%8c%e6%a0%88%e5%b8%a7" aria-label="栈段和栈帧">栈段和栈帧</a></li></ul>
+                </li>
                 <li>
                     <a href="#%e6%96%87%e4%bb%b6%e7%ae%a1%e7%90%86" aria-label="文件管理">文件管理</a><ul>
                         
@@ -243,10 +244,32 @@ gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.
                 <li>
                     <a href="#%e6%96%87%e4%bb%b6%e6%8f%8f%e8%bf%b0%e7%ac%a6%e9%87%8d%e5%ae%9a%e5%90%91" aria-label="文件描述符重定向">文件描述符重定向</a></li>
                 <li>
-                    <a href="#%e5%86%85%e5%ad%98%e6%98%a0%e5%b0%84" aria-label="内存映射">内存映射</a>
+                    <a href="#%e5%86%85%e5%ad%98%e6%98%a0%e5%b0%84" aria-label="内存映射">内存映射</a></li>
+                <li>
+                    <a href="#%e6%96%87%e4%bb%b6%e5%85%83%e6%95%b0%e6%8d%ae" aria-label="文件元数据">文件元数据</a></li>
+                <li>
+                    <a href="#%e6%96%87%e4%bb%b6%e5%a4%b9%e6%93%8d%e4%bd%9c" aria-label="文件夹操作">文件夹操作</a></li>
+                <li>
+                    <a href="#%e6%96%87%e4%bb%b6%e9%94%81" aria-label="文件锁">文件锁</a></li>
+                <li>
+                    <a href="#%e5%85%b6%e4%bb%96%e6%96%87%e4%bb%b6%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e5%87%bd%e6%95%b0" aria-label="其他文件操作系统函数">其他文件操作系统函数</a></li>
+                <li>
+                    <a href="#vfs-%e6%80%bb%e7%bb%93" aria-label="VFS 总结">VFS 总结</a></li></ul>
                 </li>
-            </ul>
-            </li>
+                <li>
+                    <a href="#%e8%bf%9b%e7%a8%8b%e7%ae%a1%e7%90%86" aria-label="进程管理">进程管理</a><ul>
+                        
+                <li>
+                    <a href="#%e7%a8%8b%e5%ba%8f%e5%92%8c%e8%bf%9b%e7%a8%8b" aria-label="程序和进程">程序和进程</a></li>
+                <li>
+                    <a href="#%e8%bf%9b%e7%a8%8b%e7%9a%84%e7%8a%b6%e6%80%81" aria-label="进程的状态">进程的状态</a></li>
+                <li>
+                    <a href="#fork-%e5%ad%90%e8%bf%9b%e7%a8%8b" aria-label="fork 子进程">fork 子进程</a></li>
+                <li>
+                    <a href="#%e9%81%97%e8%a8%80%e5%87%bd%e6%95%b0" aria-label="遗言函数">遗言函数</a></li>
+                <li>
+                    <a href="#%e8%bf%9b%e7%a8%8b%e8%b5%84%e6%ba%90%e5%9b%9e%e6%94%b6" aria-label="进程资源回收">进程资源回收</a>
+                </li>
             </ul>
             </li>
             </ul>
@@ -499,8 +522,8 @@ stack: 栈</p>
 <h3 id="栈段和栈帧">栈段和栈帧<a hidden class="anchor" aria-hidden="true" href="#栈段和栈帧">#</a></h3>
 <p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e6%a0%88%e6%ae%b5%e5%92%8c%e6%a0%88%e5%b8%a7.jpg" alt="Unix-栈段和栈帧"  />
 </p>
-<h3 id="文件管理">文件管理<a hidden class="anchor" aria-hidden="true" href="#文件管理">#</a></h3>
-<h4 id="文件描述符">文件描述符<a hidden class="anchor" aria-hidden="true" href="#文件描述符">#</a></h4>
+<h2 id="文件管理">文件管理<a hidden class="anchor" aria-hidden="true" href="#文件管理">#</a></h2>
+<h3 id="文件描述符">文件描述符<a hidden class="anchor" aria-hidden="true" href="#文件描述符">#</a></h3>
 <blockquote>
 <p>文件描述符（数组下标）始终是当前最小的未使用的下标</p>
 </blockquote>
@@ -508,11 +531,11 @@ stack: 栈</p>
 </p>
 <p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e6%96%87%e4%bb%b6%e6%8f%8f%e8%bf%b0%e7%ac%a62.jpg" alt="Unix-文件描述符2"  />
 </p>
-<h4 id="文件权限">文件权限<a hidden class="anchor" aria-hidden="true" href="#文件权限">#</a></h4>
+<h3 id="文件权限">文件权限<a hidden class="anchor" aria-hidden="true" href="#文件权限">#</a></h3>
 <blockquote>
 <p>注意：umask 的影响</p>
 </blockquote>
-<h4 id="常用函数">常用函数<a hidden class="anchor" aria-hidden="true" href="#常用函数">#</a></h4>
+<h3 id="常用函数">常用函数<a hidden class="anchor" aria-hidden="true" href="#常用函数">#</a></h3>
 <blockquote>
 <p>open()<br>
 close()<br>
@@ -559,7 +582,11 @@ write()</p>
     close(dst_fd);
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre></div><h4 id="文件描述符重定向">文件描述符重定向<a hidden class="anchor" aria-hidden="true" href="#文件描述符重定向">#</a></h4>
+</code></pre></div><h3 id="文件描述符重定向">文件描述符重定向<a hidden class="anchor" aria-hidden="true" href="#文件描述符重定向">#</a></h3>
+<blockquote>
+<p>dup()<br>
+dup2()</p>
+</blockquote>
 <p><code>t_file.h</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#ifndef T_FILE_H
 </span><span style="color:#75715e">#define T_FILE_H
@@ -596,7 +623,7 @@ write()</p>
 </span><span style="color:#75715e"></span>
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre></div><h4 id="内存映射">内存映射<a hidden class="anchor" aria-hidden="true" href="#内存映射">#</a></h4>
+</code></pre></div><h3 id="内存映射">内存映射<a hidden class="anchor" aria-hidden="true" href="#内存映射">#</a></h3>
 <ul>
 <li><code>mmap</code></li>
 <li><code>munmap</code></li>
@@ -627,7 +654,93 @@ write()</p>
 
         <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre></div>
+</code></pre></div><h3 id="文件元数据">文件元数据<a hidden class="anchor" aria-hidden="true" href="#文件元数据">#</a></h3>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e6%96%87%e4%bb%b6%e5%ad%98%e5%82%a8.jpg" alt="Unix-文件存储"  />
+</p>
+<ul>
+<li><code>stat</code> 查看文件元数据信息</li>
+</ul>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e6%96%87%e4%bb%b6%e5%85%83%e6%95%b0%e6%8d%ae.jpg" alt="Unix-文件元数据"  />
+</p>
+<ul>
+<li>软连接与硬链接原理</li>
+</ul>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e8%bd%af%e8%bf%9e%e6%8e%a5%e4%b8%8e%e7%a1%ac%e9%93%be%e6%8e%a5.jpg" alt="Unix-软连接与硬链接"  />
+</p>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e8%bd%af%e8%bf%9e%e6%8e%a5%e4%b8%8e%e7%a1%ac%e9%93%be%e6%8e%a52.jpg" alt="Unix-软连接与硬链接2"  />
+</p>
+<h3 id="文件夹操作">文件夹操作<a hidden class="anchor" aria-hidden="true" href="#文件夹操作">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">opendir()
+closedir()
+readdir()
+</code></pre></div><h3 id="文件锁">文件锁<a hidden class="anchor" aria-hidden="true" href="#文件锁">#</a></h3>
+<ul>
+<li>读锁（共享锁）</li>
+<li>写锁（互斥锁）</li>
+</ul>
+<blockquote>
+<p>通过 <code>fcntl(2)</code> 操作文件描述符<br>
+如果一个进程对文件加了写锁，则其他进程也<strong>无法加读锁和写锁</strong>了<br>
+可以对文件的一个区域加锁，也可以对整个文件加锁</p>
+</blockquote>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e6%96%87%e4%bb%b6%e9%94%81.jpg" alt="Unix-文件锁"  />
+</p>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-fcntl-%e6%96%87%e4%bb%b6%e9%94%81.jpg" alt="Unix-fcntl-文件锁"  />
+</p>
+<h3 id="其他文件操作系统函数">其他文件操作系统函数<a hidden class="anchor" aria-hidden="true" href="#其他文件操作系统函数">#</a></h3>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f%e8%b0%83%e7%94%a8.jpg" alt="Unix-文件系统调用"  />
+</p>
+<h3 id="vfs-总结">VFS 总结<a hidden class="anchor" aria-hidden="true" href="#vfs-总结">#</a></h3>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-VFS.jpg" alt="Unix-VFS"  />
+</p>
+<h2 id="进程管理">进程管理<a hidden class="anchor" aria-hidden="true" href="#进程管理">#</a></h2>
+<h3 id="程序和进程">程序和进程<a hidden class="anchor" aria-hidden="true" href="#程序和进程">#</a></h3>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e7%a8%8b%e5%ba%8f%e5%92%8c%e8%bf%9b%e7%a8%8b.jpg" alt="Unix-程序和进程"  />
+</p>
+<ul>
+<li>进程间只有父子关系和兄弟关系</li>
+<li><code>pstree</code> 可查看进程树</li>
+<li><code>ps -aux</code> 可查看系统的进程情况</li>
+<li><code>top</code> 可查看进程的实时状态，类似 Windows 的任务管理器</li>
+</ul>
+<h3 id="进程的状态">进程的状态<a hidden class="anchor" aria-hidden="true" href="#进程的状态">#</a></h3>
+<p><img loading="lazy" style="margin: auto;" src=".././img/Unix-%e8%bf%9b%e7%a8%8b%e7%8a%b6%e6%80%81.jpg" alt="Unix-进程状态"  />
+
+<img loading="lazy" style="margin: auto;" src=".././img/Unix-%e8%bf%9b%e7%a8%8b%e7%8a%b6%e6%80%812.jpg" alt="Unix-进程状态2"  />
+</p>
+<h3 id="fork-子进程">fork 子进程<a hidden class="anchor" aria-hidden="true" href="#fork-子进程">#</a></h3>
+<h3 id="遗言函数">遗言函数<a hidden class="anchor" aria-hidden="true" href="#遗言函数">#</a></h3>
+<p>== 类似收工函数==</p>
+<p>== 开工函数在 <code>main</code> 函数之前执行 ==</p>
+<ol>
+<li>
+<p><code>atexit()</code></p>
+</li>
+<li>
+<p><code>on_exit()</code></p>
+</li>
+</ol>
+<h3 id="进程资源回收">进程资源回收<a hidden class="anchor" aria-hidden="true" href="#进程资源回收">#</a></h3>
+<ul>
+<li>父进程回收子进程</li>
+</ul>
+<ol>
+<li>
+<p><code>wait()</code></p>
+</li>
+<li>
+<p><code>waitpid()</code></p>
+</li>
+</ol>
+<ul>
+<li>孤儿进程</li>
+</ul>
+<p>父进程退出后，不影响子进程</p>
+<ul>
+<li>僵尸进程</li>
+</ul>
+<p>子进程结束后，未被父进程回收资源</p>
+
 
   </div>
 
