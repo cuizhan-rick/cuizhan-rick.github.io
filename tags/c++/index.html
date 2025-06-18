@@ -153,7 +153,7 @@ if (!doNotTrack) {
 静态库制作 ==使用静态库进行链接编译，只会把用到的函数所在的 .o 文件进行加载编译==
 gcc -c *.c ar -r libpmath.a *.o # 可查看静态库中的文件 ar -t libpmath.a 动态库制作 gcc -c -fPIC *.c gcc -shared -o libpmath.so *.o 编译相关 # 指定头文件路径和库路径 gcc main.c -Ip_math -Lp_math -lpmath # 查看预编译输出信息 gcc -E main.c -o main.i -v # 将预处理后的文件编译为汇编文件 gcc -S main.i -o main.s # 将汇编文件编译为目标文件(机器码) gcc -c main.s -o main.o # 链接为可执行文件 gcc main.o # 动态库查找路径 LD_LIBRARY_PATH gdb 调试 # 生成带有调试信息的可执行文件 gcc -c -ggdb # 或 -g # 启动调试 gdb a....</p>
   </section>
-  <footer class="entry-footer"><span title='2025-06-09 21:25:34 +0800 CST'>June 9, 2025</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Rick Cui</footer>
+  <footer class="entry-footer"><span title='2025-06-09 21:25:34 +0800 CST'>June 9, 2025</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Rick Cui</footer>
   <a class="entry-link" aria-label="post link to Unix Linux 使用和开发" href="https://cuizhan-rick.github.io/posts/299-unix-linux-%E4%BD%BF%E7%94%A8/"></a>
 </article>
 
